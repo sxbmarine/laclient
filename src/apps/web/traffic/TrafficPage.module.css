@@ -1,0 +1,259 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  color: #1a1a1a;
+}
+
+.heroSection {
+  padding: 24px 20px 12px;
+}
+
+.mainTitle {
+  font-size: 38px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+}
+
+.descriptionText {
+  font-size: 17px;
+  line-height: 1.5;
+  color: #2c2c2c;
+  margin-bottom: 24px;
+}
+
+.landscapeImage {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  margin-bottom: 32px;
+}
+
+/* Cards Section */
+.cardsContainer {
+  padding: 0 20px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.cardItem {
+  background: #ffffff;
+  border: 1.5px solid #cfd7df;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.cardItemClickable {
+  cursor: pointer;
+}
+
+.cardItemClickable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.09);
+}
+
+.cardHeader {
+  background: #465b70;
+  padding: 22px 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardTitle {
+  font-size: 23px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+}
+
+.cardGoldLine {
+  height: 4px;
+  background: #f4d068;
+}
+
+.cardBody {
+  padding: 22px 20px;
+  background: #ffffff;
+}
+
+.cardText {
+  font-size: 17px;
+  line-height: 1.5;
+  color: #2c2c2c;
+}
+
+.searchClickNotice {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1b4965;
+}
+
+/* Fines List Section */
+.finesListContainer {
+  padding: 0 20px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.finesListHeaderCard {
+  background: linear-gradient(135deg, #1b4965 0%, #0d2b45 100%);
+  border-radius: 18px;
+  padding: 20px;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.finesListHeaderTitle {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.finesListHeaderMeta {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fineCard {
+  background: #ffffff;
+  border: 1.5px solid #cfd7df;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fineCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 10px;
+}
+
+.fineCardId {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0d2b45;
+}
+
+.fineCardBadge {
+  background: #eaf4e6;
+  color: #2b7a2b;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.fineCardReason {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.35;
+}
+
+.fineCardDetailsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 14px;
+  color: #555555;
+  padding-top: 4px;
+}
+
+.payBtn {
+  background: #34c759;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  box-shadow: 0 2px 6px rgba(52, 199, 89, 0.3);
+}
+
+.payBtn:hover {
+  background: #2ca84b;
+}
+
+.payBtn:active {
+  transform: scale(0.95);
+}
+
+.fineCardAmount {
+  font-size: 20px;
+  font-weight: 800;
+  color: #d90429;
+}
+
+.emptyStateCard {
+  background: #f8f9fa;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 18px;
+  padding: 36px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.emptyStateIcon {
+  font-size: 42px;
+}
+
+.emptyStateTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0d2b45;
+}
+
+.emptyStateText {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.45;
+  max-width: 320px;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  background: #f1f5f9;
+  color: #0f172a;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-top: 8px;
+}
+
+.backBtn:hover {
+  background: #e2e8f0;
+}

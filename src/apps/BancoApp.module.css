@@ -1,0 +1,539 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #09090c;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-family-system);
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.4s ease;
+}
+
+.content {
+  flex: 1;
+  padding: 20px 16px 40px;
+  overflow-y: auto;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.headerRightGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bgChangeBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.bgChangeBtn:active {
+  transform: scale(0.9);
+  opacity: 0.7;
+}
+
+/* Apple HIG Large Title (34px Bold, tracking -0.8px) */
+.myCardsTitle {
+  font-size: 34px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.8px;
+  line-height: 41px;
+}
+
+.userAvatarWrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userAvatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CARDS CAROUSEL */
+.cardsCarousel {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  cursor: grab;
+  user-select: none;
+}
+
+.cardsCarousel:active {
+  cursor: grabbing;
+}
+
+.cardsCarousel::-webkit-scrollbar {
+  display: none;
+}
+
+.bankCard {
+  min-width: 320px;
+  width: 320px;
+  height: 170px;
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-sizing: border-box;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.bankCard:active {
+  transform: scale(0.97);
+}
+
+/* Card Themes */
+.chaseCard {
+  background: linear-gradient(135deg, #06263f 0%, #0273cf 100%);
+  color: #ffffff;
+}
+
+.boaCard {
+  background: linear-gradient(135deg, #0f2744 0%, #001229 55%, #bd152b 100%);
+  color: #ffffff;
+}
+
+.citiCard {
+  background: linear-gradient(135deg, #1d2a3a 0%, #0c1520 100%);
+  color: #ffffff;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bankLogo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.cardDigits {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.cardDigits:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.cardDigits:active {
+  transform: scale(0.95);
+}
+
+.cardMiddle {
+  margin-top: 4px;
+}
+
+.cardBalance {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.cardBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.cardSubtitle {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 500;
+}
+
+.cardActions {
+  display: flex;
+  gap: 6px;
+}
+
+.cardActionBtn {
+  font-size: 18px;
+  font-weight: 200;
+  padding: 4px 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: none;
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cardActionBtn:active {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* PAGINATION DOTS INDICATOR */
+.paginationDots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.activeDot {
+  width: 24px;
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* NET WORTH CARD */
+.netWorthCard {
+  backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 16px 20px;
+  margin-top: 14px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.netWorthTitle {
+  font-size: 17px;
+  color: var(--text-secondary);
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+
+.netWorthAmount {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1bff54;
+}
+
+/* QUICK ACTION BAR */
+.actionBar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.actionItem {
+  flex: 1;
+  backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #ffffff;
+}
+
+.actionItem:active {
+  transform: scale(0.96);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.actionIcon {
+  font-size: 20px;
+}
+
+.actionText {
+  font-size: 18px;
+  font-weight: 200;
+}
+
+/* TRANSACTION ITEMS */
+.txIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.txTitle {
+  font-weight: 200;
+  font-size: 17px;
+}
+
+.txDate {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.txAmount {
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.txAmountOut {
+  color: var(--accent-red);
+}
+
+.txAmountIn {
+  color: var(--accent-green);
+}
+
+/* BANK SELECTOR GRID */
+.bankSelectorGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.bankOption {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.bankOptionSelected {
+  border-color: var(--accent);
+  background: rgba(255, 10, 112, 0.12);
+}
+
+.bankOptionLogo {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.bankOptionName {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  flex: 1;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.accountInfo {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  padding: 12px;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+}
+
+.error {
+  color: var(--accent-red);
+  font-size: 14px;
+  padding: 8px 12px;
+  background: rgba(255, 69, 58, 0.15);
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.success {
+  color: var(--accent-green);
+  font-size: 14px;
+  padding: 8px 12px;
+  background: rgba(48, 209, 88, 0.15);
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* INFO MODAL POPUP */
+.modalOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modalContent {
+  background: #121217;
+  border-radius: 28px 28px 0 0;
+  padding: 16px 20px 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.modalHandle {
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 auto 16px;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.modalBankLogo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 12px;
+  padding: 6px;
+}
+
+.modalBankTitle {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.modalBankSubtitle {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.modalAccountBox {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.modalAccountLabel {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.modalAccountRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modalAccountNum {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #ffffff;
+  font-family: monospace;
+}
+
+.copyBtn {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.copyBtn:active {
+  transform: scale(0.94);
+  opacity: 0.9;
+}

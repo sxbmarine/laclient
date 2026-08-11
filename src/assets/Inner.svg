@@ -1,0 +1,102 @@
+<svg viewBox="0 0 12.5549 12.5549" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12.554932" height="12.554932" fill="none" clip-path="url(#clipPath_0)" customFrame="url(#clipPath_0)">
+	<defs>
+		<linearGradient id="paint_linear_0" x1="6.277493" x2="6.277493" y1="-3.8438559e-16" y2="12.554986" gradientUnits="userSpaceOnUse">
+			<stop stop-color="rgb(255,255,255)" offset="0" stop-opacity="0.0599999987" />
+			<stop stop-color="rgb(255,255,255)" offset="1" stop-opacity="0" />
+		</linearGradient>
+		<clipPath id="clipPath_0">
+			<rect width="12.554986" height="12.554986" x="0.000000" y="0.000000" rx="6.277493" fill="rgb(255,255,255)" />
+		</clipPath>
+		<g id="pixso_custom_effect_8">
+			<effect visibility="visible" effectType="gaussianBlur" stdDeviation="1.44865215" />
+		</g>
+		<filter id="filter_8" width="12.555176" height="14.003540" x="-0.000244" y="-0.241455" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_8)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feBlend result="shape" in="SourceGraphic" in2="BackgroundImageFix" mode="normal" />
+			<feGaussianBlur stdDeviation="0.482884049" result="effect_layerBlur_1" />
+		</filter>
+		<g id="pixso_custom_effect_9">
+			<effect visibility="visible" effectType="gaussianBlur" stdDeviation="0.482884079" />
+		</g>
+		<filter id="filter_9" width="5.794678" height="5.311768" x="3.380127" y="6.036011" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_9)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feBlend result="shape" in="SourceGraphic" in2="BackgroundImageFix" mode="normal" />
+			<feGaussianBlur stdDeviation="0.16096136" result="effect_layerBlur_1" />
+		</filter>
+		<radialGradient id="paint_radial_0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(5.79461,0,0,5.31172,6.27743,6.03613)">
+			<stop stop-color="rgb(22,31,136)" offset="0" stop-opacity="1" />
+			<stop stop-color="rgb(86,24,141)" offset="1" stop-opacity="1" />
+		</radialGradient>
+		<g id="pixso_custom_effect_10">
+			<effect visibility="visible" effectType="gaussianBlur" stdDeviation="2.41442013" />
+		</g>
+		<filter id="filter_10" width="9.657471" height="9.174805" x="1.448975" y="4.587524" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_10)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feBlend result="shape" in="SourceGraphic" in2="BackgroundImageFix" mode="normal" />
+			<feGaussianBlur stdDeviation="0.804806709" result="effect_layerBlur_1" />
+		</filter>
+		<linearGradient id="paint_linear_1" x1="6.27745724" x2="6.27745724" y1="7.0020752" y2="11.348032" gradientUnits="userSpaceOnUse">
+			<stop stop-color="rgb(29,134,156)" offset="0" stop-opacity="0.670000017" />
+			<stop stop-color="rgb(35,113,198)" offset="0.371348083" stop-opacity="0.699707866" />
+			<stop stop-color="rgb(4,10,173)" offset="1" stop-opacity="0.75" />
+		</linearGradient>
+		<g id="pixso_custom_effect_11">
+			<effect visibility="visible" effectType="gaussianBlur" stdDeviation="0.482884079" />
+		</g>
+		<filter id="filter_11" width="3.863037" height="3.863159" x="4.345947" y="7.967773" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_11)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feBlend result="shape" in="SourceGraphic" in2="BackgroundImageFix" mode="normal" />
+			<feGaussianBlur stdDeviation="0.16096136" result="effect_layerBlur_1" />
+		</filter>
+		<radialGradient id="paint_radial_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.8973,0,0,2.8973,6.27751,8.45081)">
+			<stop stop-color="rgb(0,82,103)" offset="0" stop-opacity="1" />
+			<stop stop-color="rgb(65,89,103)" offset="0.595647752" stop-opacity="1" />
+			<stop stop-color="rgb(135,0,199)" offset="1" stop-opacity="1" />
+		</radialGradient>
+		<g id="pixso_custom_effect_12">
+			<effect visibility="visible" effectType="gaussianBlur" stdDeviation="0" />
+		</g>
+		<filter id="filter_12" width="7.726074" height="7.726196" x="2.414551" y="2.414673" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_12)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feBlend result="shape" in="SourceGraphic" in2="BackgroundImageFix" mode="normal" />
+			<feGaussianBlur stdDeviation="0" result="effect_layerBlur_1" />
+		</filter>
+		<radialGradient id="paint_radial_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(4.78055,0,0,4.78055,6.27738,2.22164)">
+			<stop stop-color="rgb(89,120,221)" offset="0" stop-opacity="1" />
+			<stop stop-color="rgb(49,47,173)" offset="0.51047796" stop-opacity="0.610000014" />
+			<stop stop-color="rgb(28,28,134)" offset="1" stop-opacity="0" />
+		</radialGradient>
+		<g id="pixso_custom_effect_13">
+			<effect visibility="visible" effectType="gaussianBlur" stdDeviation="1.44865215" />
+		</g>
+		<filter id="filter_13" width="12.555176" height="12.554932" x="-0.000244" y="0.000122" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_13)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feBlend result="shape" in="SourceGraphic" in2="BackgroundImageFix" mode="normal" />
+			<feGaussianBlur stdDeviation="0.482884049" result="effect_layerBlur_1" />
+		</filter>
+		<radialGradient id="paint_radial_3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(5.31172,0,0,5.31173,6.27733,1.20729)">
+			<stop stop-color="rgb(255,255,255)" offset="0" stop-opacity="0.379999995" />
+			<stop stop-color="rgb(0,0,0)" offset="1" stop-opacity="0" />
+		</radialGradient>
+	</defs>
+	<rect id="Inner" width="12.554986" height="12.554986" x="0.000000" y="0.000000" rx="6.277493" fill="rgb(7,20,76)" />
+	<g filter="url(#filter_8)">
+		<path id="Rectangle 6" d="M1.93137 1.20715L10.6233 1.20715C10.6233 1.20715 11.1062 4.3459 11.1062 6.76032C11.1062 9.17474 10.6233 12.3135 10.6233 12.3135L1.93137 12.3135C1.93137 12.3135 1.44849 9.41618 1.44849 6.76032C1.44849 4.10446 1.93137 1.20715 1.93137 1.20715Z" fill="rgb(3,3,3)" fill-opacity="0.800000012" fill-rule="nonzero" />
+	</g>
+	<g opacity="0" filter="url(#filter_9)">
+		<ellipse id="Ellipse 5" rx="2.897305" ry="2.655862" cx="6.27743149" cy="8.69199562" fill="url(#paint_radial_0)" />
+	</g>
+	<g filter="url(#filter_10)">
+		<ellipse id="Green" rx="2.414420" ry="2.172978" cx="6.27745724" cy="9.1750536" fill="url(#paint_linear_1)" />
+	</g>
+	<g filter="url(#filter_11)">
+		<circle id="Purple" cx="6.27750969" cy="9.89945793" r="1.44865227" fill="url(#paint_radial_1)" fill-opacity="0.800000012" />
+	</g>
+	<g filter="url(#filter_12)">
+		<circle id="Inner top circle shine" cx="6.27737904" cy="6.27786732" r="3.8630724" fill="url(#paint_radial_2)" />
+	</g>
+	<g filter="url(#filter_13)">
+		<circle id="Top circle shine" cx="6.27732706" cy="6.2775712" r="4.82884073" fill="url(#paint_radial_3)" />
+	</g>
+	<rect id="Inner" width="12.072102" height="12.072102" x="0.241442" y="0.241442" rx="6.036051" stroke="url(#paint_linear_0)" stroke-width="0.482884" />
+</svg>

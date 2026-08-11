@@ -1,0 +1,60 @@
+
+.Pixso-symbol-3_78 {
+        width: 282px;
+height: 4px;
+position: relative;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+      }
+.Pixso-vector-3_79 {
+        width: 4px;
+height: 4px;
+background-image: url(@/assets/images/Tick3.svg);
+background-size: 100% 100%;
+background-repeat: no-repeat;
+position: relative;
+flex-shrink: 0;
+      }
+.Pixso-vector-3_80 {
+        width: 4px;
+height: 4px;
+background-image: url(@/assets/images/Tick2.svg);
+background-size: 100% 100%;
+background-repeat: no-repeat;
+position: relative;
+flex-shrink: 0;
+      }
+.Pixso-vector-3_81 {
+        width: 4px;
+height: 4px;
+background-image: url(@/assets/images/Tick1.svg);
+background-size: 100% 100%;
+background-repeat: no-repeat;
+position: relative;
+flex-shrink: 0;
+      }
+.Pixso-vector-3_82 {
+        width: 4px;
+height: 4px;
+background-image: url(@/assets/images/Tick.svg);
+background-size: 100% 100%;
+background-repeat: no-repeat;
+position: relative;
+flex-shrink: 0;
+      }
+.Pixso-vector-3_83 {
+        width: 4px;
+height: 4px;
+background-image: url(@/assets/images/Tick0.svg);
+background-size: 100% 100%;
+background-repeat: no-repeat;
+position: relative;
+flex-shrink: 0;
+      }
+.component-3_78 {
+        width: fit-content;
+height: fit-content;
+      }
+

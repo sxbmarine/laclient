@@ -1,0 +1,128 @@
+.component-1_129 {
+  width: 100%;
+  max-width: 540px;
+  position: relative;
+  margin: 0 auto;
+  cursor: pointer;
+  user-select: none;
+}
+
+.Pixso-symbol-1_129 {
+  width: 100%;
+  position: relative;
+}
+
+.Pixso-symbol-1_130, .Pixso-symbol-1_131, .Pixso-symbol-1_132 {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  isolation: isolate;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 18px;
+  min-height: 82px;
+  border-radius: 26px;
+  box-sizing: border-box;
+}
+
+.Pixso-instance-1_137, .Pixso-instance-1_148, .Pixso-instance-1_157 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+
+.Pixso-instance-1_138, .Pixso-instance-1_149, .Pixso-instance-1_158 {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 4;
+}
+
+.Pixso-frame-1_139, .Pixso-frame-1_150, .Pixso-frame-1_159 {
+  width: 100%;
+  position: relative;
+  flex-shrink: 1;
+  z-index: 5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.frame-content-1_139, .frame-content-1_150, .frame-content-1_159 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+
+.Pixso-frame-1_140, .Pixso-frame-1_151, .Pixso-frame-1_160 {
+  width: 100%;
+  position: relative;
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+  padding-right: 12px;
+}
+
+.frame-content-1_140, .frame-content-1_151, .frame-content-1_160 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.Pixso-paragraph-1_141, .Pixso-paragraph-1_152, .Pixso-paragraph-1_161 {
+  font-size: 17px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
+  font-weight: 650;
+  letter-spacing: -0.3px;
+  line-height: 22px;
+  color: #ffffff;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Pixso-paragraph-1_142, .Pixso-paragraph-1_153, .Pixso-paragraph-1_162 {
+  font-size: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.92);
+  width: 100%;
+  margin: 3px 0 0 0;
+  padding: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Pixso-frame-1_143, .Pixso-frame-1_154, .Pixso-frame-1_163 {
+  width: auto;
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+}

@@ -1,0 +1,33 @@
+:root, 
+[data-collection-5720-155-mode="light"] {
+  /* Light */
+  --fills-primary: rgba(120, 120, 120, 0.2);
+  --labels-secondary: rgba(60, 60, 67, 0.6);
+  --separators-vibrant: rgba(230, 230, 230, 1);
+  --accents-blue: rgba(0, 136, 255, 1);
+}
+
+[data-collection-5720-155-mode="dark"] {
+  /* Dark */
+  --fills-primary: rgba(120, 120, 128, 0.36);
+  --labels-secondary: rgba(235, 235, 245, 0.7);
+  --separators-vibrant: rgba(26, 26, 26, 1);
+  --accents-blue: rgba(0, 145, 255, 1);
+}
+
+[data-collection-5720-155-mode="ic-light"] {
+  /* IC - Light */
+  --fills-primary: rgba(120, 120, 120, 0.28);
+  --labels-secondary: rgba(60, 60, 67, 0.8);
+  --separators-vibrant: rgba(230, 230, 230, 1);
+  --accents-blue: rgba(30, 110, 244, 1);
+}
+
+[data-collection-5720-155-mode="ic-dark"] {
+  /* IC - Dark */
+  --fills-primary: rgba(120, 120, 128, 0.44);
+  --labels-secondary: rgba(235, 235, 245, 0.7);
+  --separators-vibrant: rgba(26, 26, 26, 1);
+  --accents-blue: rgba(92, 184, 255, 1);
+}
+

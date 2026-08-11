@@ -1,0 +1,23 @@
+.Pixso-symbol-3_84 {
+  width: 36px;
+  height: 24px;
+  position: relative;
+  border-radius: 100px;
+}
+
+.Pixso-rectangle-3_85 {
+  width: 36px;
+  height: 22px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+  background-color: #ffffff;
+}
+
+.component-3_84 {
+  width: 36px;
+  height: 24px;
+}

@@ -1,0 +1,15 @@
+<svg viewBox="0 0 10.1406 13.0378" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10.140625" height="13.037842" fill="none" customFrame="#000000">
+	<defs>
+		<g id="pixso_custom_effect_20">
+			<effect visibility="visible" effectType="gaussianBlur" stdDeviation="2.41442013" />
+		</g>
+		<filter id="filter_20" width="10.140625" height="13.037842" x="0.000000" y="0.000000" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_20)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feBlend result="shape" in="SourceGraphic" in2="BackgroundImageFix" mode="normal" />
+			<feGaussianBlur stdDeviation="0.804806709" result="effect_layerBlur_1" />
+		</filter>
+	</defs>
+	<g filter="url(#filter_20)">
+		<path id="shine" d="M5.07029 2.41443L6.31246 2.41443C7.09322 2.41443 7.72615 3.04736 7.72615 3.82812C7.72615 4.16249 7.60764 4.48603 7.39165 4.74128L2.41443 10.6235L2.41443 5.07029C2.41443 3.6035 3.6035 2.41443 5.07029 2.41443Z" fill="rgb(255,255,255)" fill-opacity="0.800000012" fill-rule="nonzero" />
+	</g>
+</svg>

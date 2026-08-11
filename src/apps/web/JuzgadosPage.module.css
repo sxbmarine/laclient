@@ -1,0 +1,483 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.headerBannerImg {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.menuBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #0d2b45;
+  gap: 2px;
+}
+
+.menuIcon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.menuLabel {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Top Accent Bar */
+.accentBar {
+  height: 4px;
+  background: linear-gradient(90deg, #1b4965 0%, #f4a261 100%);
+}
+
+/* Hero Section */
+.heroSection {
+  position: relative;
+  background: url('https://images.unsplash.com/photo-1580655653885-65763b2597d0?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
+  min-height: 220px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+}
+
+.courtHelpBox {
+  width: 100%;
+  background: linear-gradient(180deg, rgba(20, 70, 110, 0.92) 0%, rgba(15, 50, 85, 0.96) 100%);
+  padding: 20px 16px;
+  color: #ffffff;
+}
+
+.courtHelpHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.courtHelpImg {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+}
+
+.courtHelpTitleFallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.betaBadge {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.8;
+  vertical-align: super;
+}
+
+.searchForm {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.searchInput {
+  flex: 1;
+  height: 46px;
+  border-radius: 8px;
+  border: none;
+  padding: 0 14px;
+  font-size: 16px;
+  color: #1a1a1a;
+  outline: none;
+}
+
+.searchBtn {
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  border: none;
+  background: #f4d068;
+  color: #1a1a1a;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.searchSubtitle {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.3;
+}
+
+/* Quick Services Grid */
+.quickServicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 10px;
+  padding: 28px 16px;
+  background: #ffffff;
+}
+
+.serviceItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.serviceIcon {
+  font-size: 28px;
+  color: #0d2b45;
+}
+
+.serviceTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.25;
+}
+
+/* Efiling Feature Card Section */
+.featureSection {
+  padding: 16px 16px 28px;
+  background: #ffffff;
+}
+
+.efilingCard {
+  background: #eaf4e6;
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.efilingImg {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.efilingTitle {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0d2b45;
+}
+
+.efilingDesc {
+  font-size: 15px;
+  color: #2b2b2b;
+  line-height: 1.4;
+}
+
+.learnMoreBtn {
+  align-self: flex-start;
+  padding: 12px 22px;
+  background: #14213d;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.viewAllBtnContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.viewAllBtn {
+  padding: 12px 28px;
+  background: transparent;
+  border: 2px solid #14213d;
+  color: #14213d;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Court Communications Section */
+.communicationsSection {
+  background: linear-gradient(180deg, #1b4965 0%, #0d2b45 100%);
+  color: #ffffff;
+  padding: 32px 18px;
+}
+
+.commTitle {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.tagNotice {
+  display: inline-block;
+  background: #f4d068;
+  color: #1a1a1a;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.commSubtitle {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Types of Cases Section */
+.typesSection {
+  padding: 32px 16px;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.typesHeading {
+  font-size: 30px;
+  font-weight: 800;
+  color: #0055a5;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.caseCard {
+  background: #ffffff;
+  border: 1.5px solid #d0e4ff;
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.caseCardHighlight {
+  background: #cbe3f7;
+  border: 1.5px solid #99c2ec;
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.caseHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.caseIcon {
+  font-size: 22px;
+  color: #0055a5;
+}
+
+.caseTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0d2b45;
+}
+
+.caseDesc {
+  font-size: 15px;
+  color: #333333;
+  line-height: 1.4;
+}
+
+/* Locate Courthouse Section */
+.courthouseSection {
+  padding: 32px 16px 40px;
+  background: #f4f6f8;
+}
+
+.courthouseHeading {
+  font-size: 30px;
+  font-weight: 800;
+  color: #0055a5;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.courthouseCard {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.courthouseRow {
+  padding: 18px;
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.courthouseRow:last-child {
+  border-bottom: none;
+}
+
+.courtName {
+  font-size: 17px;
+  font-weight: 800;
+  color: #0d2b45;
+}
+
+.courtAddress {
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.3;
+}
+
+/* Our Mission Section */
+.missionSection {
+  padding: 42px 24px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.missionHeading {
+  font-size: 34px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.missionText {
+  font-size: 18px;
+  font-style: italic;
+  color: #2b2b2b;
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 0 auto;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+/* Footer Section */
+.footer {
+  background: #1d2d3d;
+  color: #ffffff;
+  padding: 36px 20px 52px;
+}
+
+.footerBannerImg {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 28px;
+}
+
+.footerColumns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.footerColTitle {
+  font-size: 17px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.footerColList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footerLink {
+  color: #d1d5db;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.15s;
+  cursor: pointer;
+}
+
+.footerLink:hover {
+  color: #ffffff;
+}
+
+.socialSection {
+  margin-bottom: 28px;
+}
+
+.socialLabel {
+  font-size: 14px;
+  color: #d1d5db;
+  margin-bottom: 14px;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 18px;
+  font-size: 22px;
+}
+
+.socialIconBtn {
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.socialIconBtn:hover {
+  transform: scale(1.1);
+}
+
+.legalLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #d1d5db;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 24px;
+  line-height: 1.6;
+}
+
+.legalLinkItem {
+  color: #ffffff;
+  text-decoration: underline;
+  cursor: pointer;
+}

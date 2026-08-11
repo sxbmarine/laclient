@@ -1,0 +1,31 @@
+.Pixso-symbol-1_124 {
+  display: flex;
+  align-items: center;
+}
+.Pixso-symbol-1_125, .Pixso-symbol-1_126 {
+  width: auto;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.Pixso-paragraph-1_127, .Pixso-paragraph-1_128 {
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
+  font-weight: 500;
+  text-align: right;
+  line-height: 18px;
+  color: rgba(235, 235, 245, 0.75);
+  width: auto;
+  height: auto;
+  position: relative;
+  flex-shrink: 0;
+  white-space: pre;
+}
+.component-1_124 {
+  width: fit-content;
+  height: fit-content;
+}

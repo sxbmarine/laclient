@@ -1,0 +1,22 @@
+
+.scroll-container {
+        height: 100%;
+width: 100%;
+overflow: auto;
+      }
+.Pixso-instance-1_226 {
+        width: 100%;
+height: 28px;
+position: relative;
+flex-shrink: 0;
+      }
+
+
+.Pixso-instance-1_226 {
+        background-color: var(--accents-green);
+border-radius: 100px 100px 100px 100px;
+      }
+.Pixso-instance-1_226 .Pixso-symbol-1_195  {
+        width: 64px;
+height: 28px;
+      }

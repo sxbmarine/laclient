@@ -1,0 +1,865 @@
+
+.Pixso-symbol-1_129 {
+        
+      }
+.Pixso-symbol-1_130 {
+        width: 386px;
+height: 77.333px;
+position: relative;
+display: flex;
+flex-direction: row;
+isolation: isolate;
+gap: 10px;
+justify-content: center;
+align-items: center;
+padding: 12px 14px 27px 14px;
+border-radius: 24px 24px 24px 24px;
+      }
+.Pixso-frame-1_133 {
+        width: calc(100% - 0px);
+height: 8px;
+overflow: hidden;
+position: absolute;
+z-index: 1;
+left: 0px;
+right: 0px;
+bottom: -1.6670000000000016px;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+align-items: center;
+border-radius: 24px 24px 24px 24px;
+      }
+.frame-content-1_133 {
+        display: flex;
+flex-direction: column;
+gap: 10px;
+align-items: center;
+justify-content: flex-end;
+padding: 0px 20px 0px 20px;
+width: 100%;
+height: 100%;
+position: relative;
+      }
+.Pixso-instance-1_134 {
+        width: 346px;
+height: 64px;
+position: relative;
+flex-shrink: 0;
+      }
+.Pixso-frame-1_135 {
+        width: calc(100% - 0px);
+height: 8px;
+overflow: hidden;
+position: absolute;
+z-index: 2;
+left: 0px;
+right: 0px;
+bottom: 6.332999999999998px;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+align-items: center;
+border-radius: 24px 24px 24px 24px;
+      }
+.frame-content-1_135 {
+        display: flex;
+flex-direction: column;
+gap: 10px;
+align-items: center;
+justify-content: flex-end;
+padding: 0px 10px 0px 10px;
+width: 100%;
+height: 100%;
+position: relative;
+      }
+.Pixso-instance-1_136 {
+        width: 366px;
+height: 64px;
+position: relative;
+flex-shrink: 0;
+      }
+.Pixso-instance-1_137 {
+        width: 386px;
+height: 63px;
+position: absolute;
+z-index: 3;
+left: 0px;
+top: 0px;
+      }
+.Pixso-instance-1_138 {
+        width: 38.333302px;
+height: 38.333px;
+position: relative;
+flex-shrink: 0;
+z-index: 4;
+      }
+.Pixso-frame-1_139 {
+        width: 100%;
+height: 38.333px;
+position: relative;
+flex-shrink: 1;
+z-index: 5;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: flex-start;
+flex-grow: 1;
+flex-basis: 0;
+align-self: stretch;
+      }
+.frame-content-1_139 {
+        display: flex;
+flex-direction: row;
+align-items: flex-start;
+justify-content: center;
+width: 100%;
+height: 100%;
+position: relative;
+      }
+.Pixso-frame-1_140 {
+        width: 100%;
+height: 38.333px;
+position: relative;
+flex-shrink: 1;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+flex-grow: 1;
+flex-basis: 0;
+align-self: stretch;
+      }
+.frame-content-1_140 {
+        display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: center;
+width: 100%;
+height: 100%;
+position: relative;
+      }
+.Pixso-paragraph-1_141 {
+        font-size: 15px;
+font-family: "SF Pro-Semibold";
+font-weight: 590;
+letter-spacing: -0.23px;
+line-height: 17px;
+font-feature-settings: "locl" 0;
+color: var(--grays-white);
+width: 235.666687px;
+height: auto;
+position: relative;
+flex-shrink: 0;
+flex-grow: 0;
+      }
+.Pixso-paragraph-1_142 {
+        font-size: 15px;
+font-family: "SF Pro-Regular";
+font-weight: 400;
+letter-spacing: -0.23px;
+line-height: 18px;
+font-feature-settings: "locl" 0;
+color: var(--grays-white);
+width: 100%;
+height: auto;
+position: relative;
+flex-shrink: 0;
+flex-grow: 0;
+      }
+.Pixso-frame-1_143 {
+        width: auto;
+height: auto;
+position: relative;
+flex-shrink: 0;
+display: flex;
+flex-direction: column;
+gap: 5.5px;
+align-items: flex-end;
+      }
+.Pixso-instance-1_144 {
+        width: 58px;
+height: 17px;
+position: relative;
+flex-shrink: 0;
+      }
+.Pixso-rectangle-1_145 {
+        width: 32px;
+height: 32px;
+position: relative;
+flex-shrink: 0;
+border-radius: 6px 6px 6px 6px;
+background-color: rgba(255, 0, 0, 1);
+      }
+.Pixso-symbol-1_131 {
+        width: 386px;
+height: 71.333px;
+position: relative;
+display: flex;
+flex-direction: row;
+isolation: isolate;
+gap: 10px;
+justify-content: center;
+align-items: center;
+padding: 12px 14px 21px 14px;
+border-radius: 24px 24px 24px 24px;
+      }
+.Pixso-frame-1_146 {
+        width: calc(100% - 0px);
+height: 8px;
+overflow: hidden;
+position: absolute;
+z-index: 1;
+left: 0px;
+right: 0px;
+bottom: 0.3329999999999984px;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+align-items: center;
+border-radius: 24px 24px 24px 24px;
+      }
+.frame-content-1_146 {
+        display: flex;
+flex-direction: column;
+gap: 10px;
+align-items: center;
+justify-content: flex-end;
+padding: 0px 10px 0px 10px;
+width: 100%;
+height: 100%;
+position: relative;
+      }
+.Pixso-instance-1_147 {
+        width: 366px;
+height: 64px;
+position: relative;
+flex-shrink: 0;
+      }
+.Pixso-instance-1_148 {
+        width: 386px;
+height: 63px;
+position: absolute;
+z-index: 2;
+left: 0px;
+top: 0px;
+      }
+.Pixso-instance-1_149 {
+        width: 38.333302px;
+height: 38.333px;
+position: relative;
+flex-shrink: 0;
+z-index: 3;
+      }
+.Pixso-frame-1_150 {
+        width: 100%;
+height: 38.333px;
+position: relative;
+flex-shrink: 1;
+z-index: 4;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: flex-start;
+flex-grow: 1;
+flex-basis: 0;
+align-self: stretch;
+      }
+.frame-content-1_150 {
+        display: flex;
+flex-direction: row;
+align-items: flex-start;
+justify-content: center;
+width: 100%;
+height: 100%;
+position: relative;
+      }
+.Pixso-frame-1_151 {
+        width: 100%;
+height: 38.333px;
+position: relative;
+flex-shrink: 1;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+flex-grow: 1;
+flex-basis: 0;
+align-self: stretch;
+      }
+.frame-content-1_151 {
+        display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: center;
+width: 100%;
+height: 100%;
+position: relative;
+      }
+.Pixso-paragraph-1_152 {
+        font-size: 15px;
+font-family: "SF Pro-Semibold";
+font-weight: 590;
+letter-spacing: -0.23px;
+line-height: 17px;
+font-feature-settings: "locl" 0;
+color: var(--grays-white);
+width: 235.666687px;
+height: auto;
+position: relative;
+flex-shrink: 0;
+flex-grow: 0;
+      }
+.Pixso-paragraph-1_153 {
+        font-size: 15px;
+font-family: "SF Pro-Regular";
+font-weight: 400;
+letter-spacing: -0.23px;
+line-height: 18px;
+font-feature-settings: "locl" 0;
+color: var(--grays-white);
+width: 100%;
+height: auto;
+position: relative;
+flex-shrink: 0;
+flex-grow: 0;
+      }
+.Pixso-frame-1_154 {
+        width: auto;
+height: auto;
+position: relative;
+flex-shrink: 0;
+display: flex;
+flex-direction: column;
+gap: 5.5px;
+align-items: flex-end;
+      }
+.Pixso-instance-1_155 {
+        width: 58px;
+height: 17px;
+position: relative;
+flex-shrink: 0;
+      }
+.Pixso-rectangle-1_156 {
+        width: 32px;
+height: 32px;
+position: relative;
+flex-shrink: 0;
+border-radius: 6px 6px 6px 6px;
+background-color: rgba(255, 0, 0, 1);
+      }
+.Pixso-symbol-1_132 {
+        width: 386px;
+height: 66.333px;
+position: relative;
+display: flex;
+flex-direction: row;
+isolation: isolate;
+gap: 10px;
+justify-content: center;
+align-items: center;
+padding: 14px 14px 14px 14px;
+min-height: 64px;
+border-radius: 24px 24px 24px 24px;
+      }
+.Pixso-instance-1_157 {
+        width: 386px;
+height: 66px;
+position: absolute;
+z-index: 1;
+left: 0px;
+top: 0px;
+      }
+.Pixso-instance-1_158 {
+        width: 38.333302px;
+height: 38.333px;
+position: relative;
+flex-shrink: 0;
+z-index: 2;
+      }
+.Pixso-frame-1_159 {
+        width: 100%;
+height: auto;
+position: relative;
+flex-shrink: 1;
+z-index: 3;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: flex-start;
+flex-grow: 1;
+flex-basis: 0;
+      }
+.frame-content-1_159 {
+        display: flex;
+flex-direction: row;
+gap: 10px;
+align-items: flex-start;
+justify-content: center;
+width: 100%;
+position: relative;
+      }
+.Pixso-frame-1_160 {
+        width: 100%;
+height: 35px;
+position: relative;
+flex-shrink: 1;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+flex-grow: 1;
+flex-basis: 0;
+align-self: stretch;
+      }
+.frame-content-1_160 {
+        display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: center;
+width: 100%;
+height: 100%;
+position: relative;
+      }
+.Pixso-paragraph-1_161 {
+        font-size: 15px;
+font-family: "SF Pro-Semibold";
+font-weight: 590;
+letter-spacing: -0.23px;
+line-height: 17px;
+color: var(--grays-white);
+width: 235.666687px;
+height: 17.5px;
+position: relative;
+flex-shrink: 0;
+      }
+.Pixso-paragraph-1_162 {
+        font-size: 15px;
+font-family: "SF Pro-Regular";
+font-weight: 400;
+letter-spacing: -0.23px;
+line-height: 18px;
+color: var(--grays-white);
+width: 309.666687px;
+height: 17.5px;
+position: relative;
+flex-shrink: 0;
+      }
+.Pixso-frame-1_163 {
+        width: auto;
+height: auto;
+position: relative;
+flex-shrink: 0;
+display: flex;
+flex-direction: column;
+gap: 5.5px;
+align-items: flex-end;
+      }
+.Pixso-instance-1_164 {
+        width: 58px;
+height: 17px;
+position: relative;
+flex-shrink: 0;
+      }
+.Pixso-rectangle-1_165 {
+        width: 32px;
+height: 32px;
+position: relative;
+flex-shrink: 0;
+border-radius: 6px 6px 6px 6px;
+background-color: rgba(255, 0, 0, 1);
+      }
+.component-1_129 {
+        width: fit-content;
+height: fit-content;
+      }
+
+
+.Pixso-instance-1_134 .Pixso-symbol-1_109  {
+        width: 346px;
+height: 64px;
+      }
+.Pixso-instance-1_134 .Pixso-frame-1_110  {
+        width: calc(100% - 0px);
+height: calc(100% - 0px);
+overflow: hidden;
+border-radius: 23px 23px 23px 23px;
+background-color: rgba(16, 16, 16, 1);
+background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 100%);
+background-blend-mode: luminosity;
+      }
+.Pixso-instance-1_134 .Pixso-frame-1_110 .shadow-blend-1_110-0 {
+        inset: 0;
+box-shadow: 1.25px 0px 0px -0.75px rgba(208, 208, 208, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_134 .Pixso-frame-1_110 .shadow-blend-1_110-1 {
+        inset: 0;
+box-shadow: -1.25px 0px 0px -0.75px rgba(208, 208, 208, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_134 .Pixso-frame-1_110 .shadow-blend-1_110-2 {
+        inset: 0;
+box-shadow: 0px 0px 0px 0.5px rgba(204, 204, 204, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_134 .Pixso-frame-1_110 .shadow-blend-1_110-3 {
+        inset: 0;
+box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.02) ;
+pointer-events: none;
+mix-blend-mode: normal;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_134 .Pixso-frame-1_111  {
+        width: calc(100% - 0px);
+height: calc(100% - 0px);
+overflow: hidden;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_136 .Pixso-symbol-1_109  {
+        width: 366px;
+height: 64px;
+      }
+.Pixso-instance-1_136 .Pixso-frame-1_110  {
+        width: calc(100% - 0px);
+height: calc(100% - 0px);
+overflow: hidden;
+border-radius: 23px 23px 23px 23px;
+background-color: rgba(16, 16, 16, 1);
+background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 100%);
+background-blend-mode: luminosity;
+      }
+.Pixso-instance-1_136 .Pixso-frame-1_110 .shadow-blend-1_110-0 {
+        inset: 0;
+box-shadow: 1.25px 0px 0px -0.75px rgba(208, 208, 208, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_136 .Pixso-frame-1_110 .shadow-blend-1_110-1 {
+        inset: 0;
+box-shadow: -1.25px 0px 0px -0.75px rgba(208, 208, 208, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_136 .Pixso-frame-1_110 .shadow-blend-1_110-2 {
+        inset: 0;
+box-shadow: 0px 0px 0px 0.5px rgba(204, 204, 204, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_136 .Pixso-frame-1_110 .shadow-blend-1_110-3 {
+        inset: 0;
+box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.02) ;
+pointer-events: none;
+mix-blend-mode: normal;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_136 .Pixso-frame-1_111  {
+        width: calc(100% - 0px);
+height: calc(100% - 0px);
+overflow: hidden;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_137 .Pixso-symbol-1_109  {
+        width: 386px;
+height: 63px;
+      }
+.Pixso-instance-1_137 .Pixso-frame-1_110  {
+        width: calc(100% - 0px);
+height: calc(100% - 0px);
+overflow: hidden;
+border-radius: 23px 23px 23px 23px;
+background-color: rgba(16, 16, 16, 1);
+background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 100%);
+background-blend-mode: luminosity;
+      }
+.Pixso-instance-1_137 .Pixso-frame-1_110 .shadow-blend-1_110-0 {
+        inset: 0;
+box-shadow: 1.25px 0px 0px -0.75px rgba(208, 208, 208, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_137 .Pixso-frame-1_110 .shadow-blend-1_110-1 {
+        inset: 0;
+box-shadow: -1.25px 0px 0px -0.75px rgba(208, 208, 208, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_137 .Pixso-frame-1_110 .shadow-blend-1_110-2 {
+        inset: 0;
+box-shadow: 0px 0px 0px 0.5px rgba(204, 204, 204, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_137 .Pixso-frame-1_110 .shadow-blend-1_110-3 {
+        inset: 0;
+box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.02) ;
+pointer-events: none;
+mix-blend-mode: normal;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_137 .Pixso-frame-1_111  {
+        width: calc(100% - 0px);
+height: calc(100% - 0px);
+overflow: hidden;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_138 {
+        background-image: url(@/assets/images/c26d0f4e6f1d97cbbc8bf76776266dd85318da8e.png);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+      }
+.Pixso-instance-1_138 .Pixso-symbol-1_117  {
+        width: 38.333302px;
+height: 38.333px;
+overflow: hidden;
+      }
+.Pixso-instance-1_138 .Pixso-rectangle-1_120  {
+        width: 38.333px;
+height: 100%;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-image: url(@/assets/images/9ee404c0ae57001eef8b631f83a9acce5f986f38.png);
+      }
+.Pixso-instance-1_144 .Pixso-symbol-1_125  {
+        width: 58px;
+height: 17px;
+mix-blend-mode: plus-lighter;
+      }
+.Pixso-instance-1_144 .Pixso-paragraph-1_127  {
+        font-size: 15px;
+font-family: "SF Pro-Regular";
+font-weight: 400;
+text-align: right;
+line-height: 17px;
+color: rgba(76.5, 76.5, 76.5, 1);
+width: auto;
+height: auto;
+white-space: pre;
+      }
+.Pixso-instance-1_147 .Pixso-symbol-1_109  {
+        width: 366px;
+height: 64px;
+      }
+.Pixso-instance-1_147 .Pixso-frame-1_110  {
+        width: calc(100% - 0px);
+height: calc(100% - 0px);
+overflow: hidden;
+border-radius: 23px 23px 23px 23px;
+background-color: rgba(16, 16, 16, 1);
+background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 100%);
+background-blend-mode: luminosity;
+      }
+.Pixso-instance-1_147 .Pixso-frame-1_110 .shadow-blend-1_110-0 {
+        inset: 0;
+box-shadow: 1.25px 0px 0px -0.75px rgba(208, 208, 208, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_147 .Pixso-frame-1_110 .shadow-blend-1_110-1 {
+        inset: 0;
+box-shadow: -1.25px 0px 0px -0.75px rgba(208, 208, 208, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_147 .Pixso-frame-1_110 .shadow-blend-1_110-2 {
+        inset: 0;
+box-shadow: 0px 0px 0px 0.5px rgba(204, 204, 204, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_147 .Pixso-frame-1_110 .shadow-blend-1_110-3 {
+        inset: 0;
+box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.02) ;
+pointer-events: none;
+mix-blend-mode: normal;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_147 .Pixso-frame-1_111  {
+        width: calc(100% - 0px);
+height: calc(100% - 0px);
+overflow: hidden;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_148 .Pixso-symbol-1_109  {
+        width: 386px;
+height: 63px;
+      }
+.Pixso-instance-1_148 .Pixso-frame-1_110  {
+        width: calc(100% - 0px);
+height: calc(100% - 0px);
+overflow: hidden;
+border-radius: 23px 23px 23px 23px;
+background-color: rgba(16, 16, 16, 1);
+background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 100%);
+background-blend-mode: luminosity;
+      }
+.Pixso-instance-1_148 .Pixso-frame-1_110 .shadow-blend-1_110-0 {
+        inset: 0;
+box-shadow: 1.25px 0px 0px -0.75px rgba(208, 208, 208, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_148 .Pixso-frame-1_110 .shadow-blend-1_110-1 {
+        inset: 0;
+box-shadow: -1.25px 0px 0px -0.75px rgba(208, 208, 208, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_148 .Pixso-frame-1_110 .shadow-blend-1_110-2 {
+        inset: 0;
+box-shadow: 0px 0px 0px 0.5px rgba(204, 204, 204, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_148 .Pixso-frame-1_110 .shadow-blend-1_110-3 {
+        inset: 0;
+box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.02) ;
+pointer-events: none;
+mix-blend-mode: normal;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_148 .Pixso-frame-1_111  {
+        width: calc(100% - 0px);
+height: calc(100% - 0px);
+overflow: hidden;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_149 {
+        background-image: url(@/assets/images/c26d0f4e6f1d97cbbc8bf76776266dd85318da8e.png);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+      }
+.Pixso-instance-1_149 .Pixso-symbol-1_117  {
+        width: 38.333302px;
+height: 38.333px;
+overflow: hidden;
+      }
+.Pixso-instance-1_149 .Pixso-rectangle-1_120  {
+        width: 38.333px;
+height: 100%;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-image: url(@/assets/images/9ee404c0ae57001eef8b631f83a9acce5f986f38.png);
+      }
+.Pixso-instance-1_155 .Pixso-symbol-1_125  {
+        width: 58px;
+height: 17px;
+mix-blend-mode: plus-lighter;
+      }
+.Pixso-instance-1_155 .Pixso-paragraph-1_127  {
+        font-size: 15px;
+font-family: "SF Pro-Regular";
+font-weight: 400;
+text-align: right;
+line-height: 17px;
+color: rgba(76.5, 76.5, 76.5, 1);
+width: auto;
+height: auto;
+white-space: pre;
+      }
+.Pixso-instance-1_157 .Pixso-symbol-1_109  {
+        width: 386px;
+height: 66px;
+      }
+.Pixso-instance-1_157 .Pixso-frame-1_110  {
+        width: calc(100% - 0px);
+height: calc(100% - 0px);
+overflow: hidden;
+border-radius: 23px 23px 23px 23px;
+background-color: rgba(16, 16, 16, 1);
+background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 100%);
+background-blend-mode: luminosity;
+      }
+.Pixso-instance-1_157 .Pixso-frame-1_110 .shadow-blend-1_110-0 {
+        inset: 0;
+box-shadow: 1.25px 0px 0px -0.75px rgba(208, 208, 208, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_157 .Pixso-frame-1_110 .shadow-blend-1_110-1 {
+        inset: 0;
+box-shadow: -1.25px 0px 0px -0.75px rgba(208, 208, 208, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_157 .Pixso-frame-1_110 .shadow-blend-1_110-2 {
+        inset: 0;
+box-shadow: 0px 0px 0px 0.5px rgba(204, 204, 204, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_157 .Pixso-frame-1_110 .shadow-blend-1_110-3 {
+        inset: 0;
+box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.02) ;
+pointer-events: none;
+mix-blend-mode: normal;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_157 .Pixso-frame-1_111  {
+        width: calc(100% - 0px);
+height: calc(100% - 0px);
+overflow: hidden;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-instance-1_158 {
+        background-image: url(@/assets/images/c26d0f4e6f1d97cbbc8bf76776266dd85318da8e.png);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+      }
+.Pixso-instance-1_158 .Pixso-symbol-1_117  {
+        width: 38.333302px;
+height: 38.333px;
+overflow: hidden;
+      }
+.Pixso-instance-1_158 .Pixso-rectangle-1_120  {
+        width: 38.333px;
+height: 100%;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-image: url(@/assets/images/9ee404c0ae57001eef8b631f83a9acce5f986f38.png);
+      }
+.Pixso-instance-1_164 .Pixso-symbol-1_125  {
+        width: 58px;
+height: 17px;
+flex-shrink: 0;
+mix-blend-mode: plus-lighter;
+      }
+.Pixso-instance-1_164 .Pixso-paragraph-1_127  {
+        font-size: 15px;
+font-family: "SF Pro-Regular";
+font-weight: 400;
+text-align: right;
+line-height: 17px;
+color: rgba(76.5, 76.5, 76.5, 1);
+width: auto;
+height: auto;
+white-space: pre;
+      }

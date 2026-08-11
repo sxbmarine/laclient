@@ -1,0 +1,478 @@
+@font-face {
+  font-family: 'Apple Color Emoji';
+  src: url('../assets/fonts/AppleColorEmoji-Windows.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AppleColorEmoji';
+  src: url('../assets/fonts/AppleColorEmoji-Windows.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: '0xProto Nerd Font Propo';
+  src: url('../assets/fonts/icons.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: '0xProtoNFP-Regular';
+  src: url('../assets/fonts/icons.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AppIcons';
+  src: url('../assets/fonts/icons.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Fallback aliases to point sf-symbol to new icons.ttf font */
+@font-face {
+  font-family: 'SF-Symbols-Pro';
+  src: url('../assets/fonts/icons.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Symbols Pro';
+  src: url('../assets/fonts/icons.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('../assets/fonts/SFPRODISPLAYREGULAR.OTF') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('../assets/fonts/SFPRODISPLAYMEDIUM.OTF') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('../assets/fonts/SFPRODISPLAYBOLD.OTF') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --phone-width: 390px;
+  --phone-height: 844px;
+  --phone-radius: 48px;
+  --screen-radius: 42px;
+  --bezel: 10px;
+  --bg-primary: #000000;
+  --bg-secondary: #1c1c1e;
+  --bg-tertiary: #2c2c2e;
+  --bg-elevated: #3a3a3c;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(235, 235, 245, 0.6);
+  --text-tertiary: rgba(235, 235, 245, 0.3);
+  --accent: #0a84ff;
+  --accent-green: #30d158;
+  --accent-red: #ff453a;
+  --accent-orange: #ff9f0a;
+  --accent-purple: #bf5af2;
+  --accent-pink: #ff375f;
+  --accent-teal: #64d2ff;
+  --separator: rgba(84, 84, 88, 0.65);
+  --glass: rgba(28, 28, 30, 0.72);
+  --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+  /* Apple HIG Typography System Font Stack with NerdFont & Emoji fallbacks */
+  --font-family-system: 'SF Pro Display', 'SF Pro Text', '0xProto Nerd Font Propo', '0xProtoNFP-Regular', 'AppIcons', 'SF-Symbols-Pro', 'Apple Color Emoji', 'AppleColorEmoji', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-mono: 'SF Mono', '0xProto Nerd Font Propo', ui-monospace, Menlo, Monaco, Consolas, monospace;
+
+  /* Apple HIG Dynamic Type Scale (Sizes, Weights & Optical Tracking) */
+  --font-size-large-title: 34px;
+  --font-weight-large-title: 700;
+  --tracking-large-title: -0.8px;
+  --line-height-large-title: 41px;
+
+  --font-size-title-1: 28px;
+  --font-weight-title-1: 700;
+  --tracking-title-1: -0.5px;
+  --line-height-title-1: 34px;
+
+  --font-size-title-2: 22px;
+  --font-weight-title-2: 700;
+  --tracking-title-2: -0.26px;
+  --line-height-title-2: 28px;
+
+  --font-size-title-3: 20px;
+  --font-weight-title-3: 600;
+  --tracking-title-3: -0.45px;
+  --line-height-title-3: 25px;
+
+  --font-size-headline: 17px;
+  --font-weight-headline: 600;
+  --tracking-headline: -0.4px;
+  --line-height-headline: 22px;
+
+  --font-size-body: 17px;
+  --font-weight-body: 400;
+  --tracking-body: -0.4px;
+  --line-height-body: 22px;
+
+  --font-size-callout: 16px;
+  --font-weight-callout: 400;
+  --tracking-callout: -0.32px;
+  --line-height-callout: 21px;
+
+  --font-size-subheadline: 15px;
+  --font-weight-subheadline: 400;
+  --tracking-subheadline: -0.2px;
+  --line-height-subheadline: 20px;
+
+  --font-size-footnote: 13px;
+  --font-weight-footnote: 400;
+  --tracking-footnote: -0.08px;
+  --line-height-footnote: 18px;
+
+  --font-size-caption-1: 12px;
+  --font-weight-caption-1: 400;
+  --tracking-caption-1: 0px;
+  --line-height-caption-1: 16px;
+
+  --font-size-caption-2: 11px;
+  --font-weight-caption-2: 400;
+  --tracking-caption-2: 0.06px;
+  --line-height-caption-2: 13px;
+
+  font-family: var(--font-family-system);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.emoji,
+.apple-emoji,
+[class*="emoji"] {
+  font-family: 'Apple Color Emoji', 'AppleColorEmoji', sans-serif !important;
+}
+
+.sf-symbol,
+.sf-icon,
+.icon,
+[class*="sf-symbol"],
+[class*="icon"] {
+  font-family: '0xProto Nerd Font Propo', '0xProtoNFP-Regular', 'AppIcons', 'SF-Symbols-Pro', 'SF Symbols Pro', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  display: inline-block;
+  line-height: 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-squircle-mask {
+  mask-image: url('../assets/app_squircle.svg');
+  -webkit-mask-image: url('../assets/app_squircle.svg');
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+body {
+  color: var(--text-primary);
+  user-select: none;
+  font-family: var(--font-family-system);
+}
+
+/* ─── Apple HIG Typography Utility Classes ────────────────────────────── */
+.hig-large-title {
+  font-size: var(--font-size-large-title);
+  font-weight: var(--font-weight-large-title);
+  letter-spacing: var(--tracking-large-title);
+  line-height: var(--line-height-large-title);
+}
+
+.hig-title-1 {
+  font-size: var(--font-size-title-1);
+  font-weight: var(--font-weight-title-1);
+  letter-spacing: var(--tracking-title-1);
+  line-height: var(--line-height-title-1);
+}
+
+.hig-title-2 {
+  font-size: var(--font-size-title-2);
+  font-weight: var(--font-weight-title-2);
+  letter-spacing: var(--tracking-title-2);
+  line-height: var(--line-height-title-2);
+}
+
+.hig-title-3 {
+  font-size: var(--font-size-title-3);
+  font-weight: var(--font-weight-title-3);
+  letter-spacing: var(--tracking-title-3);
+  line-height: var(--line-height-title-3);
+}
+
+.hig-headline {
+  font-size: var(--font-size-headline);
+  font-weight: var(--font-weight-headline);
+  letter-spacing: var(--tracking-headline);
+  line-height: var(--line-height-headline);
+}
+
+.hig-body {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  letter-spacing: var(--tracking-body);
+  line-height: var(--line-height-body);
+}
+
+.hig-callout {
+  font-size: var(--font-size-callout);
+  font-weight: var(--font-weight-callout);
+  letter-spacing: var(--tracking-callout);
+  line-height: var(--line-height-callout);
+}
+
+.hig-subheadline {
+  font-size: var(--font-size-subheadline);
+  font-weight: var(--font-weight-subheadline);
+  letter-spacing: var(--tracking-subheadline);
+  line-height: var(--line-height-subheadline);
+}
+
+.hig-footnote {
+  font-size: var(--font-size-footnote);
+  font-weight: var(--font-weight-footnote);
+  letter-spacing: var(--tracking-footnote);
+  line-height: var(--line-height-footnote);
+}
+
+.hig-caption-1 {
+  font-size: var(--font-size-caption-1);
+  font-weight: var(--font-weight-caption-1);
+  letter-spacing: var(--tracking-caption-1);
+  line-height: var(--line-height-caption-1);
+}
+
+.hig-caption-2 {
+  font-size: var(--font-size-caption-2);
+  font-weight: var(--font-weight-caption-2);
+  letter-spacing: var(--tracking-caption-2);
+  line-height: var(--line-height-caption-2);
+}
+
+button {
+  font: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.app-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.app-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.ios-list {
+  backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.ios-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  min-height: 44px;
+  border-bottom: 0.5px solid var(--separator);
+}
+
+.ios-list-item:last-child {
+  border-bottom: none;
+}
+
+.ios-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  font-size: 17px;
+  font-weight: 600;
+  transition: opacity 0.15s;
+}
+
+.ios-btn:active {
+  opacity: 0.7;
+}
+
+.ios-btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.ios-btn-secondary {
+  background: var(--bg-tertiary);
+  color: var(--accent);
+}
+
+.ios-btn-danger {
+  background: var(--accent-red);
+  color: #fff;
+}
+
+.ios-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--bg-tertiary);
+  border: none;
+  border-radius: 30px;
+  font-size: 17px;
+  outline: none;
+}
+
+.ios-input:focus {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.ios-label {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--text-secondary);
+  gap: 12px;
+}
+
+.empty-state-icon {
+  font-size: 48px;
+  opacity: 0.5;
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--bg-tertiary);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.25s ease-out;
+}
+
+/* Notification Banner Animations */
+@keyframes notificationSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-90px) scale(0.85);
+  }
+
+  75% {
+    opacity: 1;
+    transform: translateY(6px) scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes notificationSlideUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) scale(0.82);
+  }
+}

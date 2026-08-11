@@ -1,0 +1,397 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #191a1c;
+  color: #e8eaed;
+  font-family: var(--font-family-system);
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top Header Bar */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px 4px;
+  z-index: 10;
+}
+
+/* Chrome Active Web Page URL Bar */
+.webUrlBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  background: #1f1f21;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 10;
+}
+
+.urlPill {
+  flex: 1;
+  height: 40px;
+  background: #2d2e31;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  color: #e8eaed;
+  font-size: 15px;
+}
+
+.urlText {
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.webPageContent {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 60px;
+}
+
+.iconCircleBtn {
+  width: 38px;
+  height: 38px;
+  border-radius: 35%;
+  background: #2d2e31;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9aa0a6;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.iconCircleBtn:active {
+  background: #3c4043;
+}
+
+.profileAvatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Scrollable Main Content */
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 16px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  scroll-behavior: smooth;
+}
+
+/* Google Logo Image */
+.googleLogoImg {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  user-select: none;
+}
+
+/* Search Bar Pill */
+.searchBar {
+  width: 100%;
+  height: 56px;
+  background: #2d2e31;
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  cursor: text;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.searchIconGImg {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #e8eaed;
+  font-size: 16px;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: #9aa0a6;
+}
+
+.searchRightActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #9aa0a6;
+  font-size: 18px;
+}
+
+.dividerLine {
+  width: 1px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Quick Action Pills */
+.actionPills {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+}
+
+.pillBtn {
+  flex: 1;
+  height: 44px;
+  background: #2d2e31;
+  border-radius: 22px;
+  border: none;
+  color: #e8eaed;
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.pillBtn:active {
+  background: #3c4043;
+}
+
+/* Card Section Container */
+.cardSection {
+  width: 100%;
+  background: #242528;
+  border-radius: 24px;
+  padding: 18px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cardTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #e8eaed;
+  margin-bottom: 14px;
+}
+
+/* Bookmarks Horizontal Grid */
+.bookmarksGrid {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scroll-behavior: smooth;
+}
+
+.bookmarksGrid::-webkit-scrollbar {
+  display: none;
+}
+
+.bookmarkItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 64px;
+  flex-shrink: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.bookmarkBadge {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #303134;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.bookmarkImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bookmarkLetter {
+  font-size: 20px;
+  font-weight: 700;
+  color: #e8eaed;
+}
+
+.addBadge {
+  background: #2b3a55;
+  color: #8ab4f8;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.bookmarkLabel {
+  font-size: 12px;
+  color: #bdc1c6;
+  text-align: center;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 64px;
+}
+
+/* Shortcuts Grid */
+.shortcutsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.shortcutItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.shortcutBadge {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  background: #323846;
+  color: #8ab4f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.shortcutLabel {
+  font-size: 12px;
+  color: #bdc1c6;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Discover Card Content */
+.discoverContent {
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.discoverHeadline {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e8eaed;
+  line-height: 1.35;
+  flex: 1;
+}
+
+.discoverImage {
+  width: 90px;
+  height: 68px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #303134;
+  flex-shrink: 0;
+}
+
+.discoverFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 13px;
+  color: #9aa0a6;
+}
+
+/* Bottom Chrome Navigation Bar */
+.bottomNav {
+  height: 56px;
+  background: #1f1f21;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.navActionBtn {
+  background: none;
+  border: none;
+  color: #9aa0a6;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.15s, color 0.15s;
+}
+
+.navActionBtn:active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e8eaed;
+}
+
+.addTabCircle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #303134;
+  color: #e8eaed;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabsBadge {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #9aa0a6;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #9aa0a6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

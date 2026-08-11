@@ -1,0 +1,192 @@
+:root {
+  --fills-primary: rgba(255, 255, 255, 0.24);
+  --labels-secondary: #8e8e93;
+}
+
+.component-3_86 {
+  width: 100%;
+}
+
+/* Container symbols for 100%, 75%, 50%, 25%, 0% */
+.Pixso-symbol-3_86,
+.Pixso-symbol-3_87,
+.Pixso-symbol-3_88,
+.Pixso-symbol-3_89,
+.Pixso-symbol-3_90,
+.Pixso-symbol-3_91 {
+  width: 100%;
+  height: 48px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hide separators */
+.Pixso-instance-3_92,
+.Pixso-instance-3_102,
+.Pixso-instance-3_112,
+.Pixso-instance-3_122,
+.Pixso-instance-3_132 {
+  display: none !important;
+  height: 0 !important;
+  width: 0 !important;
+}
+
+.Pixso-frame-3_93,
+.Pixso-frame-3_103,
+.Pixso-frame-3_113,
+.Pixso-frame-3_123,
+.Pixso-frame-3_133 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.frame-content-3_93,
+.frame-content-3_103,
+.frame-content-3_113,
+.frame-content-3_123,
+.frame-content-3_133 {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Left and right icons */
+.Pixso-paragraph-3_94,
+.Pixso-paragraph-3_101,
+.Pixso-paragraph-3_104,
+.Pixso-paragraph-3_111,
+.Pixso-paragraph-3_114,
+.Pixso-paragraph-3_121,
+.Pixso-paragraph-3_124,
+.Pixso-paragraph-3_131,
+.Pixso-paragraph-3_134,
+.Pixso-paragraph-3_141 {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8e8e93;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Central Track + Fill + Knob Frame */
+.Pixso-frame-3_95,
+.Pixso-frame-3_105,
+.Pixso-frame-3_115,
+.Pixso-frame-3_125,
+.Pixso-frame-3_135 {
+  width: 100%;
+  height: 28px;
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* Track instances */
+.Pixso-instance-3_96,
+.Pixso-instance-3_106,
+.Pixso-instance-3_116,
+.Pixso-instance-3_126,
+.Pixso-instance-3_136 {
+  width: 100% !important;
+  height: 6px !important;
+  position: absolute;
+  left: 0 !important;
+  right: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+/* Fill instances */
+.Pixso-instance-3_97,
+.Pixso-instance-3_107,
+.Pixso-instance-3_117,
+.Pixso-instance-3_127,
+.Pixso-instance-3_137 {
+  height: 6px !important;
+  position: absolute;
+  left: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+.Pixso-instance-3_97 { width: 100% !important; }
+.Pixso-instance-3_107 { width: 75% !important; }
+.Pixso-instance-3_117 { width: 50% !important; }
+.Pixso-instance-3_127 { width: 25% !important; }
+.Pixso-instance-3_137 { width: 0% !important; }
+
+/* Knob Frame & Ticks */
+.Pixso-frame-3_98,
+.Pixso-frame-3_108,
+.Pixso-frame-3_118,
+.Pixso-frame-3_128,
+.Pixso-frame-3_138 {
+  width: 100%;
+  height: 28px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+/* Ticks instance */
+.Pixso-instance-3_99,
+.Pixso-instance-3_109,
+.Pixso-instance-3_119,
+.Pixso-instance-3_129,
+.Pixso-instance-3_139 {
+  width: 100% !important;
+  height: 4px !important;
+  position: absolute;
+  left: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  opacity: 0.6;
+}
+
+/* Knob instances positioning according to percentage */
+.Pixso-instance-3_100,
+.Pixso-instance-3_110,
+.Pixso-instance-3_120,
+.Pixso-instance-3_130,
+.Pixso-instance-3_140 {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 36px !important;
+  height: 24px !important;
+  margin: 0 !important;
+  right: auto !important;
+}
+
+.Pixso-symbol-3_87 .Pixso-instance-3_100 { left: 100% !important; }
+.Pixso-symbol-3_88 .Pixso-instance-3_110 { left: 75% !important; }
+.Pixso-symbol-3_89 .Pixso-instance-3_120 { left: 50% !important; }
+.Pixso-symbol-3_90 .Pixso-instance-3_130 { left: 25% !important; }
+.Pixso-symbol-3_91 .Pixso-instance-3_140 { left: 0% !important; }

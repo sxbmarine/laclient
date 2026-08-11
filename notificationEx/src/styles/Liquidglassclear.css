@@ -1,0 +1,68 @@
+
+.Pixso-symbol-1_109 {
+        width: 160px;
+height: 160px;
+position: relative;
+      }
+.Pixso-frame-1_110 {
+        width: calc(100% - 0px);
+height: calc(100% - 0px);
+overflow: hidden;
+position: absolute;
+left: 0px;
+right: 0px;
+top: 0px;
+bottom: 0px;
+border-radius: 23px 23px 23px 23px;
+background-color: rgba(16, 16, 16, 1);
+background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 100%);
+background-blend-mode: luminosity;
+      }
+.shadow-blend-1_110-0 {
+        position: absolute;
+inset: 0;
+box-shadow: 1.25px 0px 0px -0.75px rgba(208, 208, 208, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.shadow-blend-1_110-1 {
+        position: absolute;
+inset: 0;
+box-shadow: -1.25px 0px 0px -0.75px rgba(208, 208, 208, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.shadow-blend-1_110-2 {
+        position: absolute;
+inset: 0;
+box-shadow: 0px 0px 0px 0.5px rgba(204, 204, 204, 1) ;
+pointer-events: none;
+mix-blend-mode: color-burn;
+border-radius: 23px 23px 23px 23px;
+      }
+.shadow-blend-1_110-3 {
+        position: absolute;
+inset: 0;
+box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.02) ;
+pointer-events: none;
+mix-blend-mode: normal;
+border-radius: 23px 23px 23px 23px;
+      }
+.Pixso-frame-1_111 {
+        width: calc(100% - 0px);
+height: calc(100% - 0px);
+overflow: hidden;
+position: absolute;
+left: 0px;
+right: 0px;
+top: 0px;
+bottom: 0px;
+border-radius: 23px 23px 23px 23px;
+      }
+.component-1_109 {
+        width: fit-content;
+height: fit-content;
+      }
+

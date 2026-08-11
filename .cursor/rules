@@ -1,0 +1,128 @@
+# Proyecto: Overlay Móvil para servidor de ERLC (Emergency Response: Liberty County)
+
+## Descripción general
+
+App de escritorio construida con **ElectronJS** que simula un "teléfono móvil" para un
+servidor de rol de ERLC (Roblox). Los jugadores la abren aparte, en segunda pantalla o
+minimizada, mientras juegan. No está embebida dentro del juego (ERLC no soporta overlays
+tipo NUI como FiveM) — es una aplicación de escritorio independiente.
+
+El servidor de Discord de la comunidad ya tiene un bot funcionando que gestiona parte de
+esta misma información (personajes, banco, multas). Este overlay **reutiliza la misma
+base de datos** que usa el bot — no es un proyecto aparte con su propia fuente de datos.
+
+## Stack técnico
+
+- **Frontend/App**: ElectronJS (proceso main + renderer). Renderer en React (a definir
+  si Vite o Create React App — usar Vite).
+- **Backend as a Service**: Supabase (Postgres + Auth + Realtime + Edge Functions).
+- **Auth**: Login con Discord vía Supabase Auth OAuth, usando un protocolo personalizado
+  (deep link) porque es una app de escritorio, no una web. Ver sección "Autenticación".
+- **Datos de mapa**: API oficial de PRC/ERLC (`https://api.policeroleplay.community/v2/server`),
+  consumida a través de un proxy (Edge Function de Supabase) — nunca directamente desde
+  el cliente, porque requiere una `server-key` sensible.
+- **Bot de Discord existente**: sigue escribiendo en la misma base de datos usando la
+  `service_role` key de Supabase (esto ignora RLS, así que no se ve afectado por las
+  políticas nuevas).
+
+## Apps que incluye el overlay (fase actual)
+
+1. **Login con Discord** — pantalla inicial, obligatoria antes de acceder a cualquier app.
+2. **Banco**
+   - Selección de banco (varios bancos posibles por jugador).
+   - Creación de cuenta bancaria.
+   - Transferencias entre cuentas (vía función RPC `transferir()` en Postgres, atómica).
+   - Historial de movimientos (tabla `transacciones`).
+3. **DNIe** — muestra los datos del personaje activo (nombre, fecha de nacimiento,
+   género, domicilio, nacionalidad, número de teléfono).
+4. **Mapa** — posiciones en vivo de los jugadores conectados en el servidor de ERLC
+   (vía proxy a la API de PRC), mostrando calle, código postal y número de edificio.
+5. **Contactos** — agenda personal por número de teléfono, vinculada al propio jugador.
+6. **Mensajes** — chat de texto simple entre contactos, en tiempo real (Supabase Realtime).
+7. **GPS** — compartir la ubicación propia con contactos concretos (opt-in, no automático).
+
+## Fase futura (no implementar todavía, pero tenerlo en cuenta al diseñar)
+
+- **MDT policial**: tablet para el rol de policía, construida también con Electron,
+  reutilizando la misma base de datos (personajes, multas, antecedentes). Ya existe una
+  tabla `roles` (civil/policia/admin) preparada para esto — no la elimines ni la
+  rediseñes sin motivo.
+
+## Esquema de base de datos
+
+El esquema completo (tablas + RLS + función de transferencia) ya está definido y debe
+respetarse tal cual salvo que se indique lo contrario. Tablas principales:
+
+- `usuarios` (puente entre `auth.uid()` y `discord_id`)
+- `roles` (civil / policia / admin)
+- `personajes` (DNIe)
+- `carteras` (efectivo en mano)
+- `cuentas_bancarias`
+- `transacciones`
+- `multas`
+- `contactos`
+- `mensajes`
+- `gps_compartido`
+- `ubicaciones`
+
+Todas las tablas tienen RLS activado. El acceso desde el overlay siempre pasa por el
+cliente `authenticated` de Supabase (nunca `service_role` desde el cliente de Electron).
+
+Función `discord_id_actual()`: helper SQL que traduce `auth.uid()` al `discord_id` del
+usuario logueado — úsala en cualquier query nueva en vez de comparar contra `auth.uid()`
+directamente, porque las tablas de datos usan `discord_id` como clave, no UUIDs de auth.
+
+## Autenticación (Discord OAuth en Electron)
+
+Flujo obligatorio, no usar `signInWithOAuth` con `skipBrowserRedirect: false` por defecto:
+
+1. Renderer pide login → invoca IPC hacia el proceso main.
+2. Main llama a `supabase.auth.signInWithOAuth({ provider: 'discord', options: {
+   redirectTo: 'erlcapp://auth/callback', skipBrowserRedirect: true } })`.
+3. Main abre `data.url` con `shell.openExternal()` (navegador del sistema, NUNCA un
+   BrowserWindow embebido).
+4. La app tiene registrado el protocolo `erlcapp://` (`app.setAsDefaultProtocolClient`).
+5. Al volver el deep link, el main process lo captura (`open-url` en macOS,
+   `second-instance` + `argv` en Windows/Linux), extrae `access_token` y
+   `refresh_token` del fragmento de la URL.
+6. Esos tokens se pasan al renderer por IPC (vía `contextBridge`, nunca exponiendo
+   `ipcRenderer` completo por seguridad) y el renderer llama a
+   `supabase.auth.setSession({ access_token, refresh_token })`.
+
+No implementar el login dentro de un `BrowserWindow` interno del propio Electron.
+
+## Integración con la API de ERLC (mapa)
+
+- La `server-key` de ERLC es secreta y **nunca** debe estar en el código del cliente
+  Electron (se puede decompilar/inspeccionar fácilmente).
+- Debe vivir como secret en una Edge Function de Supabase, que hace de proxy:
+  el overlay llama a esa función (autenticado con su JWT normal de usuario), la función
+  llama a `GET https://api.policeroleplay.community/v2/server?Players=true` con el
+  header `server-key`, y devuelve solo los campos necesarios (Player, Team, Location,
+  Callsign) — nunca reenviar la respuesta cruda completa si contiene datos de staff/admins.
+- El campo `Player` de la API viene como `Username:RobloxId`. Cruzar contra
+  `personajes.usuario_roblox` para saber a qué personaje/discord_id corresponde cada
+  posición del mapa.
+
+## Convenciones y prioridades para el código
+
+- Seguridad primero: cualquier operación que toque saldo, multas o datos de otro usuario
+  pasa por una función RPC de Postgres (`security definer`), nunca por un `update`/`insert`
+  directo del cliente a la tabla.
+- No añadir dependencias de pago ni servicios que requieran tarjeta — el proyecto se
+  mantiene 100% en capas gratuitas (Supabase free tier, Vercel/Netlify si hiciera falta
+  alojar algo estático, GitHub para el código).
+- El bot de Discord existente no se toca ni se reescribe salvo que se pida explícitamente.
+- Cualquier tabla o política nueva debe seguir el mismo patrón: `discord_id` como clave de
+  negocio, `discord_id_actual()` en las políticas RLS, RLS activado por defecto en toda
+  tabla nueva desde el momento en que se crea.
+- Idioma de la UI: español.
+
+## Qué NO hacer
+
+- No crear una base de datos nueva — todo vive en el mismo proyecto de Supabase que usa
+  el bot.
+- No hacer login embebiendo el flujo OAuth en un BrowserWindow de Electron.
+- No exponer la `service_role key` ni la `server-key` de ERLC en ningún archivo que
+  termine empaquetado en el cliente de Electron.
+- No tocar saldos de `cuentas_bancarias` con `update` directo desde el cliente.

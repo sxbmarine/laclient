@@ -1,0 +1,624 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  overflow: hidden;
+  -webkit-app-region: drag;
+}
+
+.scaler {
+  width: 632.58px;
+  height: 1308.62px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+  -webkit-app-region: no-drag;
+}
+
+.phoneFrame {
+  width: 100%;
+  height: 1308.615845px;
+  position: relative;
+  flex-shrink: 0;
+  mix-blend-mode: normal;
+}
+
+/* Side Button 1 (1205_1174) */
+.strokeWrapper1205_1174 {
+  position: absolute;
+  left: -0.000031px;
+  top: 268.483368px;
+  width: 11.589218px;
+  height: 59.877628px;
+}
+
+.frame1205_1174 {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1.448652px;
+  mix-blend-mode: normal;
+}
+
+.stroke1205_1174 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 1.448652px;
+  pointer-events: none;
+  border: 0.482884px solid rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+}
+
+.vector1205_1175 {
+  width: 11.589233px;
+  height: calc(100% - -0.000058px);
+  background-image: url('../assets/images/SideButton2.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: -0.000058px;
+}
+
+.rectangle1205_1176 {
+  width: 6.760377px;
+  height: 1.931536px;
+  position: absolute;
+  left: 0.482951px;
+  bottom: 2.414537px;
+  border-radius: 4.82884px;
+  filter: blur(0.482884px);
+  background-color: rgba(255, 255, 255, 1);
+  mix-blend-mode: normal;
+}
+
+.vector1205_1177 {
+  width: 4.802124px;
+  height: calc(100% - 5.794498px);
+  background-image: url('../assets/images/shine6.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -1.448636px;
+  top: 0.482738px;
+  bottom: 5.31176px;
+}
+
+.vector1205_1178 {
+  width: 10.140625px;
+  height: 13.037842px;
+  background-image: url('../assets/images/shine5.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -0.482673px;
+  top: 2.414212px;
+}
+
+/* Side Button 2 (1205_1179) */
+.strokeWrapper1205_1179 {
+  position: absolute;
+  left: -0.000031px;
+  top: 373.26889px;
+  width: 11.589218px;
+  height: 97.54258px;
+}
+
+.frame1205_1179 {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1.448652px;
+  mix-blend-mode: normal;
+}
+
+.stroke1205_1179 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 1.448652px;
+  pointer-events: none;
+  border: 0.482884px solid rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+}
+
+.vector1205_1180 {
+  width: 11.589233px;
+  height: calc(100% - -0.000023px);
+  background-image: url('../assets/images/SideButton1.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: -0.000023px;
+}
+
+.rectangle1205_1181 {
+  width: 6.760377px;
+  height: 1.931536px;
+  position: absolute;
+  left: 0.482951px;
+  bottom: 1.931295px;
+  border-radius: 4.82884px;
+  filter: blur(0.482884px);
+  background-color: rgba(255, 255, 255, 1);
+  mix-blend-mode: normal;
+}
+
+.vector1205_1182 {
+  width: 4.828979px;
+  height: calc(100% - 5.794533px);
+  background-image: url('../assets/images/shine4.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -1.448636px;
+  top: 0.483079px;
+  bottom: 5.311454px;
+}
+
+.vector1205_1183 {
+  width: 10.140625px;
+  height: 13.037842px;
+  background-image: url('../assets/images/shine3.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -0.482673px;
+  top: 2.414553px;
+}
+
+/* Side Button 3 (1205_1184) */
+.strokeWrapper1205_1184 {
+  position: absolute;
+  left: -0.000031px;
+  top: 497.37027px;
+  width: 11.589218px;
+  height: 97.54258px;
+}
+
+.frame1205_1184 {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1.448652px;
+  mix-blend-mode: normal;
+}
+
+.stroke1205_1184 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 1.448652px;
+  pointer-events: none;
+  border: 0.482884px solid rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+}
+
+.vector1205_1185 {
+  width: 11.589233px;
+  height: calc(100% - 0.000100px);
+  background-image: url('../assets/images/SideButton.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -0.000036px;
+  top: -0.000165px;
+  bottom: 0.000265px;
+}
+
+.rectangle1205_1186 {
+  width: 6.760377px;
+  height: 1.931536px;
+  position: absolute;
+  left: 0.482951px;
+  bottom: 1.931692px;
+  border-radius: 4.82884px;
+  filter: blur(0.482884px);
+  background-color: rgba(255, 255, 255, 1);
+  mix-blend-mode: normal;
+}
+
+.vector1205_1187 {
+  width: 4.828979px;
+  height: calc(100% - 5.794411px);
+  background-image: url('../assets/images/shine0.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -1.448636px;
+  top: 0.482903px;
+  bottom: 5.311508px;
+}
+
+.vector1205_1188 {
+  width: 10.140625px;
+  height: 13.037842px;
+  background-image: url('../assets/images/shine.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -0.482673px;
+  top: 2.41415px;
+}
+
+/* Side Button 4 (1205_1189) */
+.strokeWrapper1205_1189 {
+  position: absolute;
+  left: 620.989273px;
+  top: 406.588074px;
+  width: 11.589218px;
+  height: 154.522903px;
+  transform: rotateY(180deg);
+}
+
+.frame1205_1189 {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1.448652px;
+  mix-blend-mode: normal;
+}
+
+.stroke1205_1189 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 1.448652px;
+  pointer-events: none;
+  border: 0.482884px solid rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+}
+
+.vector1205_1190 {
+  width: 11.589111px;
+  height: calc(100% - -0.000046px);
+  background-image: url('../assets/images/SideButton0.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: -0.000046px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.rectangle1205_1191 {
+  width: 6.760377px;
+  height: 1.931536px;
+  position: absolute;
+  left: 0.482871px;
+  bottom: 1.931714px;
+  border-radius: 4.82884px;
+  filter: blur(0.482884px);
+  background-color: rgba(255, 255, 255, 1);
+  mix-blend-mode: normal;
+}
+
+.vector1205_1192 {
+  width: 4.828857px;
+  height: calc(100% - 5.794632px);
+  background-image: url('../assets/images/shine2.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -1.448377px;
+  top: 0.482913px;
+  bottom: 5.311719px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.vector1205_1193 {
+  width: 10.140381px;
+  height: 13.037842px;
+  background-image: url('../assets/images/shine1.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -0.48264px;
+  top: 2.414161px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+/* Device Most Outer Border (1205_1194) */
+.vector1205_1194 {
+  width: 624.852051px;
+  height: 1308.615723px;
+  background-image: url('../assets/images/DeviceMostOuterBorder.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 3.863256px;
+  top: -0.000432px;
+  pointer-events: none;
+}
+
+/* Group (1205_1195) - Container for bezel elements */
+.group1205_1195 {
+  width: 607.468201px;
+  height: 1291.714844px;
+  position: absolute;
+  left: 12.555116px;
+  top: 8.208784px;
+  mix-blend-mode: normal;
+  pointer-events: none;
+}
+
+.rectangle1205_1196 {
+  width: 607.468201px;
+  height: 1291.231934px;
+  position: absolute;
+  left: -0.00006px;
+  top: 0.482686px;
+  border-radius: 102.371414px;
+  box-shadow: 0px -0.965768px 2.41442px 3.380189px rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  mix-blend-mode: normal;
+}
+
+.vector1205_1197 {
+  width: 611.331543px;
+  height: 1295.095215px;
+  background-image: url('../assets/images/DeviceBezelCurveinOutline.svg'), url('../assets/images/Mask.png');
+  background-size: 100% 100%, 0 0;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -0.00006px;
+  top: 0.482686px;
+}
+
+.instance1205_1200 {
+  width: 131.344467px;
+  height: 5.311725px;
+  position: absolute;
+  left: 238.061569px;
+  top: 0.000044px;
+}
+
+.vector1205_1204 {
+  width: 607.468262px;
+  height: 1291.232422px;
+  background-image: url('../assets/images/DeviceBezeltopinsetshine.svg'), url('../assets/images/Mask.png');
+  background-size: 100% 100%, 0 0;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -0.00006px;
+  top: 0.482686px;
+}
+
+.strokeWrapper1205_1207 {
+  position: absolute;
+  left: -0.00006px;
+  top: 0.482686px;
+  width: 607.468201px;
+  height: 1291.231934px;
+}
+
+.rectangle1205_1207 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 102.371414px;
+  filter: blur(1.609613px);
+  background-color: transparent;
+  mix-blend-mode: normal;
+}
+
+.stroke1205_1207 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 102.371414px;
+  pointer-events: none;
+  border: 0.965768px solid rgba(255, 255, 255, 0.8);
+  box-sizing: border-box;
+}
+
+/* Antenna Lines (1205_1208) */
+.vector1205_1208 {
+  width: 624.852051px;
+  height: 1308.615723px;
+  background-image: url('../assets/images/Masktocontainantennalines.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 3.863256px;
+  top: -0.000432px;
+  pointer-events: none;
+}
+
+/* Screen vector 1205_1216: image.png background + React App active screen */
+.vector1205_1216 {
+  width: 593.358398px;
+  height: 1276.122192px;
+  background-image: url('../assets/images/image.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 20.110147px;
+  top: 17.24646px;
+  border-radius: 95px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.homeIndicator {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 190px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  z-index: 999;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.homeIndicator:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateX(-50%) scaleX(1.05);
+}
+
+.homeIndicator:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+/* Dynamic Island (1205_1219) - Posicionado por encima de todo el móvil */
+.frame1205_1219 {
+  width: 180.115753px;
+  height: 52.151478px;
+  position: absolute;
+  left: 225.989883px;
+  top: 42.010483px;
+  mix-blend-mode: normal;
+  pointer-events: auto;
+  z-index: 1000000;
+  transition: height 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.frame1205_1219Expanded {
+  height: 180px;
+}
+
+.rectangle1205_1220 {
+  width: 180.598648px;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border-radius: 67.603767px;
+  background-color: rgba(0, 0, 0, 1);
+  mix-blend-mode: normal;
+  transition: height 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-radius 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.rectangle1205_1220Expanded {
+  border-radius: 42px;
+}
+
+.faceIdContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  animation: faceIdFadeIn 0.3s ease-out forwards;
+}
+
+.faceIdSvgIcon {
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
+}
+
+.faceIdText {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+  opacity: 0.9;
+}
+
+@keyframes faceIdFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.statusDot {
+  position: absolute;
+  left: 20px;
+  top: 26px;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10001;
+  transition: background-color 0.25s, box-shadow 0.25s, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto;
+}
+
+.orangeDot {
+  background-color: #ff9f0a;
+  box-shadow: 0 0 8px rgba(255, 159, 10, 0.9);
+}
+
+.greenDot {
+  background-color: #30d158;
+  box-shadow: 0 0 8px rgba(48, 209, 88, 0.9);
+}
+
+.statusDot:hover {
+  transform: translateY(-50%) scale(1.3);
+}
+
+.statusDot:active {
+  transform: translateY(-50%) scale(0.9);
+}
+
+.frame1205_1221 {
+  width: 28.007275px;
+  height: 28.007275px;
+  position: absolute;
+  left: 140.519257px;
+  top: 26px;
+  transform: translateY(-50%);
+  mix-blend-mode: normal;
+}
+
+.vector1205_1222 {
+  width: 28.007324px;
+  height: 28.007324px;
+  background-image: url('../assets/images/Ellipse3.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.vector1205_1223 {
+  width: 15.452393px;
+  height: 15.452271px;
+  background-image: url('../assets/images/Ellipse4.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 6.277152px;
+  top: 6.518814px;
+}
+
+.vector1205_1224 {
+  width: 12.554932px;
+  height: 12.554932px;
+  background-image: url('../assets/images/Inner.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 7.725871px;
+  top: 7.967306px;
+}

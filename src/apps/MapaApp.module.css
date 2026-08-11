@@ -1,0 +1,331 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Viewport ──────────────────────────────────────────────────────── */
+.mapViewport {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  /* clips the canvas – no background bleeds through */
+  touch-action: none;
+  user-select: none;
+  cursor: grab;
+}
+
+.mapViewport:active {
+  cursor: grabbing;
+}
+
+/* ── Canvas ────────────────────────────────────────────────────────── */
+/*
+ * Anchored at the exact centre of the viewport (top: 50%, left: 50%).
+ * The CSS transform includes "translate(-50%, -50%)" to centre the element
+ * on that anchor, plus the user's panX/panY, plus scale(zoom).
+ *
+ * Because the canvas is position:absolute and the image has no object-fit,
+ * the image renders at its full natural pixel size.  CSS scale() makes it
+ * fill the viewport at minZoom without any cropping.
+ */
+.mapCanvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* ── Map image ─────────────────────────────────────────────────────── */
+/*
+ * Rendered at natural pixel size – no object-fit, no width/height override.
+ * CSS transform scale() on the parent (.mapCanvas) handles zooming.
+ */
+.mapImg {
+  display: block;
+  max-width: none;
+  /* prevent browser from shrinking to container width */
+  filter: brightness(0.95) contrast(1.05);
+}
+
+/* ── Blue dot pin ──────────────────────────────────────────────────── */
+.userPin {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: #007aff;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 8px rgba(0, 122, 255, 0.35), 0 4px 12px rgba(0, 0, 0, 0.6);
+  z-index: 30;
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.5), 0 4px 12px rgba(0, 0, 0, 0.6);
+  }
+
+  50% {
+    box-shadow: 0 0 0 14px rgba(0, 122, 255, 0.15), 0 4px 12px rgba(0, 0, 0, 0.6);
+  }
+
+  100% {
+    box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.5), 0 4px 12px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.pinLabel {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  border: 0.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Floating controls ─────────────────────────────────────────────── */
+.controlsGroup {
+  position: absolute;
+  top: 60px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  z-index: 200;
+  pointer-events: auto;
+}
+
+.modeToggleBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  backdrop-filter: blur(25px) saturate(200%) brightness(1.08);
+  -webkit-backdrop-filter: blur(25px) saturate(200%) brightness(1.08);
+  background: linear-gradient(135deg, rgba(35, 35, 42, 0.9) 0%, rgba(18, 18, 22, 0.95) 100%);
+  border: 0.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.7), 0 8px 24px rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto;
+}
+
+.modeToggleBtn:hover {
+  background: linear-gradient(135deg, rgba(45, 45, 55, 0.95) 0%, rgba(25, 25, 30, 0.98) 100%);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.modeToggleBtn:active {
+  transform: scale(0.94);
+}
+
+.zoomControls {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  backdrop-filter: blur(25px) saturate(200%) brightness(1.08);
+  -webkit-backdrop-filter: blur(25px) saturate(200%) brightness(1.08);
+  background: linear-gradient(135deg, rgba(35, 35, 42, 0.9) 0%, rgba(18, 18, 22, 0.95) 100%);
+  border: 0.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.7), 0 8px 24px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.zoomBtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  border: none;
+  background: transparent;
+}
+
+.zoomBtn:first-child {
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+}
+
+.zoomBtn:active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.recenterBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  backdrop-filter: blur(25px) saturate(200%) brightness(1.08);
+  -webkit-backdrop-filter: blur(25px) saturate(200%) brightness(1.08);
+  background: linear-gradient(135deg, rgba(35, 35, 42, 0.9) 0%, rgba(18, 18, 22, 0.95) 100%);
+  border: 0.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.7), 0 8px 24px rgba(0, 0, 0, 0.45);
+  color: #007aff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto;
+}
+
+.recenterBtn:active {
+  transform: scale(0.9);
+}
+
+/* ── Bottom info card ──────────────────────────────────────────────── */
+.bottomCard {
+  position: absolute;
+  bottom: 24px;
+  left: 16px;
+  right: 16px;
+  backdrop-filter: blur(30px) saturate(210%) brightness(1.08);
+  -webkit-backdrop-filter: blur(30px) saturate(210%) brightness(1.08);
+  background: linear-gradient(180deg, rgba(32, 32, 38, 0.92) 0%, rgba(16, 16, 20, 0.97) 100%);
+  border: 0.5px solid rgba(255, 255, 255, 0.35);
+  border-radius: 26px;
+  padding: 16px 18px;
+  z-index: 200;
+  box-shadow: inset 0 14px 40px rgba(0, 0, 0, 0.65);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: auto;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatarWrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.playerMeta {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.playerName {
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.4px;
+  line-height: 22px;
+}
+
+.playerSub {
+  font-size: 14px;
+  color: var(--text-secondary);
+  letter-spacing: -0.2px;
+}
+
+.badgeLive {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #e0b423;
+  background: rgba(209, 180, 48, 0.15);
+  border: 0.5px solid rgba(209, 153, 48, 0.3);
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.locationBox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 0.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+}
+
+.locationTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.locationGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.locationChip {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 0.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 6px 10px;
+}
+
+.chipLabel {
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.chipValue {
+  font-size: 17px;
+  font-weight: 300;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.locationDetail {
+  font-size: 11px;
+  color: var(--text-secondary);
+}

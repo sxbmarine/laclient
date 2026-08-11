@@ -1,0 +1,128 @@
+<svg viewBox="0 0 624.852 1308.62" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="624.852051" height="1308.615723" fill="none" customFrame="#000000">
+	<defs>
+		<filter id="pixso_custom_mask_type_alpha">
+			<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 " />
+		</filter>
+		<g id="pixso_custom_effect_14">
+			<effect visibility="visible" effectType="backgroundBlur" saturation="0" stdDeviation="1.44865215" />
+		</g>
+		<filter id="filter_14" width="9.174805" height="8.208984" x="484.332764" y="-0.000122" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_14)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feBlend result="shape" in="SourceGraphic" in2="BackgroundImageFix" mode="normal" />
+		</filter>
+		<clipPath id="outline_mask_0" transform="matrix(1,0,0,1,-484.333,0.00012207)">
+			<path d="M8.20903 0L0 0L0 9.1748L8.20903 9.1748L8.20903 0Z" fill="rgb(255,255,255)" fill-rule="evenodd" transform="matrix(-4.37114e-08,1,-1,-4.37114e-08,493.508,-0.00012207)" />
+		</clipPath>
+		<g id="pixso_custom_effect_15">
+			<effect visibility="visible" effectType="backgroundBlur" saturation="0" stdDeviation="1.44865215" />
+		</g>
+		<filter id="filter_15" width="8.208984" height="9.174805" x="-0.482910" y="135.207520" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_15)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feBlend result="shape" in="SourceGraphic" in2="BackgroundImageFix" mode="normal" />
+		</filter>
+		<clipPath id="outline_mask_1" transform="matrix(1,0,0,1,0.48291,-135.208)">
+			<path d="M8.20903 0L0 0L0 9.1748L8.20903 9.1748L8.20903 0Z" fill="rgb(255,255,255)" fill-rule="evenodd" transform="matrix(-1,-8.74228e-08,8.74228e-08,-1,7.72607,144.382)" />
+		</clipPath>
+		<g id="pixso_custom_effect_16">
+			<effect visibility="visible" effectType="backgroundBlur" saturation="0" stdDeviation="1.44865215" />
+		</g>
+		<filter id="filter_16" width="7.726074" height="9.174805" x="616.643066" y="135.207520" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_16)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feBlend result="shape" in="SourceGraphic" in2="BackgroundImageFix" mode="normal" />
+		</filter>
+		<clipPath id="outline_mask_2" transform="matrix(1,0,0,1,-616.643,-135.208)">
+			<path d="M7.72615 0L0 0L0 9.1748L7.72615 9.1748L7.72615 0Z" fill="rgb(255,255,255)" fill-rule="evenodd" transform="matrix(-1,-8.74228e-08,8.74228e-08,-1,624.369,144.382)" />
+		</clipPath>
+		<g id="pixso_custom_effect_17">
+			<effect visibility="visible" effectType="backgroundBlur" saturation="0" stdDeviation="1.44865215" />
+		</g>
+		<filter id="filter_17" width="8.208984" height="9.174805" x="0.000122" y="1164.716064" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_17)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feBlend result="shape" in="SourceGraphic" in2="BackgroundImageFix" mode="normal" />
+		</filter>
+		<clipPath id="outline_mask_3" transform="matrix(1,0,0,1,-0.00012207,-1164.72)">
+			<path d="M8.20903 0L0 0L0 9.1748L8.20903 9.1748L8.20903 0Z" fill="rgb(255,255,255)" fill-rule="evenodd" transform="matrix(-1,-8.74228e-08,8.74228e-08,-1,8.20911,1173.89)" />
+		</clipPath>
+		<g id="pixso_custom_effect_18">
+			<effect visibility="visible" effectType="backgroundBlur" saturation="0" stdDeviation="1.44865215" />
+		</g>
+		<filter id="filter_18" width="7.726074" height="8.691895" x="616.643066" y="1164.716309" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_18)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feBlend result="shape" in="SourceGraphic" in2="BackgroundImageFix" mode="normal" />
+		</filter>
+		<clipPath id="outline_mask_4" transform="matrix(1,0,0,1,-616.643,-1164.72)">
+			<path d="M7.72615 0L0 0L0 8.69191L7.72615 8.69191L7.72615 0Z" fill="rgb(255,255,255)" fill-rule="evenodd" transform="matrix(-1,-8.74228e-08,8.74228e-08,-1,624.369,1173.41)" />
+		</clipPath>
+		<g id="pixso_custom_effect_19">
+			<effect visibility="visible" effectType="backgroundBlur" saturation="0" stdDeviation="1.44865215" />
+		</g>
+		<filter id="filter_19" width="9.174805" height="7.726074" x="127.964233" y="1300.406738" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_19)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feBlend result="shape" in="SourceGraphic" in2="BackgroundImageFix" mode="normal" />
+		</filter>
+		<clipPath id="outline_mask_5" transform="matrix(1,0,0,1,-127.964,-1300.41)">
+			<path d="M7.72614 0L0 0L0 9.1748L7.72614 9.1748L7.72614 0Z" fill="rgb(255,255,255)" fill-rule="evenodd" transform="matrix(-4.37114e-08,1,-1,-4.37114e-08,137.139,1300.41)" />
+		</clipPath>
+	</defs>
+	<mask id="mask_0" width="624.851929" height="1308.615845" x="0.000000" y="0.000000" maskUnits="userSpaceOnUse">
+		<g filter="url(#pixso_custom_mask_type_alpha)">
+			<rect id="Most outer device mask" width="624.851929" height="1308.615845" x="0.000000" y="0.000000" rx="111.063332" fill="rgb(0,0,0)" />
+		</g>
+	</mask>
+	<g id="Mask to contain antenna lines" mask="url(#mask_0)">
+		<g data-pixso-skip-parse="true">
+			<foreignObject width="9.174805" height="8.208984" x="484.332764" y="-0.000122">
+				<div xmlns="http://www.w3.org/1999/xhtml" style="clip-path:url(#outline_mask_0);height:100%;backdrop-filter:blur(0.724326px);width:100%;-webkit-backdrop-filter:blur(0.724326px);" />
+			</foreignObject>
+		</g>
+		<g filter="url(#filter_14)">
+			<path id="Antenna line" d="M0 0L8.20903 0L8.20903 9.1748L8.9707e-08 9.1748L0 0Z" fill="rgb(0,0,0)" fill-opacity="0.100000001" fill-rule="nonzero" transform="matrix(-4.37114e-08,1,-1,-4.37114e-08,493.508,-0.00012207)" />
+			<path id="Antenna line" d="M0 0L8.20903 0L8.20903 9.1748L0 9.1748L0 0ZM0.482884 0.482884L0.482884 8.69191L7.72615 8.69191L7.72615 0.482884L0.482884 0.482884Z" fill="rgb(0,0,0)" fill-opacity="0.100000001" fill-rule="evenodd" transform="matrix(-4.37114e-08,1,-1,-4.37114e-08,493.508,-0.00012207)" />
+		</g>
+		<g data-pixso-skip-parse="true">
+			<foreignObject width="8.208984" height="9.174805" x="-0.482910" y="135.207520">
+				<div xmlns="http://www.w3.org/1999/xhtml" style="clip-path:url(#outline_mask_1);height:100%;backdrop-filter:blur(0.724326px);width:100%;-webkit-backdrop-filter:blur(0.724326px);" />
+			</foreignObject>
+		</g>
+		<g filter="url(#filter_15)">
+			<path id="Antenna line" d="M0 0L8.20903 0L8.20903 9.1748L8.9707e-08 9.1748L0 0Z" fill="rgb(0,0,0)" fill-opacity="0.100000001" fill-rule="nonzero" transform="matrix(-1,-8.74228e-08,8.74228e-08,-1,7.72607,144.382)" />
+			<path id="Antenna line" d="M0 0L8.20903 0L8.20903 9.1748L0 9.1748L0 0ZM0.482884 0.482884L0.482884 8.69191L7.72615 8.69191L7.72615 0.482884L0.482884 0.482884Z" fill="rgb(0,0,0)" fill-opacity="0.100000001" fill-rule="evenodd" transform="matrix(-1,-8.74228e-08,8.74228e-08,-1,7.72607,144.382)" />
+		</g>
+		<g data-pixso-skip-parse="true">
+			<foreignObject width="7.726074" height="9.174805" x="616.643066" y="135.207520">
+				<div xmlns="http://www.w3.org/1999/xhtml" style="clip-path:url(#outline_mask_2);height:100%;backdrop-filter:blur(0.724326px);width:100%;-webkit-backdrop-filter:blur(0.724326px);" />
+			</foreignObject>
+		</g>
+		<g filter="url(#filter_16)">
+			<path id="Antenna line" d="M0 0L7.72615 0L7.72615 9.1748L8.44301e-08 9.1748L0 0Z" fill="rgb(0,0,0)" fill-opacity="0.100000001" fill-rule="nonzero" transform="matrix(-1,-8.74228e-08,8.74228e-08,-1,624.369,144.382)" />
+			<path id="Antenna line" d="M0 0L7.72615 0L7.72615 9.1748L0 9.1748L0 0ZM0.482884 0.482884L0.482884 8.69191L7.24326 8.69191L7.24326 0.482884L0.482884 0.482884Z" fill="rgb(0,0,0)" fill-opacity="0.100000001" fill-rule="evenodd" transform="matrix(-1,-8.74228e-08,8.74228e-08,-1,624.369,144.382)" />
+		</g>
+		<g data-pixso-skip-parse="true">
+			<foreignObject width="8.208984" height="9.174805" x="0.000122" y="1164.716064">
+				<div xmlns="http://www.w3.org/1999/xhtml" style="clip-path:url(#outline_mask_3);height:100%;backdrop-filter:blur(0.724326px);width:100%;-webkit-backdrop-filter:blur(0.724326px);" />
+			</foreignObject>
+		</g>
+		<g filter="url(#filter_17)">
+			<path id="Antenna line" d="M0 0L8.20903 0L8.20903 9.1748L8.9707e-08 9.1748L0 0Z" fill="rgb(0,0,0)" fill-opacity="0.100000001" fill-rule="nonzero" transform="matrix(-1,-8.74228e-08,8.74228e-08,-1,8.20911,1173.89)" />
+			<path id="Antenna line" d="M0 0L8.20903 0L8.20903 9.1748L0 9.1748L0 0ZM0.482884 0.482884L0.482884 8.69191L7.72615 8.69191L7.72615 0.482884L0.482884 0.482884Z" fill="rgb(0,0,0)" fill-opacity="0.100000001" fill-rule="evenodd" transform="matrix(-1,-8.74228e-08,8.74228e-08,-1,8.20911,1173.89)" />
+		</g>
+		<g data-pixso-skip-parse="true">
+			<foreignObject width="7.726074" height="8.691895" x="616.643066" y="1164.716309">
+				<div xmlns="http://www.w3.org/1999/xhtml" style="clip-path:url(#outline_mask_4);height:100%;backdrop-filter:blur(0.724326px);width:100%;-webkit-backdrop-filter:blur(0.724326px);" />
+			</foreignObject>
+		</g>
+		<g filter="url(#filter_18)">
+			<path id="Antenna line" d="M0 0L7.72615 0L7.72615 8.69191L8.44301e-08 8.69191L0 0Z" fill="rgb(0,0,0)" fill-opacity="0.100000001" fill-rule="nonzero" transform="matrix(-1,-8.74228e-08,8.74228e-08,-1,624.369,1173.41)" />
+			<path id="Antenna line" d="M0 0L7.72615 0L7.72615 8.69191L0 8.69191L0 0ZM0.482884 0.482884L0.482884 8.20903L7.24326 8.20903L7.24326 0.482884L0.482884 0.482884Z" fill="rgb(0,0,0)" fill-opacity="0.100000001" fill-rule="evenodd" transform="matrix(-1,-8.74228e-08,8.74228e-08,-1,624.369,1173.41)" />
+		</g>
+		<g data-pixso-skip-parse="true">
+			<foreignObject width="9.174805" height="7.726074" x="127.964233" y="1300.406738">
+				<div xmlns="http://www.w3.org/1999/xhtml" style="clip-path:url(#outline_mask_5);height:100%;backdrop-filter:blur(0.724326px);width:100%;-webkit-backdrop-filter:blur(0.724326px);" />
+			</foreignObject>
+		</g>
+		<g filter="url(#filter_19)">
+			<path id="Antenna line" d="M0 0L7.72614 0L7.72614 9.1748L8.37298e-08 9.1748L0 0Z" fill="rgb(0,0,0)" fill-opacity="0.100000001" fill-rule="nonzero" transform="matrix(-4.37114e-08,1,-1,-4.37114e-08,137.139,1300.41)" />
+			<path id="Antenna line" d="M0 0L7.72614 0L7.72614 9.1748L0 9.1748L0 0ZM0.482884 0.482884L0.482884 8.69191L7.24326 8.69191L7.24326 0.482884L0.482884 0.482884Z" fill="rgb(0,0,0)" fill-opacity="0.100000001" fill-rule="evenodd" transform="matrix(-4.37114e-08,1,-1,-4.37114e-08,137.139,1300.41)" />
+		</g>
+	</g>
+</svg>

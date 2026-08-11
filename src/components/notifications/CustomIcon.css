@@ -1,0 +1,93 @@
+.Pixso-symbol-1_114 {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Pixso-symbol-1_115 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('@/assets/notification/a1fda222e8b3db69d6165240af4a7481a5c8ed2d.png');
+}
+
+.Pixso-rectangle-1_118 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('@/assets/notification/7c7f6ebb62636609c4a32e1314732e89bae820a6.png');
+}
+
+.Pixso-symbol-1_116 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('@/assets/notification/ce712cee18b13ebfad27d5045e0f97b2a0327915.png');
+}
+
+.Pixso-rectangle-1_119 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('@/assets/notification/0063a433efeb8b898c37c90c552b6014726b3d18.png');
+}
+
+.Pixso-symbol-1_117 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('@/assets/notification/c26d0f4e6f1d97cbbc8bf76776266dd85318da8e.png');
+}
+
+.Pixso-rectangle-1_120 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('@/assets/notification/9ee404c0ae57001eef8b631f83a9acce5f986f38.png');
+}
+
+.component-1_114 {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.customAppIconBadge {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+}
