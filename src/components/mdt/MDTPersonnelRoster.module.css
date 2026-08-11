@@ -1,0 +1,117 @@
+.rosterList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.compactList {
+  max-height: 250px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.officerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: var(--rounded-md);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.officerRow:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(41, 151, 255, 0.3);
+}
+
+.deptBadge {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: var(--rounded-pill);
+  letter-spacing: 0.5px;
+  border: 1px solid transparent;
+  min-width: 48px;
+  text-align: center;
+}
+
+.deptLSPD {
+  background: rgba(0, 102, 204, 0.25);
+  color: #2997ff;
+  border-color: rgba(41, 151, 255, 0.4);
+}
+
+.deptSDSO {
+  background: rgba(255, 159, 10, 0.25);
+  color: #ff9f0a;
+  border-color: rgba(255, 159, 10, 0.4);
+}
+
+.deptSASP {
+  background: rgba(48, 209, 88, 0.25);
+  color: #30d158;
+  border-color: rgba(48, 209, 88, 0.4);
+}
+
+.deptSAHP {
+  background: rgba(175, 82, 222, 0.25);
+  color: #bf5af2;
+  border-color: rgba(175, 82, 222, 0.4);
+}
+
+.officerMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  margin-left: 12px;
+}
+
+.officerHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.statusOnline {
+  background: #30d158;
+  color: #30d158;
+}
+
+.statusBusy {
+  background: #ff9f0a;
+  color: #ff9f0a;
+}
+
+.officerName {
+  font-family: var(--font-text);
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.officerSub {
+  font-family: var(--font-text);
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.badgeNumber {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+}

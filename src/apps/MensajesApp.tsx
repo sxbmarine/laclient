@@ -15,7 +15,7 @@ interface ContactAvatarProps {
 }
 
 function ContactAvatar({ name, robloxUsername, className }: ContactAvatarProps) {
-  const [imgState, setImgState] = useState<'primary' | 'unavatar' | 'letter'>('primary')
+  const [hasError, setHasError] = useState(false)
 
   const cleanUser = robloxUsername
     ? robloxUsername.replace(/^@/, '').replace(/\s+/g, '').trim()
@@ -25,38 +25,19 @@ function ContactAvatar({ name, robloxUsername, className }: ContactAvatarProps) 
     ? `https://www.roblox.com/headshot-thumbnail/image?userName=${encodeURIComponent(cleanUser)}&width=150&height=150&format=png`
     : null
 
-  const unavatarSrc = cleanUser ? `https://unavatar.io/roblox/${encodeURIComponent(cleanUser)}` : null
-
-  if (imgState === 'primary' && primarySrc) {
+  if (!hasError && primarySrc) {
     return (
       <img
         src={primarySrc}
         alt={name}
         className={className || styles.avatarImg}
-        onError={() => {
-          if (unavatarSrc) setImgState('unavatar')
-          else setImgState('letter')
-        }}
+        onError={() => setHasError(true)}
       />
     )
   }
 
-  if (imgState === 'unavatar' && unavatarSrc) {
-    return (
-      <img
-        src={unavatarSrc}
-        alt={name}
-        className={className || styles.avatarImg}
-        onError={() => setImgState('letter')}
-      />
-    )
-  }
-
-  return (
-    <div className={className ? `${styles.avatar} ${className}` : styles.avatar}>
-      {name[0]?.toUpperCase() || '?'}
-    </div>
-  )
+  const firstLetter = (name || cleanUser || '?')[0]?.toUpperCase() || '?'
+  return <div className={className || styles.avatarPlaceholder}>{firstLetter}</div>
 }
 
 function formatMessageTime(dateStr?: string) {
@@ -302,8 +283,8 @@ export function MensajesApp() {
 
   const selectedContactPInfo = selectedContact
     ? personajesMap[selectedContact.numero_telefono] ||
-      personajesMap[selectedContact.numero_telefono.replace(/\D/g, '')] ||
-      personajesMap[`name:${selectedContact.nombre.toLowerCase().trim()}`]
+    personajesMap[selectedContact.numero_telefono.replace(/\D/g, '')] ||
+    personajesMap[`name:${selectedContact.nombre.toLowerCase().trim()}`]
     : null
 
   return (
@@ -315,7 +296,7 @@ export function MensajesApp() {
           {/* Top Bar Navigation */}
           <div className={styles.topNavHeader}>
             <button className={styles.editBtn} onClick={() => navigate('/')}>
-              Editar
+               Atrás
             </button>
             <button className={styles.filterBtn} title="Filtros">
               <span>☰</span>
@@ -392,7 +373,7 @@ export function MensajesApp() {
             {/* Floating Glassmorphic Search Bar & New Message Button */}
             <div className={styles.floatingBottomBar}>
               <div className={styles.searchPill}>
-                <span className={styles.searchIcon}>🔍</span>
+                <span className={styles.searchIcon}></span>
                 <input
                   type="text"
                   placeholder="Buscar"
@@ -400,15 +381,8 @@ export function MensajesApp() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className={styles.searchInput}
                 />
-                <span className={styles.micIcon}>🎙️</span>
+                <span className={styles.micIcon}></span>
               </div>
-              <button
-                className={styles.composeBtn}
-                onClick={() => navigate('/contactos')}
-                title="Nuevo mensaje"
-              >
-                ✏️
-              </button>
             </div>
           </div>
         </>
@@ -424,7 +398,7 @@ export function MensajesApp() {
               }}
               title="Atrás"
             >
-              ‹
+              
             </button>
             {selectedContact && (
               <div className={styles.chatHeaderCenter}>

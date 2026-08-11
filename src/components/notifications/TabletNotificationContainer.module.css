@@ -1,0 +1,203 @@
+/* ── Container for bottom-right notification stack ───────────────────── */
+.notificationStack {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+  max-width: 360px;
+  width: calc(100% - 48px);
+}
+
+/* ── Individual Notification Card ────────────────────────────────────── */
+.notificationCard {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px 16px 16px;
+  background: rgb(18, 22, 31);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  pointer-events: auto;
+  cursor: pointer;
+  transform-origin: bottom right;
+  animation: slideInRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.notificationCard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.notificationCardExiting {
+  animation: slideOutRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+/* ── Left Ambient Glow Effect ────────────────────────────────────────── */
+.ambientGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 140px;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.15;
+  border-radius: 14px 0 0 14px;
+  transition: opacity 0.3s ease;
+}
+
+/* ── Icon Circle Container (Concentric Double Circle Design) ─────────── */
+.iconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+}
+
+/* Círculo exterior detrás con transparencia */
+.outerAura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* Círculo interior sólido pequeñito perfectamente centrado en el centro */
+.innerCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: var(--font-family-system);
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.iconText {
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Notification Content Text ───────────────────────────────────────── */
+.contentArea {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+  z-index: 2;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+  line-height: 1.25;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text {
+  font-family: var(--font-text);
+  font-size: 11.5px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.35;
+  margin: 0;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Bottom Shrinking Progress Bar ──────────────────────────────────── */
+.progressBarTrack {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0 0 14px 14px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  width: 100%;
+  transform-origin: left center;
+  animation-name: shrinkWidth;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  border-radius: 0 0 0 14px;
+}
+
+/* ── Keyframes ──────────────────────────────────────────────────────── */
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(110%) scale(0.92);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(110%) scale(0.92);
+  }
+}
+
+@keyframes shrinkWidth {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}

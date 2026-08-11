@@ -25,7 +25,7 @@ export function StatusBar({
       <div className={styles.center}>
         {showBack && (
           <button className={styles.backBtn} onClick={onBack}>
-            ‹ Atrás
+            {showBack && <span style={{ marginRight: '7px' }}></span>}Atrás
           </button>
         )}
       </div>

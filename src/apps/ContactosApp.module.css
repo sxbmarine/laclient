@@ -4,7 +4,7 @@
   height: 100%;
   background: var(--bg-primary);
   color: var(--text-primary);
-  font-family: var(--font-family-system);
+  font-family: var(--font-text);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -22,13 +22,13 @@
 .avatar {
   width: 44px;
   height: 44px;
-  border-radius: 50%;
-  background: var(--accent);
+  border-radius: var(--rounded-full);
+  background: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  font-size: 18px;
+  font-size: var(--font-size-button-large);
   margin-right: 12px;
   flex-shrink: 0;
   color: #ffffff;
@@ -37,36 +37,36 @@
 .avatarImg {
   width: 44px;
   height: 44px;
-  border-radius: 50%;
+  border-radius: var(--rounded-full);
   object-fit: cover;
   margin-right: 12px;
   flex-shrink: 0;
   border: 0.5px solid rgba(255, 255, 255, 0.15);
-  background: var(--bg-secondary, #1c1c1e);
+  background: var(--color-surface-tile-1);
 }
 
 .phoneInputWrapper {
   display: flex;
   align-items: center;
-  background: #1c1c1e;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
+  background: var(--color-surface-tile-1);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--rounded-md);
   overflow: hidden;
-  margin-bottom: 16px;
-  transition: all 0.2s ease;
+  margin-bottom: var(--spacing-sm);
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .phoneInputWrapper:focus-within {
-  border-color: var(--accent, #007aff);
-  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.25);
+  border-color: var(--color-primary-focus);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.25);
 }
 
 .phonePrefix {
-  background: rgba(0, 122, 255, 0.15);
-  color: var(--accent, #007aff);
+  background: rgba(0, 102, 204, 0.15);
+  color: var(--color-primary);
   font-weight: 600;
-  font-size: 17px;
-  letter-spacing: -0.4px;
+  font-size: var(--font-size-body);
+  letter-spacing: var(--tracking-body);
   padding: 12px 14px;
   user-select: none;
   border-right: 1px solid rgba(255, 255, 255, 0.12);
@@ -80,10 +80,11 @@
   flex: 1;
   background: transparent;
   border: none;
-  color: var(--text-primary, #ffffff);
-  font-size: 17px;
-  letter-spacing: -0.4px;
-  line-height: 22px;
+  color: var(--text-primary);
+  font-family: var(--font-text);
+  font-size: var(--font-size-body);
+  letter-spacing: var(--tracking-body);
+  line-height: var(--line-height-body);
   padding: 12px 14px;
   outline: none;
   width: 100%;
@@ -93,20 +94,20 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  background: #1c1c1e;
-  border: 1px solid rgba(0, 122, 255, 0.4);
-  border-radius: 14px;
+  background: var(--color-surface-tile-1);
+  border: 1px solid rgba(0, 102, 204, 0.4);
+  border-radius: var(--rounded-lg);
   padding: 12px 14px;
-  margin-bottom: 16px;
+  margin-bottom: var(--spacing-sm);
   animation: fadeIn 0.25s ease;
 }
 
 .foundAvatar {
   width: 48px;
   height: 48px;
-  border-radius: 50%;
+  border-radius: var(--rounded-full);
   object-fit: cover;
-  border: 2px solid var(--accent, #007aff);
+  border: 2px solid var(--color-primary);
   flex-shrink: 0;
   background: rgba(255, 255, 255, 0.1);
 }
@@ -119,9 +120,10 @@
 }
 
 .foundName {
+  font-family: var(--font-text);
   font-weight: 600;
-  font-size: 17px;
-  letter-spacing: -0.4px;
+  font-size: var(--font-size-body);
+  letter-spacing: var(--tracking-body);
   color: #ffffff;
   white-space: nowrap;
   overflow: hidden;
@@ -129,34 +131,38 @@
 }
 
 .foundRoblox {
-  font-size: 14px;
-  color: var(--accent, #007aff);
-  font-weight: 500;
-  letter-spacing: -0.2px;
+  font-family: var(--font-text);
+  font-size: var(--font-size-caption);
+  color: var(--color-primary-on-dark);
+  font-weight: 400;
+  letter-spacing: var(--tracking-caption);
 }
 
 .useNameBtn {
-  background: var(--accent, #007aff);
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
   border: none;
-  border-radius: 8px;
-  padding: 6px 12px;
-  font-size: 13px;
+  border-radius: var(--rounded-pill);
+  padding: 6px 14px;
+  font-family: var(--font-text);
+  font-size: var(--font-size-fine-print);
   font-weight: 600;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s;
   white-space: nowrap;
 }
 
-.useNameBtn:hover {
-  opacity: 0.85;
+.useNameBtn:active {
+  transform: scale(0.95);
+  opacity: 0.9;
 }
 
 .error {
   color: var(--accent-red);
-  font-size: 14px;
+  font-family: var(--font-text);
+  font-size: var(--font-size-caption);
   padding: 10px 14px;
   background: rgba(255, 69, 58, 0.15);
-  border-radius: 10px;
-  margin-bottom: 12px;
+  border-radius: var(--rounded-md);
+  margin-bottom: var(--spacing-sm);
 }

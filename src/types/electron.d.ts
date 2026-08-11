@@ -8,6 +8,9 @@ export interface ElectronAPI {
   onAuthTokens: (callback: (tokens: AuthTokens) => void) => () => void
   minimizeWindow: () => Promise<void>
   closeWindow: () => Promise<void>
+  setAlwaysOnTop?: (flag: boolean) => Promise<boolean>
+  getAlwaysOnTop?: () => Promise<boolean>
+  setDeviceMode?: (mode: 'phone' | 'tablet') => Promise<void>
   getAppVersion: () => Promise<string>
   logTerminal?: (...args: any[]) => Promise<void>
 }

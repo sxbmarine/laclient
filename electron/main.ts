@@ -1,4 +1,5 @@
 import { app, BrowserWindow, shell, ipcMain } from 'electron'
+import { autoUpdater } from 'electron-updater'
 import path from 'node:path'
 import { createClient } from '@supabase/supabase-js'
 
@@ -18,6 +19,8 @@ function getSupabaseAdmin() {
 }
 
 function createWindow() {
+  const devUrl = import.meta.env.VITE_DEV_SERVER_URL as string | undefined
+
   mainWindow = new BrowserWindow({
     width: 420,
     height: 860,
@@ -30,16 +33,72 @@ function createWindow() {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
       nodeIntegration: false,
-      sandbox: true,
+      devTools: !!devUrl, // Desactiva DevTools en producción
     },
   })
 
-  const devUrl = import.meta.env.VITE_DEV_SERVER_URL as string | undefined
+  mainWindow.setAspectRatio(420 / 860)
+
+  mainWindow.webContents.setWindowOpenHandler(({ url }) => {
+    if (url.includes('/tablet')) {
+      return {
+        action: 'allow',
+        overrideBrowserWindowOptions: {
+          width: 1150,
+          height: 820,
+          frame: false,
+          transparent: true,
+          resizable: true,
+          autoHideMenuBar: true,
+          webPreferences: {
+            preload: path.join(__dirname, 'preload.js'),
+            contextIsolation: true,
+            nodeIntegration: false,
+            sandbox: true,
+            devTools: !!devUrl,
+          },
+        },
+      }
+    }
+    return {
+      action: 'allow',
+      overrideBrowserWindowOptions: {
+        frame: false,
+        transparent: true,
+        autoHideMenuBar: true,
+        webPreferences: {
+          preload: path.join(__dirname, 'preload.js'),
+          contextIsolation: true,
+          nodeIntegration: false,
+          sandbox: true,
+          devTools: !!devUrl,
+        },
+      },
+    }
+  })
+
   if (devUrl) {
     mainWindow.loadURL(devUrl)
     mainWindow.webContents.openDevTools({ mode: 'detach' })
   } else {
     mainWindow.loadFile(path.join(__dirname, '../dist/index.html'))
+
+    // En producción: Bloquear atajos de teclado F12 / Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+Shift+C
+    mainWindow.webContents.on('before-input-event', (event, input) => {
+      const isF12 = input.key === 'F12'
+      const isDevToolsShortcut =
+        input.control &&
+        input.shift &&
+        ['i', 'j', 'c'].includes(input.key.toLowerCase())
+      if (isF12 || isDevToolsShortcut) {
+        event.preventDefault()
+      }
+    })
+
+    // Cerrar DevTools automáticamente si por alguna razón intentan abrirse
+    mainWindow.webContents.on('devtools-opened', () => {
+      mainWindow?.webContents.closeDevTools()
+    })
   }
 
   mainWindow.on('closed', () => {
@@ -145,6 +204,15 @@ if (!gotLock) {
 
     const deepLink = process.argv.find((arg) => arg.startsWith(`${PROTOCOL}://`))
     if (deepLink) handleDeepLink(deepLink)
+
+    // Configurar y comprobar actualizaciones automáticas si no estamos en entorno dev
+    if (!import.meta.env.VITE_DEV_SERVER_URL) {
+      autoUpdater.autoDownload = true
+      autoUpdater.autoInstallOnAppQuit = true
+      autoUpdater.checkForUpdatesAndNotify().catch((err) => {
+        console.warn('[AutoUpdater] Error buscando actualizaciones:', err?.message)
+      })
+    }
   })
 }
 
@@ -199,7 +267,34 @@ ipcMain.handle('window:getAlwaysOnTop', () => {
   return mainWindow?.isAlwaysOnTop() ?? false
 })
 
+ipcMain.handle('window:setDeviceMode', (_event, mode: 'phone' | 'tablet') => {
+  if (mainWindow && !mainWindow.isDestroyed()) {
+    if (mode === 'tablet') {
+      mainWindow.setAspectRatio(1150 / 820)
+      mainWindow.setSize(1150, 820, true)
+      mainWindow.center()
+    } else {
+      mainWindow.setAspectRatio(420 / 860)
+      mainWindow.setSize(420, 860, true)
+      mainWindow.center()
+    }
+  }
+})
+
 ipcMain.handle('app:getVersion', () => app.getVersion())
+
+ipcMain.handle('updater:check', async () => {
+  try {
+    const result = await autoUpdater.checkForUpdates()
+    return { ok: true, updateInfo: result?.updateInfo }
+  } catch (err: any) {
+    return { ok: false, error: err?.message }
+  }
+})
+
+ipcMain.handle('updater:quitAndInstall', () => {
+  autoUpdater.quitAndInstall()
+})
 
 ipcMain.handle('log:terminal', (_event, ...args) => {
   console.log('[CLIENT-LOG]', ...args)

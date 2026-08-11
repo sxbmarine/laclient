@@ -50,13 +50,14 @@ export function TrafficPage() {
         console.error('Error al obtener multas:', error.message)
         setFinesList([])
       } else {
-        // Filter ONLY user's multas where tipo === 'traffic'
+        // Filter user's multas where tipo === 'traffic'
         const userTrafficFines = (data || []).filter((m: any) => {
           const isUser =
             (personajeId && String(m.personaje_id) === String(personajeId)) ||
             (discordId && String(m.discord_id) === String(discordId))
-          const isTraffic = String(m.tipo || '').toLowerCase() === 'traffic'
-          return isUser && isTraffic
+          const isTraffic = String(m.tipo || '').toLowerCase() === 'traffic' || !m.tipo
+          const isUnpaid = mode === 'pay' ? (!m.pagado && m.estado !== 'pagada') : true
+          return isUser && isTraffic && isUnpaid
         })
 
         setFinesList(userTrafficFines)
@@ -102,14 +103,14 @@ export function TrafficPage() {
 
       const fine = item.rawItem
       if (fine && fine.id) {
-        // Delete or update multa in Supabase database
-        const { error } = await supabase.from('multas').delete().eq('id', fine.id)
+        // PRESERVE HISTORY: Update fine status to pagado = true (do NOT delete!)
+        const { error } = await supabase
+          .from('multas')
+          .update({ pagado: true, estado: 'pagada', fecha_pago: new Date().toISOString() })
+          .eq('id', fine.id)
+
         if (error) {
-          // If delete RLS is blocked, update estado to pagado
-          await supabase
-            .from('multas')
-            .update({ estado: 'pagada', pagado: true })
-            .eq('id', fine.id)
+          console.error('Error al marcar la multa como pagada:', error.message)
         }
       }
 
@@ -122,8 +123,12 @@ export function TrafficPage() {
           .eq('id', card.id)
       }
 
-      // Remove from local list
-      setFinesList((prev) => prev.filter((f) => String(f.id) !== String(item.id)))
+      // Update local state: remove from pay list or mark as paid
+      setFinesList((prev) =>
+        viewMode === 'pay'
+          ? prev.filter((f) => String(f.id) !== String(item.id))
+          : prev.map((f) => (String(f.id) === String(item.id) ? { ...f, pagado: true, estado: 'pagada' } : f)),
+      )
 
       // Trigger iOS Notification
       notify({
@@ -171,7 +176,7 @@ export function TrafficPage() {
               </div>
             </div>
 
-            {/* Card 2: Search My Ticket (Clickable with Face ID Authentication) */}
+            {/* Card 2: Search My Ticket */}
             <div
               className={`${styles.cardItem} ${styles.cardItemClickable}`}
               onClick={() => handleStartFlow('search')}
@@ -187,7 +192,7 @@ export function TrafficPage() {
               </div>
             </div>
 
-            {/* Card 3: Pay My Ticket (Clickable with Face ID Authentication & Payment Option) */}
+            {/* Card 3: Pay My Ticket */}
             <div
               className={`${styles.cardItem} ${styles.cardItemClickable}`}
               onClick={() => handleStartFlow('pay')}
@@ -219,42 +224,51 @@ export function TrafficPage() {
             {finesList.length === 0 ? (
               <div className={styles.emptyStateCard}>
                 <div className={styles.emptyStateIcon}>󱪙</div>
-                <div className={styles.emptyStateTitle}>Sin multas de tráfico pendientes</div>
+                <div className={styles.emptyStateTitle}>
+                  {viewMode === 'pay' ? 'Sin multas pendientes' : 'Sin citaciones registradas'}
+                </div>
                 <div className={styles.emptyStateText}>
-                  No constan citaciones ni infracciones de tráfico pendientes a nombre de {personaje?.nombre || 'este usuario'}.
+                  {viewMode === 'pay'
+                    ? `No constan multas pendientes de pago a nombre de ${personaje?.nombre || 'este usuario'}.`
+                    : `No constan citaciones de tráfico a nombre de ${personaje?.nombre || 'este usuario'}.`}
                 </div>
               </div>
             ) : (
-              finesList.map((fine) => (
-                <div key={fine.id} className={styles.fineCard}>
-                  <div className={styles.fineCardHeader}>
-                    <span className={styles.fineCardId}>Citación #{fine.id}</span>
-                    <span className={styles.fineCardBadge}>Tráfico</span>
-                  </div>
-                  <div className={styles.fineCardReason}>
-                    {fine.cargos || fine.motivo || fine.razon || fine.descripcion || 'Infracción de tráfico'}
-                  </div>
-                  <div className={styles.fineCardDetailsRow}>
-                    <span>
-                      Fecha: {fine.fecha ? new Date(fine.fecha).toLocaleDateString('es-ES') : 'Reciente'}
-                    </span>
+              finesList.map((fine) => {
+                const isPaid = Boolean(fine.pagado) || String(fine.estado || '').toLowerCase() === 'pagada'
+                return (
+                  <div key={fine.id} className={styles.fineCard}>
+                    <div className={styles.fineCardHeader}>
+                      <span className={styles.fineCardId}>Citación #{fine.id}</span>
+                      <span className={`${styles.fineCardBadge} ${isPaid ? styles.badgePaid : styles.badgeUnpaid}`}>
+                        {isPaid ? 'PAGADA' : 'PENDIENTE'}
+                      </span>
+                    </div>
+                    <div className={styles.fineCardReason}>
+                      {fine.cargos || fine.motivo || fine.razon || fine.descripcion || 'Infracción de tráfico'}
+                    </div>
+                    <div className={styles.fineCardDetailsRow}>
+                      <span>
+                        Fecha: {fine.fecha ? new Date(fine.fecha).toLocaleDateString('es-ES') : 'Reciente'}
+                      </span>
 
-                    {/* Pay Button Between Date and Amount when in Pay mode */}
-                    {viewMode === 'pay' && (
-                      <button
-                        className={styles.payBtn}
-                        onClick={() => handleOpenApplePay(fine)}
-                      >
-                        Pagar
-                      </button>
-                    )}
+                      {/* Pay Button when unpaid */}
+                      {!isPaid && (
+                        <button
+                          className={styles.payBtn}
+                          onClick={() => handleOpenApplePay(fine)}
+                        >
+                          Pagar
+                        </button>
+                      )}
 
-                    <span className={styles.fineCardAmount}>
-                      ${(Number(fine.dinero || fine.monto || 0)).toLocaleString()}
-                    </span>
+                      <span className={styles.fineCardAmount}>
+                        ${(Number(fine.dinero || fine.monto || 0)).toLocaleString()}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              ))
+                )
+              })
             )}
 
             <button className={styles.backBtn} onClick={() => setShowFinesList(false)}>

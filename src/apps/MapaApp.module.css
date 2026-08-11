@@ -36,6 +36,10 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  /* Explicit size matches satellite.png (3121×3121 px).
+     Ensures child pins using left/top % are relative to the image, not a zero-size box. */
+  width: 3121px;
+  height: 3121px;
   transform-origin: center center;
   will-change: transform;
   pointer-events: none;

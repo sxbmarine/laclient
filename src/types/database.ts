@@ -27,14 +27,6 @@ export interface Personaje {
   usuario_roblox: string | null
 }
 
-export interface Cartera {
-  id: number
-  discord_id: string
-  efectivo: number
-  ultima_nomina: string | null
-  created_at: string
-}
-
 export interface CuentaBancaria {
   id: number
   discord_id: string
@@ -88,13 +80,6 @@ export interface GpsCompartido {
   discord_id_receptor: string
   activo: boolean
   created_at: string
-}
-
-export interface Ubicacion {
-  discord_id: string
-  lat: number
-  lng: number
-  updated_at: string
 }
 
 export interface ErlcPlayer {

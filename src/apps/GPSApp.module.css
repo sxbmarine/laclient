@@ -3,6 +3,8 @@
   flex-direction: column;
   height: 100%;
   background: var(--bg-primary);
+  font-family: var(--font-text);
+  -webkit-font-smoothing: antialiased;
 }
 
 .content {
@@ -11,15 +13,16 @@
 }
 
 .section {
-  margin-bottom: 24px;
+  margin-bottom: var(--spacing-lg);
 }
 
 .sectionTitle {
-  font-size: 13px;
+  font-family: var(--font-text);
+  font-size: var(--font-size-fine-print);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: var(--tracking-fine-print);
   color: var(--text-secondary);
-  margin-bottom: 12px;
+  margin-bottom: var(--spacing-sm);
 }
 
 .row {
@@ -28,17 +31,25 @@
 }
 
 .hint {
-  font-size: 14px;
+  font-family: var(--font-text);
+  font-size: var(--font-size-caption);
+  letter-spacing: var(--tracking-caption);
   color: var(--text-secondary);
 }
 
 .toggle {
   padding: 6px 14px;
-  border-radius: 16px;
-  font-size: 13px;
+  border-radius: var(--rounded-pill);
+  font-family: var(--font-text);
+  font-size: var(--font-size-fine-print);
   font-weight: 600;
-  background: var(--bg-tertiary);
+  background: var(--color-surface-tile-1);
   color: var(--text-secondary);
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background 0.15s;
+}
+
+.toggle:active {
+  transform: scale(0.95);
 }
 
 .toggle.active {
@@ -48,18 +59,20 @@
 
 .error {
   color: var(--accent-red);
-  font-size: 14px;
+  font-family: var(--font-text);
+  font-size: var(--font-size-caption);
   padding: 8px 12px;
   background: rgba(255, 69, 58, 0.15);
-  border-radius: 8px;
-  margin-bottom: 12px;
+  border-radius: var(--rounded-sm);
+  margin-bottom: var(--spacing-sm);
 }
 
 .success {
   color: var(--accent-green);
-  font-size: 14px;
+  font-family: var(--font-text);
+  font-size: var(--font-size-caption);
   padding: 8px 12px;
   background: rgba(48, 209, 88, 0.15);
-  border-radius: 8px;
-  margin-bottom: 12px;
+  border-radius: var(--rounded-sm);
+  margin-bottom: var(--spacing-sm);
 }

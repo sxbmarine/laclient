@@ -283,19 +283,19 @@
   flex: 1;
   backdrop-filter: blur(7px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 14px;
+  border-radius: var(--rounded-lg);
   padding: 12px 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 6px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background 0.15s;
   color: #ffffff;
 }
 
 .actionItem:active {
-  transform: scale(0.96);
+  transform: scale(0.95);
   background: rgba(255, 255, 255, 0.15);
 }
 

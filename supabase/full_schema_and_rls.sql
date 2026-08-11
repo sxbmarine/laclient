@@ -31,14 +31,6 @@ CREATE TABLE IF NOT EXISTS public.personajes (
   usuario_roblox TEXT
 );
 
-CREATE TABLE IF NOT EXISTS public.carteras (
-  id BIGSERIAL PRIMARY KEY,
-  discord_id TEXT UNIQUE NOT NULL,
-  efectivo NUMERIC(12,2) DEFAULT 0.00,
-  ultima_nomina TIMESTAMPTZ,
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
-
 CREATE TABLE IF NOT EXISTS public.cuentas_bancarias (
   id BIGSERIAL PRIMARY KEY,
   discord_id TEXT NOT NULL,
@@ -97,25 +89,16 @@ CREATE TABLE IF NOT EXISTS public.gps_compartido (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
-CREATE TABLE IF NOT EXISTS public.ubicaciones (
-  discord_id TEXT PRIMARY KEY,
-  lat DOUBLE PRECISION NOT NULL,
-  lng DOUBLE PRECISION NOT NULL,
-  updated_at TIMESTAMPTZ DEFAULT NOW()
-);
-
 -- 2. HABILITAR ROW LEVEL SECURITY (RLS)
 ALTER TABLE public.usuarios ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.roles ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.personajes ENABLE ROW LEVEL SECURITY;
-ALTER TABLE public.carteras ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.cuentas_bancarias ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.transacciones ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.multas ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.contactos ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.mensajes ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.gps_compartido ENABLE ROW LEVEL SECURITY;
-ALTER TABLE public.ubicaciones ENABLE ROW LEVEL SECURITY;
 
 -- 3. POLITICAS RLS COMPLETA (SELECT, INSERT, UPDATE, DELETE)
 DROP POLICY IF EXISTS "Permitir todo acceso a usuarios" ON public.usuarios;
@@ -126,9 +109,6 @@ CREATE POLICY "Permitir todo acceso a roles" ON public.roles FOR ALL TO public, 
 
 DROP POLICY IF EXISTS "Permitir todo acceso a personajes" ON public.personajes;
 CREATE POLICY "Permitir todo acceso a personajes" ON public.personajes FOR ALL TO public, authenticated, anon USING (true) WITH CHECK (true);
-
-DROP POLICY IF EXISTS "Permitir todo acceso a carteras" ON public.carteras;
-CREATE POLICY "Permitir todo acceso a carteras" ON public.carteras FOR ALL TO public, authenticated, anon USING (true) WITH CHECK (true);
 
 DROP POLICY IF EXISTS "Permitir todo acceso a cuentas_bancarias" ON public.cuentas_bancarias;
 CREATE POLICY "Permitir todo acceso a cuentas_bancarias" ON public.cuentas_bancarias FOR ALL TO public, authenticated, anon USING (true) WITH CHECK (true);
@@ -147,9 +127,6 @@ CREATE POLICY "Permitir todo acceso a mensajes" ON public.mensajes FOR ALL TO pu
 
 DROP POLICY IF EXISTS "Permitir todo acceso a gps_compartido" ON public.gps_compartido;
 CREATE POLICY "Permitir todo acceso a gps_compartido" ON public.gps_compartido FOR ALL TO public, authenticated, anon USING (true) WITH CHECK (true);
-
-DROP POLICY IF EXISTS "Permitir todo acceso a ubicaciones" ON public.ubicaciones;
-CREATE POLICY "Permitir todo acceso a ubicaciones" ON public.ubicaciones FOR ALL TO public, authenticated, anon USING (true) WITH CHECK (true);
 
 -- 4. FUNCIÓN RPC PARA TRANSFERENCIAS BANCARIAS ATÓMICAS
 CREATE OR REPLACE FUNCTION public.transferir(
@@ -209,9 +186,6 @@ BEGIN
   END IF;
   IF NOT EXISTS (SELECT 1 FROM pg_publication_tables WHERE pubname = 'supabase_realtime' AND tablename = 'multas') THEN
     ALTER PUBLICATION supabase_realtime ADD TABLE public.multas;
-  END IF;
-  IF NOT EXISTS (SELECT 1 FROM pg_publication_tables WHERE pubname = 'supabase_realtime' AND tablename = 'ubicaciones') THEN
-    ALTER PUBLICATION supabase_realtime ADD TABLE public.ubicaciones;
   END IF;
   IF NOT EXISTS (SELECT 1 FROM pg_publication_tables WHERE pubname = 'supabase_realtime' AND tablename = 'gps_compartido') THEN
     ALTER PUBLICATION supabase_realtime ADD TABLE public.gps_compartido;

@@ -478,8 +478,9 @@ export function BancoApp() {
               className={styles.userAvatarImg}
               onError={(e) => {
                 const el = e.currentTarget
-                if (!el.src.includes('unavatar.io')) {
-                  el.src = `https://unavatar.io/roblox/${encodeURIComponent(cleanUsername || 'Roblox')}`
+                const fallback = `https://www.roblox.com/headshot-thumbnail/image?userName=${encodeURIComponent(cleanUsername || 'Roblox')}&width=420&height=420&format=png`
+                if (el.src !== fallback) {
+                  el.src = fallback
                 }
               }}
             />

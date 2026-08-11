@@ -75,6 +75,31 @@
   --phone-radius: 48px;
   --screen-radius: 42px;
   --bezel: 10px;
+
+  /* ─── Apple Design System Tokens (apple-DESIGN.md) ──────────────────── */
+  --color-primary: #0066cc;
+  --color-primary-focus: #0071e3;
+  --color-primary-on-dark: #2997ff;
+  --color-ink: #1d1d1f;
+  --color-body: #1d1d1f;
+  --color-body-on-dark: #ffffff;
+  --color-body-muted: #cccccc;
+  --color-ink-muted-80: #333333;
+  --color-ink-muted-48: #7a7a7a;
+  --color-divider-soft: #f0f0f0;
+  --color-hairline: #e0e0e0;
+  --color-canvas: #ffffff;
+  --color-canvas-parchment: #f5f5f7;
+  --color-surface-pearl: #fafafc;
+  --color-surface-tile-1: #272729;
+  --color-surface-tile-2: #2a2a2c;
+  --color-surface-tile-3: #252527;
+  --color-surface-black: #000000;
+  --color-surface-chip-translucent: rgba(210, 210, 215, 0.64);
+  --color-on-primary: #ffffff;
+  --color-on-dark: #ffffff;
+
+  /* Backward Compatible Theme Tokens */
   --bg-primary: #000000;
   --bg-secondary: #1c1c1e;
   --bg-tertiary: #2c2c2e;
@@ -82,76 +107,119 @@
   --text-primary: #ffffff;
   --text-secondary: rgba(235, 235, 245, 0.6);
   --text-tertiary: rgba(235, 235, 245, 0.3);
-  --accent: #0a84ff;
+  --accent: var(--color-primary);
+  --accent-blue-dark: var(--color-primary-on-dark);
   --accent-green: #30d158;
   --accent-red: #ff453a;
   --accent-orange: #ff9f0a;
   --accent-purple: #bf5af2;
   --accent-pink: #ff375f;
   --accent-teal: #64d2ff;
-  --separator: rgba(84, 84, 88, 0.65);
+  --separator: rgba(255, 255, 255, 0.12);
   --glass: rgba(28, 28, 30, 0.72);
+
+  /* Border Radii Scale */
+  --rounded-none: 0px;
+  --rounded-xs: 5px;
+  --rounded-sm: 8px;
+  --rounded-md: 11px;
+  --rounded-lg: 18px;
+  --rounded-pill: 9999px;
+  --rounded-full: 9999px;
+
+  /* Spacing Scale */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 17px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-section: 80px;
+
+  /* Shadows */
+  --shadow-product: rgba(0, 0, 0, 0.22) 3px 5px 30px 0px;
   --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 
-  /* Apple HIG Typography System Font Stack with NerdFont & Emoji fallbacks */
+  /* Typography Font Stacks */
+  --font-display: 'SF Pro Display', system-ui, -apple-system, sans-serif;
+  --font-text: 'SF Pro Text', system-ui, -apple-system, sans-serif;
   --font-family-system: 'SF Pro Display', 'SF Pro Text', '0xProto Nerd Font Propo', '0xProtoNFP-Regular', 'AppIcons', 'SF-Symbols-Pro', 'Apple Color Emoji', 'AppleColorEmoji', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-family-mono: 'SF Mono', '0xProto Nerd Font Propo', ui-monospace, Menlo, Monaco, Consolas, monospace;
 
-  /* Apple HIG Dynamic Type Scale (Sizes, Weights & Optical Tracking) */
-  --font-size-large-title: 34px;
-  --font-weight-large-title: 700;
-  --tracking-large-title: -0.8px;
+  /* ─── Apple Design System Typography Tokens (apple-DESIGN.md) ────── */
+  --font-size-hero-display: 56px;
+  --font-size-display-lg: 40px;
+  --font-size-display-md: 34px;
+  --font-size-lead: 28px;
+  --font-size-lead-airy: 24px;
+  --font-size-tagline: 21px;
+  --font-size-button-large: 18px;
+  --font-size-body: 17px;
+  --font-size-caption: 14px;
+  --font-size-button-utility: 14px;
+  --font-size-fine-print: 12px;
+  --font-size-nav-link: 12px;
+  --font-size-micro-legal: 10px;
+
+  --line-height-hero-display: 1.07;
+  --line-height-display-lg: 1.10;
+  --line-height-display-md: 1.47;
+  --line-height-lead: 1.14;
+  --line-height-lead-airy: 1.5;
+  --line-height-tagline: 1.19;
+  --line-height-body-strong: 1.24;
+  --line-height-body: 1.47;
+  --line-height-dense-link: 2.41;
+  --line-height-caption: 1.43;
+  --line-height-caption-strong: 1.29;
+  --line-height-button-utility: 1.29;
+  --line-height-fine-print: 1.0;
+  --line-height-micro-legal: 1.3;
+
+  --tracking-hero-display: -0.28px;
+  --tracking-display-lg: 0px;
+  --tracking-display-md: -0.374px;
+  --tracking-lead: 0.196px;
+  --tracking-lead-airy: 0px;
+  --tracking-tagline: 0.231px;
+  --tracking-body-strong: -0.374px;
+  --tracking-body: -0.374px;
+  --tracking-caption: -0.224px;
+  --tracking-button-utility: -0.224px;
+  --tracking-fine-print: -0.12px;
+  --tracking-micro-legal: -0.08px;
+
+  /* Backward Compatible Dynamic Type Tokens */
+  --font-size-large-title: var(--font-size-display-md);
+  --font-weight-large-title: 600;
+  --tracking-large-title: var(--tracking-display-md);
   --line-height-large-title: 41px;
 
-  --font-size-title-1: 28px;
-  --font-weight-title-1: 700;
-  --tracking-title-1: -0.5px;
+  --font-size-title-1: var(--font-size-lead);
+  --font-weight-title-1: 600;
+  --tracking-title-1: var(--tracking-lead);
   --line-height-title-1: 34px;
 
   --font-size-title-2: 22px;
-  --font-weight-title-2: 700;
+  --font-weight-title-2: 600;
   --tracking-title-2: -0.26px;
   --line-height-title-2: 28px;
 
-  --font-size-title-3: 20px;
+  --font-size-title-3: var(--font-size-tagline);
   --font-weight-title-3: 600;
-  --tracking-title-3: -0.45px;
+  --tracking-title-3: var(--tracking-tagline);
   --line-height-title-3: 25px;
 
-  --font-size-headline: 17px;
+  --font-size-headline: var(--font-size-body);
   --font-weight-headline: 600;
-  --tracking-headline: -0.4px;
-  --line-height-headline: 22px;
+  --tracking-headline: var(--tracking-body-strong);
+  --line-height-headline: var(--line-height-body-strong);
 
-  --font-size-body: 17px;
-  --font-weight-body: 400;
-  --tracking-body: -0.4px;
-  --line-height-body: 22px;
-
-  --font-size-callout: 16px;
-  --font-weight-callout: 400;
-  --tracking-callout: -0.32px;
-  --line-height-callout: 21px;
-
-  --font-size-subheadline: 15px;
-  --font-weight-subheadline: 400;
-  --tracking-subheadline: -0.2px;
-  --line-height-subheadline: 20px;
-
-  --font-size-footnote: 13px;
-  --font-weight-footnote: 400;
-  --tracking-footnote: -0.08px;
-  --line-height-footnote: 18px;
-
-  --font-size-caption-1: 12px;
+  --font-size-caption-1: var(--font-size-caption);
   --font-weight-caption-1: 400;
-  --tracking-caption-1: 0px;
-  --line-height-caption-1: 16px;
-
-  --font-size-caption-2: 11px;
-  --font-weight-caption-2: 400;
-  --tracking-caption-2: 0.06px;
-  --line-height-caption-2: 13px;
+  --tracking-caption-1: var(--tracking-caption);
+  --line-height-caption-1: var(--line-height-caption);
 
   font-family: var(--font-family-system);
   font-synthesis: none;
@@ -353,15 +421,17 @@ a {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 14px;
-  border-radius: 30px;
+  padding: 12px 22px;
+  border-radius: 9999px;
   font-size: 17px;
   font-weight: 600;
-  transition: opacity 0.15s;
+  letter-spacing: -0.374px;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s, background-color 0.15s;
 }
 
 .ios-btn:active {
-  opacity: 0.7;
+  transform: scale(0.95);
+  opacity: 0.9;
 }
 
 .ios-btn-primary {
@@ -475,4 +545,207 @@ a {
     opacity: 0;
     transform: translateY(-100px) scale(0.82);
   }
+}
+
+/* ─── Apple Design System Global Component Utilities (apple-DESIGN.md) ─ */
+
+.apple-button-primary,
+.apple-btn-primary,
+.apple-btn-pill {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-family: var(--font-text);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.47;
+  letter-spacing: -0.374px;
+  border-radius: var(--rounded-pill);
+  padding: 11px 22px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s, opacity 0.15s;
+}
+
+.apple-button-primary:active,
+.apple-btn-primary:active,
+.apple-btn-pill:active {
+  transform: scale(0.95);
+  opacity: 0.9;
+}
+
+.apple-button-secondary,
+.apple-btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  font-family: var(--font-text);
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.374px;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--rounded-pill);
+  padding: 11px 22px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s;
+}
+
+.apple-button-secondary:active,
+.apple-btn-secondary:active {
+  transform: scale(0.95);
+  background-color: rgba(0, 102, 204, 0.08);
+}
+
+.apple-button-dark-utility {
+  background-color: var(--color-ink);
+  color: var(--color-on-dark);
+  font-family: var(--font-text);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.224px;
+  border-radius: var(--rounded-sm);
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s;
+}
+
+.apple-button-dark-utility:active {
+  transform: scale(0.95);
+}
+
+.apple-store-utility-card,
+.apple-card {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-text);
+  border-radius: var(--rounded-lg);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-hairline);
+  box-shadow: none;
+}
+
+.apple-card-dark {
+  background-color: var(--color-surface-tile-1);
+  color: var(--color-on-dark);
+  font-family: var(--font-text);
+  border-radius: var(--rounded-lg);
+  padding: var(--spacing-lg);
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+.apple-search-input,
+.apple-input-pill {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-text);
+  font-size: 17px;
+  border-radius: var(--rounded-pill);
+  padding: 12px 20px;
+  height: 44px;
+  border: 1px solid var(--color-hairline);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.apple-search-input:focus,
+.apple-input-pill:focus {
+  border-color: var(--color-primary-focus);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
+}
+
+.apple-hero-display,
+.typo-hero-display {
+  font-family: var(--font-display);
+  font-size: var(--font-size-hero-display);
+  font-weight: 600;
+  line-height: var(--line-height-hero-display);
+  letter-spacing: var(--tracking-hero-display);
+}
+
+.apple-display-lg,
+.typo-display-lg {
+  font-family: var(--font-display);
+  font-size: var(--font-size-display-lg);
+  font-weight: 600;
+  line-height: var(--line-height-display-lg);
+  letter-spacing: var(--tracking-display-lg);
+}
+
+.apple-display-md,
+.typo-display-md {
+  font-family: var(--font-text);
+  font-size: var(--font-size-display-md);
+  font-weight: 600;
+  line-height: var(--line-height-display-md);
+  letter-spacing: var(--tracking-display-md);
+}
+
+.apple-lead,
+.typo-lead {
+  font-family: var(--font-display);
+  font-size: var(--font-size-lead);
+  font-weight: 400;
+  line-height: var(--line-height-lead);
+  letter-spacing: var(--tracking-lead);
+}
+
+.apple-tagline,
+.typo-tagline {
+  font-family: var(--font-display);
+  font-size: var(--font-size-tagline);
+  font-weight: 600;
+  line-height: var(--line-height-tagline);
+  letter-spacing: var(--tracking-tagline);
+}
+
+.apple-body-strong,
+.typo-body-strong {
+  font-family: var(--font-text);
+  font-size: var(--font-size-body);
+  font-weight: 600;
+  line-height: var(--line-height-body-strong);
+  letter-spacing: var(--tracking-body-strong);
+}
+
+.apple-body,
+.typo-body {
+  font-family: var(--font-text);
+  font-size: var(--font-size-body);
+  font-weight: 400;
+  line-height: var(--line-height-body);
+  letter-spacing: var(--tracking-body);
+}
+
+.apple-caption,
+.typo-caption {
+  font-family: var(--font-text);
+  font-size: var(--font-size-caption);
+  font-weight: 400;
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--tracking-caption);
+}
+
+.apple-caption-strong,
+.typo-caption-strong {
+  font-family: var(--font-text);
+  font-size: var(--font-size-caption);
+  font-weight: 600;
+  line-height: var(--line-height-caption-strong);
+  letter-spacing: var(--tracking-caption);
+}
+
+.apple-fine-print,
+.typo-fine-print {
+  font-family: var(--font-text);
+  font-size: var(--font-size-fine-print);
+  font-weight: 400;
+  line-height: var(--line-height-fine-print);
+  letter-spacing: var(--tracking-fine-print);
 }

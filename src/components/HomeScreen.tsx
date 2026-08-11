@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '@/contexts/AuthContext'
+import { useDevice } from '@/contexts/DeviceContext'
 import { StatusBar } from './StatusBar'
 import styles from './HomeScreen.module.css'
 import type { AppInfo } from '@/types/database'
@@ -12,6 +13,7 @@ import mensajesIcon from '@/assets/icons/mensajes.png'
 import gpsIcon from '@/assets/icons/gps.png'
 import ajustesIcon from '@/assets/icons/ajustes.png'
 import chromeIcon from '@/assets/icons/chrome.webp'
+import tabletIcon from '@/assets/icons/tablet.webp'
 
 const ICON_MAP: Record<string, string> = {
   banco: bancoIcon,
@@ -22,6 +24,7 @@ const ICON_MAP: Record<string, string> = {
   gps: gpsIcon,
   ajustes: ajustesIcon,
   chrome: chromeIcon,
+  tablet: tabletIcon,
 }
 
 export function getAppIconUrl(appId: string): string {
@@ -38,11 +41,21 @@ const APPS: AppInfo[] = [
   { id: 'gps', name: 'GPS', icon: '', color: '#ff375f', route: '/gps' },
   { id: 'ajustes', name: 'Ajustes', icon: '', color: '#8e8e93', route: '/ajustes' },
   { id: 'chrome', name: 'Chrome', icon: '', color: '#ffffff', route: '/chrome' },
+  { id: 'tablet', name: 'Abrir Tablet', icon: '', color: '#34c759', route: '/tablet' },
 ]
 
 export function HomeScreen() {
   const navigate = useNavigate()
-  const { personaje, logout } = useAuth()
+  const { personaje } = useAuth()
+  const { openTablet } = useDevice()
+
+  const handleAppClick = (app: AppInfo) => {
+    if (app.id === 'tablet') {
+      openTablet()
+    } else {
+      navigate(app.route)
+    }
+  }
 
   return (
     <div className={styles.home}>
@@ -53,7 +66,7 @@ export function HomeScreen() {
             <button
               key={app.id}
               className={styles.appIcon}
-              onClick={() => navigate(app.route)}
+              onClick={() => handleAppClick(app)}
             >
               <div className={styles.iconOuterFrame}>
                 <div
@@ -76,9 +89,6 @@ export function HomeScreen() {
             </button>
           ))}
         </div>
-        <button className={styles.logoutBtn} onClick={() => logout()}>
-          Cerrar sesión
-        </button>
       </div>
 
       {/* Saludo posicionado justo sobre el dock */}

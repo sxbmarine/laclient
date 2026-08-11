@@ -1,7 +1,10 @@
+import React from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { AuthProvider, useAuth } from '@/contexts/AuthContext'
 import { NotificationProvider } from '@/contexts/NotificationContext'
+import { DeviceProvider, useDevice } from '@/contexts/DeviceContext'
 import { PhoneFrame } from '@/components/PhoneFrame'
+import { TabletFrame } from '@/components/TabletFrame'
 import { HomeScreen } from '@/components/HomeScreen'
 import { LoginScreen } from '@/apps/LoginScreen'
 import { BancoApp } from '@/apps/BancoApp'
@@ -12,8 +15,8 @@ import { MensajesApp } from '@/apps/MensajesApp'
 import { GPSApp } from '@/apps/GPSApp'
 import { AjustesApp } from '@/apps/AjustesApp'
 import { ChromeApp } from '@/apps/ChromeApp'
-
 import { OnboardingScreen } from '@/apps/OnboardingScreen'
+import { TabletNotificationProvider } from '@/contexts/TabletNotificationContext'
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { session, personaje, loading } = useAuth()
@@ -37,7 +40,7 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
   return <>{children}</>
 }
 
-function AppRoutes() {
+function PhoneAppRoutes() {
   const { session, personaje, loading } = useAuth()
 
   if (loading) {
@@ -97,15 +100,31 @@ function AppRoutes() {
   )
 }
 
+function MainContainer() {
+  const { deviceMode } = useDevice()
+
+  if (deviceMode === 'tablet') {
+    return <TabletFrame />
+  }
+
+  return (
+    <PhoneFrame>
+      <PhoneAppRoutes />
+    </PhoneFrame>
+  )
+}
+
 export default function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <NotificationProvider>
-          <PhoneFrame>
-            <AppRoutes />
-          </PhoneFrame>
-        </NotificationProvider>
+        <DeviceProvider>
+          <NotificationProvider>
+            <TabletNotificationProvider>
+              <MainContainer />
+            </TabletNotificationProvider>
+          </NotificationProvider>
+        </DeviceProvider>
       </AuthProvider>
     </BrowserRouter>
   )

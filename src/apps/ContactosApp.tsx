@@ -23,7 +23,7 @@ interface ContactAvatarProps {
 }
 
 function ContactAvatar({ name, robloxUsername, avatarUrl, className }: ContactAvatarProps) {
-  const [imgState, setImgState] = useState<'primary' | 'unavatar' | 'error'>('primary')
+  const [hasError, setHasError] = useState(false)
 
   const cleanUser = robloxUsername ? robloxUsername.replace(/^@/, '').replace(/\s+/g, '').trim() : ''
 
@@ -33,29 +33,13 @@ function ContactAvatar({ name, robloxUsername, avatarUrl, className }: ContactAv
       ? `https://www.roblox.com/headshot-thumbnail/image?userName=${encodeURIComponent(cleanUser)}&width=150&height=150&format=png`
       : null)
 
-  const unavatarSrc = cleanUser ? `https://unavatar.io/roblox/${encodeURIComponent(cleanUser)}` : null
-
-  if (imgState === 'primary' && primarySrc) {
+  if (!hasError && primarySrc) {
     return (
       <img
         src={primarySrc}
         alt={name}
         className={className || styles.avatarImg}
-        onError={() => {
-          if (unavatarSrc) setImgState('unavatar')
-          else setImgState('error')
-        }}
-      />
-    )
-  }
-
-  if (imgState === 'unavatar' && unavatarSrc) {
-    return (
-      <img
-        src={unavatarSrc}
-        alt={name}
-        className={className || styles.avatarImg}
-        onError={() => setImgState('error')}
+        onError={() => setHasError(true)}
       />
     )
   }

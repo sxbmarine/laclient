@@ -3,6 +3,7 @@
   flex-direction: column;
   background: #ffffff;
   color: #1a1a1a;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', '0xProto Nerd Font Propo', '0xProtoNFP-Regular', 'Apple Color Emoji', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 .heroSection {
@@ -156,12 +157,20 @@
 }
 
 .fineCardBadge {
-  background: #eaf4e6;
-  color: #2b7a2b;
   font-size: 12px;
   font-weight: 700;
   padding: 4px 10px;
   border-radius: 12px;
+}
+
+.badgePaid {
+  background: #eaf4e6;
+  color: #2b7a2b;
+}
+
+.badgeUnpaid {
+  background: #ffebe9;
+  color: #d90429;
 }
 
 .fineCardReason {

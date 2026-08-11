@@ -105,6 +105,12 @@ export function AjustesApp() {
     localStorage.setItem('sound_volume', vol.toString())
   }
 
+  // Logout handler
+  const handleLogout = async () => {
+    await logout()
+    navigate('/')
+  }
+
   // Reset iPhone handler
   const handleResetConfirm = async () => {
     localStorage.clear()
@@ -423,6 +429,11 @@ export function AjustesApp() {
         <>
           {renderNavHeader('General')}
           <div className={styles.content}>
+            <div className={styles.subHeaderLabel}>Cuenta y Sesión</div>
+            <div className={styles.logoutButton} onClick={handleLogout}>
+              Cerrar Sesión
+            </div>
+
             <div className={styles.subHeaderLabel}>Restablecimiento del Sistema</div>
             <div
               className={styles.dangerButton}

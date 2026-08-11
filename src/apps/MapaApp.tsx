@@ -60,15 +60,17 @@ export function formatLocationData(rawLoc: any): { calle: string; postal: string
 export function getMapCoordinates(rawLoc: any): { x: number; y: number } {
   if (!rawLoc) return { x: 50, y: 50 }
 
-  // 1. Direct world coordinate calculation if LocationX and LocationZ are provided
+  // 1. Direct world coordinate calculation using ER:LC center-origin system
+  // Origin (0,0) = center of the map. Map is 3121×3121 px.
+  // x: positive = right, negative = left
+  // z: positive = down, negative = up
   if (typeof rawLoc === 'object' && rawLoc !== null) {
     const locX = rawLoc.LocationX ?? rawLoc.x ?? rawLoc.X
     const locZ = rawLoc.LocationZ ?? rawLoc.z ?? rawLoc.Z ?? rawLoc.LocationY ?? rawLoc.y
     if (typeof locX === 'number' && typeof locZ === 'number') {
-      // ER:LC map world coordinates range approximately from 0 to 4096 (or -500 to 4500)
-      // Percentage = (worldCoord / 4096) * 100
-      const x = Math.max(5, Math.min(95, (locX / 4096) * 133.8))
-      const y = Math.max(5, Math.min(95, (locZ / 4096) * 124.3))
+      // Direct mapping: coordinates run 0–3121, matching satellite.png pixel dimensions
+      const x = (locX / 3121) * 100
+      const y = (locZ / 3121) * 100
       return { x, y }
     }
     if (rawLoc.PostalCode) {
@@ -608,8 +610,9 @@ export function MapaApp() {
               className={styles.avatarImg}
               onError={(e) => {
                 const el = e.currentTarget
-                if (!el.src.includes('unavatar.io')) {
-                  el.src = `https://unavatar.io/roblox/${encodeURIComponent(cleanUsername || 'Roblox')}`
+                const fallback = `https://www.roblox.com/headshot-thumbnail/image?userName=${encodeURIComponent(cleanUsername || 'Roblox')}&width=420&height=420&format=png`
+                if (el.src !== fallback) {
+                  el.src = fallback
                 }
               }}
             />

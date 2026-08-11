@@ -1,0 +1,45 @@
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table td {
+  font-family: var(--font-text);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.row:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.officerBadgePill {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--rounded-pill);
+  background: rgba(0, 102, 204, 0.2);
+  color: #2997ff;
+  border: 1px solid rgba(41, 151, 255, 0.3);
+  display: inline-block;
+}

@@ -33,14 +33,16 @@
 
 .editBtn {
   background: transparent;
-  color: #007aff;
+  color: var(--color-primary);
   border: none;
-  font-size: 17px;
+  font-family: var(--font-text);
+  font-size: var(--font-size-body);
   font-weight: 400;
-  letter-spacing: -0.4px;
+  letter-spacing: var(--tracking-body);
   cursor: pointer;
   padding: 0;
   transition: opacity 0.15s;
+  font-family: var(--font-family-system);
 }
 
 .editBtn:active {
@@ -50,8 +52,8 @@
 .filterBtn {
   width: 32px;
   height: 32px;
-  border-radius: 50%;
-  background: #1c1c1e;
+  border-radius: var(--rounded-full);
+  background: var(--color-surface-tile-1);
   color: #ffffff;
   border: none;
   display: flex;
@@ -59,10 +61,11 @@
   justify-content: center;
   font-size: 15px;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background 0.15s;
 }
 
 .filterBtn:active {
+  transform: scale(0.95);
   background: #2c2c2e;
 }
 
@@ -73,10 +76,11 @@
 }
 
 .largeTitle {
-  font-size: 34px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: var(--font-size-display-md);
+  font-weight: 600;
   color: #ffffff;
-  letter-spacing: -0.8px;
+  letter-spacing: var(--tracking-display-md);
   line-height: 41px;
   margin: 0;
 }
@@ -112,20 +116,20 @@
 .avatar {
   width: 48px;
   height: 48px;
-  border-radius: 50%;
+  border-radius: var(--rounded-full);
   background: #2c2c2e;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  font-size: 18px;
+  font-size: var(--font-size-button-large);
   color: #ffffff;
 }
 
 .avatarImg {
   width: 48px;
   height: 48px;
-  border-radius: 50%;
+  border-radius: var(--rounded-full);
   object-fit: cover;
   flex-shrink: 0;
   border: 0.5px solid rgba(255, 255, 255, 0.12);
@@ -156,11 +160,12 @@
 
 /* HIG Headline Text Style: 17px Semi-Bold */
 .contactName {
-  font-size: 17px;
+  font-family: var(--font-text);
+  font-size: var(--font-size-body);
   font-weight: 600;
   color: #ffffff;
-  letter-spacing: -0.4px;
-  line-height: 22px;
+  letter-spacing: var(--tracking-body-strong);
+  line-height: var(--line-height-body-strong);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -175,10 +180,11 @@
 
 /* HIG Footnote/Subheadline: 15px Regular */
 .timeText {
-  font-size: 15px;
-  color: #8e8e93;
+  font-family: var(--font-text);
+  font-size: var(--font-size-caption);
+  color: var(--color-ink-muted-48);
   font-weight: 400;
-  letter-spacing: -0.2px;
+  letter-spacing: var(--tracking-caption);
 }
 
 .chevron {
@@ -193,11 +199,12 @@
 
 /* HIG Subheadline: 15px Regular */
 .previewText {
-  font-size: 15px;
-  color: #8e8e93;
+  font-family: var(--font-text);
+  font-size: var(--font-size-caption);
+  color: var(--color-ink-muted-48);
   font-weight: 400;
-  letter-spacing: -0.2px;
-  line-height: 20px;
+  letter-spacing: var(--tracking-caption);
+  line-height: var(--line-height-caption);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -219,7 +226,7 @@
 .searchPill {
   flex: 1;
   height: 44px;
-  border-radius: 22px;
+  border-radius: var(--rounded-pill);
   background: rgba(36, 36, 38, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -234,6 +241,7 @@
 .searchIcon {
   font-size: 15px;
   opacity: 0.6;
+  font-family: var(--font-family-system);
 }
 
 .searchInput {
@@ -241,8 +249,9 @@
   background: transparent;
   border: none;
   color: #ffffff;
-  font-size: 17px;
-  letter-spacing: -0.4px;
+  font-family: var(--font-text);
+  font-size: var(--font-size-body);
+  letter-spacing: var(--tracking-body);
   outline: none;
 }
 
@@ -254,28 +263,29 @@
   font-size: 16px;
   opacity: 0.7;
   cursor: pointer;
+  font-family: var(--font-family-system);
 }
 
 .composeBtn {
   width: 44px;
   height: 44px;
-  border-radius: 50%;
+  border-radius: var(--rounded-full);
   background: rgba(36, 36, 38, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 0.5px solid rgba(255, 255, 255, 0.12);
-  color: #007aff;
+  color: var(--color-primary);
   font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-  transition: transform 0.15s;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .composeBtn:active {
-  transform: scale(0.92);
+  transform: scale(0.95);
 }
 
 /* ─── Active Chat View Styles ─────────────────────────────────── */
@@ -310,6 +320,7 @@
   justify-content: center;
   z-index: 10;
   transition: background 0.2s;
+  font-family: var(--font-family-system);
 }
 
 .chatBackBtn:active {

@@ -282,23 +282,46 @@
   font-weight: 500;
 }
 
-/* Danger Button in Dark Mode */
+/* Logout Button & Danger Button in Dark Mode */
+.logoutButton {
+  background: var(--color-surface-tile-1);
+  border-radius: var(--rounded-lg);
+  padding: 16px 20px;
+  text-align: center;
+  color: #ff3b30;
+  font-family: var(--font-text);
+  font-size: var(--font-size-body);
+  font-weight: 600;
+  letter-spacing: var(--tracking-body);
+  cursor: pointer;
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background 0.15s;
+  margin-bottom: 24px;
+}
+
+.logoutButton:active {
+  background: rgba(255, 59, 48, 0.15);
+  transform: scale(0.95);
+}
+
 .dangerButton {
-  background: #1c1c1e;
-  border-radius: 20px;
-  padding: 18px 20px;
+  background: var(--color-surface-tile-1);
+  border-radius: var(--rounded-lg);
+  padding: 16px 20px;
   text-align: center;
   color: #ff453a;
-  font-size: 21px;
+  font-family: var(--font-text);
+  font-size: var(--font-size-body);
   font-weight: 600;
+  letter-spacing: var(--tracking-body);
   cursor: pointer;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
   border: 0.5px solid rgba(255, 255, 255, 0.08);
-  transition: background 0.15s;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background 0.15s;
 }
 
 .dangerButton:active {
   background: rgba(255, 69, 58, 0.15);
+  transform: scale(0.95);
 }
 
 /* Confirmation Modal in Dark Mode */

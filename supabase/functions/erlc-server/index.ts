@@ -1,5 +1,7 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
+declare const Deno: any;
+
 const ERLC_API = "https://api.policeroleplay.community/v2/server";
 
 interface ErlcPlayerRaw {

@@ -3,8 +3,15 @@ import { useNavigate } from 'react-router-dom'
 import { StatusBar } from '@/components/StatusBar'
 import { useAuth } from '@/contexts/AuthContext'
 import { supabase, getDiscordId } from '@/lib/supabase'
-import type { Contacto, GpsCompartido, Ubicacion } from '@/types/database'
+import type { Contacto, GpsCompartido } from '@/types/database'
 import styles from './GPSApp.module.css'
+
+interface Ubicacion {
+  discord_id: string
+  lat: number
+  lng: number
+  updated_at: string
+}
 
 export function GPSApp() {
   const navigate = useNavigate()

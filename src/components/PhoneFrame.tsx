@@ -13,6 +13,7 @@ export function PhoneFrame({ children }: PhoneFrameProps) {
   const [scale, setScale] = useState(1)
   const [isPinned, setIsPinned] = useState(false)
   const [isFaceIdActive, setIsFaceIdActive] = useState(false)
+  const [isFocused, setIsFocused] = useState<boolean>(true)
   const [wallpaper, setWallpaper] = useState<string | null>(() => {
     return localStorage.getItem('homescreen_wallpaper') || null
   })
@@ -29,6 +30,14 @@ export function PhoneFrame({ children }: PhoneFrameProps) {
 
     updateScale()
     window.addEventListener('resize', updateScale)
+
+    const onFocus = () => setIsFocused(true)
+    const onBlur = () => setIsFocused(false)
+    const onMouseEnter = () => setIsFocused(true)
+
+    window.addEventListener('focus', onFocus)
+    window.addEventListener('blur', onBlur)
+    window.addEventListener('mouseenter', onMouseEnter)
 
     const handleWallChange = (e: Event) => {
       const customEv = e as CustomEvent<string>
@@ -61,6 +70,9 @@ export function PhoneFrame({ children }: PhoneFrameProps) {
 
     return () => {
       window.removeEventListener('resize', updateScale)
+      window.removeEventListener('focus', onFocus)
+      window.removeEventListener('blur', onBlur)
+      window.removeEventListener('mouseenter', onMouseEnter)
       window.removeEventListener('wallpaper:change', handleWallChange)
       window.removeEventListener('faceid:start', handleFaceIdStart)
     }
@@ -87,7 +99,10 @@ export function PhoneFrame({ children }: PhoneFrameProps) {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.scaler} style={{ transform: `scale(${scale})` }}>
+      <div
+        className={`${styles.scaler} ${!isFocused ? styles.unfocused : ''}`}
+        style={{ transform: `scale(${scale})` }}
+      >
         <div id="1205_1173" className={styles.phoneFrame}>
           {/* 1205_1174: side button 1 */}
           <div id="1205_1174" className={styles.strokeWrapper1205_1174}>

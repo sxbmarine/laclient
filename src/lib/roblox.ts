@@ -121,3 +121,9 @@ export async function getRobloxAvatarUrl(username: string): Promise<string | nul
 
   return `https://www.roblox.com/headshot-thumbnail/image?userName=${encodeURIComponent(normalized)}&width=420&height=420&format=png`
 }
+
+export function getRobloxHeadshotDirectUrl(username: string): string {
+  const clean = (username || '').replace(/^@/, '').replace(/\s+/g, '').trim()
+  if (!clean) return 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80'
+  return `https://www.roblox.com/headshot-thumbnail/image?userName=${encodeURIComponent(clean)}&width=420&height=420&format=png`
+}

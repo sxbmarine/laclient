@@ -1,0 +1,103 @@
+.adminForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fieldLabel {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: var(--rounded-md);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-family: var(--font-text);
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.input:focus {
+  border-color: #2997ff;
+  box-shadow: 0 0 0 3px rgba(41, 151, 255, 0.2);
+}
+
+.select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: var(--rounded-md);
+  background: rgba(20, 25, 35, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-family: var(--font-text);
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+}
+
+.submitBtn {
+  margin-top: 6px;
+  background: linear-gradient(135deg, #0066cc 0%, #2997ff 100%);
+  color: #ffffff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: var(--rounded-md);
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 102, 204, 0.4);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.submitBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 102, 204, 0.6);
+}
+
+.submitBtn:active {
+  transform: scale(0.97);
+}
+
+.deleteBtn {
+  background: rgba(255, 69, 58, 0.2);
+  color: #ff453a;
+  border: 1px solid rgba(255, 69, 58, 0.4);
+  padding: 4px 10px;
+  border-radius: var(--rounded-pill);
+  font-family: var(--font-text);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.deleteBtn:hover {
+  background: rgba(255, 69, 58, 0.4);
+}
+
+.successMsg {
+  padding: 8px 12px;
+  border-radius: var(--rounded-md);
+  background: rgba(48, 209, 88, 0.2);
+  border: 1px solid rgba(48, 209, 88, 0.4);
+  color: #30d158;
+  font-family: var(--font-text);
+  font-size: 12px;
+  font-weight: 600;
+}

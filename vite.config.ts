@@ -11,6 +11,7 @@ export default defineConfig({
         entry: 'electron/main.ts',
         vite: {
           build: {
+            sourcemap: false,
             outDir: 'dist-electron',
             rollupOptions: {
               external: ['electron'],

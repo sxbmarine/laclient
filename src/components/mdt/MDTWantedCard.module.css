@@ -1,0 +1,114 @@
+.bulletinGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.bulletinCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--rounded-md);
+  padding: 10px 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+.bulletinCard:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 69, 58, 0.4);
+  transform: translateY(-1px);
+}
+
+.mugshot {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--rounded-sm);
+  object-fit: cover;
+  border: 1.5px solid rgba(255, 69, 58, 0.6);
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.bulletinBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.bulletinHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subjectName {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+}
+
+.alertTagGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.alertTag {
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: var(--rounded-pill);
+  background: rgba(255, 69, 58, 0.25);
+  color: #ff453a;
+  border: 1px solid rgba(255, 69, 58, 0.4);
+}
+
+.deleteBoloBtn {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255, 69, 58, 0.2);
+  border: 1px solid rgba(255, 69, 58, 0.4);
+  color: #ff453a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: var(--font-family-system);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.deleteBoloBtn:hover {
+  background: rgba(255, 69, 58, 0.5);
+  border-color: #ff453a;
+  color: #ffffff;
+  transform: scale(1.15);
+  box-shadow: 0 0 8px rgba(255, 69, 58, 0.6);
+}
+
+.crimeDetail {
+  font-family: var(--font-text);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-text);
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 2px;
+}

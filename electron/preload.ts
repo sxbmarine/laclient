@@ -23,6 +23,11 @@ contextBridge.exposeInMainWorld('electronAPI', {
     ipcRenderer.invoke('window:setAlwaysOnTop', flag),
   getAlwaysOnTop: (): Promise<boolean> =>
     ipcRenderer.invoke('window:getAlwaysOnTop'),
+  setDeviceMode: (mode: 'phone' | 'tablet'): Promise<void> =>
+    ipcRenderer.invoke('window:setDeviceMode', mode),
   getAppVersion: (): Promise<string> => ipcRenderer.invoke('app:getVersion'),
+  checkForUpdates: (): Promise<{ ok: boolean; updateInfo?: any; error?: string }> =>
+    ipcRenderer.invoke('updater:check'),
+  quitAndInstall: (): Promise<void> => ipcRenderer.invoke('updater:quitAndInstall'),
   logTerminal: (...args: any[]): Promise<void> => ipcRenderer.invoke('log:terminal', ...args),
 })

@@ -18,6 +18,15 @@
   justify-content: center;
   transform-origin: center center;
   -webkit-app-region: no-drag;
+  transition: opacity 0.25s ease;
+}
+
+.unfocused {
+  opacity: 0.8;
+}
+
+.unfocused:hover {
+  opacity: 1;
 }
 
 .phoneFrame {

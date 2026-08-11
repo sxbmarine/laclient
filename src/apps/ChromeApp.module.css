@@ -4,7 +4,7 @@
   height: 100%;
   background: #191a1c;
   color: #e8eaed;
-  font-family: var(--font-family-system);
+  font-family: var(--font-text);
   -webkit-font-smoothing: antialiased;
   position: relative;
   overflow: hidden;
@@ -34,16 +34,19 @@
   flex: 1;
   height: 40px;
   background: #2d2e31;
-  border-radius: 20px;
+  border-radius: var(--rounded-pill);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 16px;
   color: #e8eaed;
-  font-size: 15px;
+  font-family: var(--font-text);
+  font-size: var(--font-size-caption);
+  letter-spacing: var(--tracking-caption);
 }
 
 .urlText {
+  font-family: var(--font-text);
   font-weight: 500;
   color: #ffffff;
 }
