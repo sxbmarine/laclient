@@ -16,11 +16,13 @@ build/
 .env.production.local
 *.env
 
-# IDE & Editor files
+# IDE, AI Agents & Editor files
 .vscode/*
-.agents/*
-.cursor/*
 !.vscode/extensions.json
+.agents/
+.agents/*
+.cursor/
+.cursor/*
 .idea/
 *.suo
 *.ntvs*
