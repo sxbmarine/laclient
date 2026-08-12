@@ -64,8 +64,7 @@
           "arch": [
             "x64"
           ]
-        },
-        "portable"
+        }
       ],
       "icon": "icon/favicon.ico"
     },
