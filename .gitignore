@@ -18,8 +18,8 @@ build/
 
 # IDE & Editor files
 .vscode/*
-.agents/
-.cursor/
+.agents/*
+.cursor/*
 !.vscode/extensions.json
 .idea/
 *.suo
