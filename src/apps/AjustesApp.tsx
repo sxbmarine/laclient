@@ -60,6 +60,15 @@ export function AjustesApp() {
 
   const [contactosCount, setContactosCount] = useState<number>(0)
   const [showResetModal, setShowResetModal] = useState<boolean>(false)
+  const [appVersion, setAppVersion] = useState<string>('1.0.2')
+
+  useEffect(() => {
+    if (window.electronAPI?.getAppVersion) {
+      window.electronAPI.getAppVersion().then((v) => {
+        if (v) setAppVersion(v)
+      })
+    }
+  }, [])
 
   // Fetch count of contacts
   useEffect(() => {
@@ -269,6 +278,12 @@ export function AjustesApp() {
                 <span className={styles.chevron}>›</span>
               </div>
             </div>
+          </div>
+
+          {/* Version Footer */}
+          <div className={styles.versionFooter}>
+            <span>Los Ángeles RP Cliente</span>
+            <span className={styles.versionNumber}>Versión {appVersion}</span>
           </div>
         </div>
       </div>
