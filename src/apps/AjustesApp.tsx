@@ -456,6 +456,12 @@ export function AjustesApp() {
             >
               Borrar iPhone (Restablecer Datos)
             </div>
+
+            {/* Version Footer */}
+            <div className={styles.versionFooter}>
+              <span>Los Ángeles RP Cliente</span>
+              <span className={styles.versionNumber}>Versión {appVersion}</span>
+            </div>
           </div>
         </>
       )}

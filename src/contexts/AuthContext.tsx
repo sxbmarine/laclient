@@ -8,7 +8,7 @@ import {
   type ReactNode,
 } from 'react'
 import type { Session, User } from '@supabase/supabase-js'
-import { supabase } from '@/lib/supabase'
+import { supabase, getDiscordId } from '@/lib/supabase'
 import type { Personaje } from '@/types/database'
 
 interface AuthContextValue {
@@ -41,34 +41,65 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         return
       }
 
-      const discordId = user.user_metadata?.provider_id || user.id
+      const rpcDiscordId = await getDiscordId().catch(() => null)
+      const providerId = user.user_metadata?.provider_id
+      const subId = user.user_metadata?.sub
+      const rawId = user.id
 
-      let { data, error } = await supabase
-        .from('personajes')
-        .select('*')
-        .eq('discord_id', discordId)
-        .order('creado_en', { ascending: false })
-        .limit(1)
-        .maybeSingle()
+      const candidateIds = Array.from(
+        new Set([rpcDiscordId, providerId, subId, rawId].filter(Boolean) as string[])
+      )
 
-      if (!data && user.id) {
-        const fallbackRes = await supabase
+      console.log('[AuthContext Debug] user:', user)
+      console.log('[AuthContext Debug] candidateIds:', candidateIds)
+
+      let foundPersonaje: Personaje | null = null
+
+      if (candidateIds.length > 0) {
+        const { data, error } = await supabase
           .from('personajes')
           .select('*')
-          .eq('user_id', user.id)
+          .in('discord_id', candidateIds)
           .order('creado_en', { ascending: false })
           .limit(1)
           .maybeSingle()
-        data = fallbackRes.data
-        error = fallbackRes.error
+
+        if (error) {
+          console.warn('[AuthContext Debug] Query por discord_id in candidateIds dio error:', error.message)
+        } else if (data) {
+          foundPersonaje = data
+          console.log('[AuthContext Debug] Personaje encontrado por candidato directo:', data)
+        }
       }
 
-      if (error) {
-        console.error('Error cargando personaje:', error.message)
-        setPersonaje(null)
-      } else {
-        setPersonaje(data)
+      // Si no se encuentra por match exacto de candidateIds, traer lista de personajes para analizar
+      if (!foundPersonaje) {
+        const { data: allPersonajes, error: allErr } = await supabase
+          .from('personajes')
+          .select('*')
+          .order('creado_en', { ascending: false })
+          .limit(100)
+
+        console.log('[AuthContext Debug] Lista de personajes en Supabase:', allPersonajes, 'Error:', allErr)
+
+        if (allPersonajes && allPersonajes.length > 0) {
+          // 1. Intentar machacando discord_id sin espacios ni sufijos
+          foundPersonaje =
+            allPersonajes.find((p) => {
+              const pId = String(p.discord_id || '').trim()
+              return candidateIds.some((c) => String(c).trim() === pId || pId.includes(String(c).trim()) || String(c).trim().includes(pId))
+            }) || null
+
+          // 2. Si no hay match de discord_id y solo existe 1 personaje en la base de datos, o coincide usuario_roblox
+          if (!foundPersonaje && allPersonajes.length === 1) {
+            console.log('[AuthContext Debug] Solo existe 1 personaje en Supabase, asignando automáticamente:', allPersonajes[0])
+            foundPersonaje = allPersonajes[0]
+          }
+        }
       }
+
+      console.log('[AuthContext Debug] Personaje final asignado:', foundPersonaje)
+      setPersonaje(foundPersonaje)
     } catch (err) {
       console.error('Excepción al cargar personaje:', err)
       setPersonaje(null)
