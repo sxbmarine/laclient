@@ -207,10 +207,46 @@ if (!gotLock) {
 
     // Configurar y comprobar actualizaciones automáticas si no estamos en entorno dev
     if (!import.meta.env.VITE_DEV_SERVER_URL) {
+      autoUpdater.logger = console
       autoUpdater.autoDownload = true
       autoUpdater.autoInstallOnAppQuit = true
+
+      autoUpdater.on('checking-for-update', () => {
+        console.log('[AutoUpdater] Comprobando actualizaciones en GitHub...')
+      })
+
+      autoUpdater.on('update-available', (info) => {
+        console.log('[AutoUpdater] ¡Nueva versión disponible! v' + info.version)
+        if (mainWindow && !mainWindow.isDestroyed()) {
+          mainWindow.webContents.send('updater:status', { status: 'available', version: info.version })
+        }
+      })
+
+      autoUpdater.on('update-not-available', (info) => {
+        console.log('[AutoUpdater] App en la última versión. v' + info.version)
+      })
+
+      autoUpdater.on('download-progress', (progressObj) => {
+        console.log(`[AutoUpdater] Progreso de descarga: ${Math.round(progressObj.percent)}%`)
+      })
+
+      autoUpdater.on('update-downloaded', (info) => {
+        console.log('[AutoUpdater] Actualización v' + info.version + ' descargada. Reiniciando e instalando...')
+        if (mainWindow && !mainWindow.isDestroyed()) {
+          mainWindow.webContents.send('updater:status', { status: 'downloaded', version: info.version })
+        }
+        // Aplicar la actualización e instalar en segundo plano
+        setTimeout(() => {
+          autoUpdater.quitAndInstall(false, true)
+        }, 1500)
+      })
+
+      autoUpdater.on('error', (err) => {
+        console.error('[AutoUpdater] Error en autoUpdater:', err?.message || err)
+      })
+
       autoUpdater.checkForUpdatesAndNotify().catch((err) => {
-        console.warn('[AutoUpdater] Error buscando actualizaciones:', err?.message)
+        console.warn('[AutoUpdater] Error en checkForUpdatesAndNotify:', err?.message)
       })
     }
   })

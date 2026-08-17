@@ -48,7 +48,7 @@ position: relative;
 .Pixso-vector-1_198 {
         width: 10px;
 height: 10px;
-background-image: url(@/assets/images/AXLabel2.svg);
+background-image: url(../assets/images/AXLabel2.svg);
 background-size: 100% 100%;
 background-repeat: no-repeat;
 position: relative;
@@ -96,7 +96,7 @@ position: relative;
 .Pixso-vector-1_201 {
         width: 10px;
 height: 10px;
-background-image: url(@/assets/images/AXLabel0.svg);
+background-image: url(../assets/images/AXLabel0.svg);
 background-size: 100% 100%;
 background-repeat: no-repeat;
 position: relative;
@@ -224,7 +224,7 @@ position: relative;
 .Pixso-vector-1_209 {
         width: 10px;
 height: 10px;
-background-image: url(@/assets/images/AXLabel.svg);
+background-image: url(../assets/images/AXLabel.svg);
 background-size: 100% 100%;
 background-repeat: no-repeat;
 position: relative;
@@ -516,7 +516,7 @@ position: relative;
 .Pixso-vector-1_222 {
         width: 10px;
 height: 10px;
-background-image: url(@/assets/images/AXLabel1.svg);
+background-image: url(../assets/images/AXLabel1.svg);
 background-size: 100% 100%;
 background-repeat: no-repeat;
 position: relative;

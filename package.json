@@ -1,8 +1,8 @@
 {
-  "name": "erlc-overlay",
-  "version": "0.1.0",
+  "name": "laclient",
+  "version": "1.0.2",
   "private": true,
-  "description": "Overlay móvil de escritorio para servidor ERLC",
+  "description": "Overlay oficial de Los Ángeles RP Spanish.",
   "main": "dist-electron/main.js",
   "scripts": {
     "dev": "vite",
@@ -33,8 +33,8 @@
     "wait-on": "^8.0.2"
   },
   "build": {
-    "appId": "com.erlc.overlay",
-    "productName": "ERLC Overlay",
+    "appId": "com.losangeles.client",
+    "productName": "Los Ángeles RP Cliente",
     "publish": [
       {
         "provider": "github",
@@ -69,8 +69,10 @@
       "icon": "icon/favicon.ico"
     },
     "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true
+      "oneClick": true,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": false
     }
   },
   "mac": {

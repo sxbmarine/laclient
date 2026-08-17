@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { AuthProvider, useAuth } from '@/contexts/AuthContext'
 import { NotificationProvider } from '@/contexts/NotificationContext'
 import { DeviceProvider, useDevice } from '@/contexts/DeviceContext'
@@ -116,7 +116,7 @@ function MainContainer() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <AuthProvider>
         <DeviceProvider>
           <NotificationProvider>
@@ -126,6 +126,6 @@ export default function App() {
           </NotificationProvider>
         </DeviceProvider>
       </AuthProvider>
-    </BrowserRouter>
+    </HashRouter>
   )
 }

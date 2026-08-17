@@ -50,6 +50,7 @@ export function OnboardingScreen() {
       // 1. Insert into personajes using assignedNumero (e.g., 2130123456) and assignedIdNumber (e.g. A1234567)
       const insertPayload: Record<string, any> = {
         discord_id: discordId,
+        user_id: user?.id || null,
         nombre: nombre.trim(),
         numero: assignedNumero,
         idnumber: assignedIdNumber,

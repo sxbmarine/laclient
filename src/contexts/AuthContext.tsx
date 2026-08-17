@@ -32,12 +32,36 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const loadPersonaje = useCallback(async () => {
     try {
-      const { data, error } = await supabase
+      const {
+        data: { user },
+      } = await supabase.auth.getUser()
+
+      if (!user) {
+        setPersonaje(null)
+        return
+      }
+
+      const discordId = user.user_metadata?.provider_id || user.id
+
+      let { data, error } = await supabase
         .from('personajes')
         .select('*')
+        .eq('discord_id', discordId)
         .order('creado_en', { ascending: false })
         .limit(1)
         .maybeSingle()
+
+      if (!data && user.id) {
+        const fallbackRes = await supabase
+          .from('personajes')
+          .select('*')
+          .eq('user_id', user.id)
+          .order('creado_en', { ascending: false })
+          .limit(1)
+          .maybeSingle()
+        data = fallbackRes.data
+        error = fallbackRes.error
+      }
 
       if (error) {
         console.error('Error cargando personaje:', error.message)

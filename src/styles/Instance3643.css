@@ -13,7 +13,7 @@ flex-shrink: 0;
 .Pixso-instance-2_384 {
         width: 248px;
 height: 4px;
-background-image: url(@/assets/images/Ticks.svg);
+background-image: url(../assets/images/Ticks.svg);
 background-size: 100% 100%;
 background-repeat: no-repeat;
 overflow: hidden;

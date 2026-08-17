@@ -49,3 +49,5 @@ pnpm-debug.log*
 .eslintcache
 .stylelintcache
 .tsbuildinfo
+*_files/
+*.descarga
