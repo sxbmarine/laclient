@@ -58,9 +58,8 @@ export function ApplePaySheet({
             return matchDiscord || matchPersonaje
           })
 
-          // Use filtered accounts if available, otherwise use all accounts from database
-          const finalAccounts = userAccounts.length > 0 ? userAccounts : data
-          setBankAccounts(finalAccounts)
+          // Use ONLY filtered user accounts
+          setBankAccounts(userAccounts)
         } else if (isMounted) {
           // Fallback if database table has no accounts yet
           setBankAccounts([

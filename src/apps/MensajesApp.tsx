@@ -57,7 +57,7 @@ function formatMessageTime(dateStr?: string) {
 
 export function MensajesApp() {
   const navigate = useNavigate()
-  const { personaje } = useAuth()
+  const { personaje, user } = useAuth()
   const [view, setView] = useState<View>('contacts')
   const [contactos, setContactos] = useState<Contacto[]>([])
   const [selectedContact, setSelectedContact] = useState<Contacto | null>(null)
@@ -83,10 +83,30 @@ export function MensajesApp() {
     setLoading(true)
     const currentDiscordId = discordId || personaje?.discord_id || (await getDiscordId())
 
-    // 1. Fetch REAL contacts from Supabase 'contactos' table
+    const candidateIds = Array.from(
+      new Set(
+        [
+          currentDiscordId,
+          discordId,
+          personaje?.discord_id,
+          user?.user_metadata?.provider_id,
+          user?.user_metadata?.sub,
+          user?.id,
+        ].filter(Boolean) as string[],
+      ),
+    )
+
+    if (candidateIds.length === 0) {
+      setContactos([])
+      setLoading(false)
+      return
+    }
+
+    // 1. Fetch ONLY current user's contacts from Supabase 'contactos' table
     const { data: contactsData } = await supabase
       .from('contactos')
       .select('*')
+      .in('discord_id', candidateIds)
       .order('nombre', { ascending: true })
 
     const fetchedContacts = contactsData ?? []
@@ -122,14 +142,18 @@ export function MensajesApp() {
       }
     })
 
-    // 3. Fetch LATEST message for each conversation
+    // 3. Fetch LATEST message for each conversation involving current user
     const msgMap: Record<string, { contenido: string; created_at: string }> = {}
 
-    if (currentDiscordId) {
+    if (candidateIds.length > 0) {
+      const orFilter = candidateIds
+        .flatMap((id) => [`emisor_discord_id.eq.${id}`, `receptor_discord_id.eq.${id}`])
+        .join(',')
+
       const { data: allMessages } = await supabase
         .from('mensajes')
         .select('*')
-        .or(`emisor_discord_id.eq.${currentDiscordId},receptor_discord_id.eq.${currentDiscordId}`)
+        .or(orFilter)
         .order('created_at', { ascending: false })
 
       if (allMessages) {

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '@/contexts/AuthContext'
 import { StatusBar } from '@/components/StatusBar'
 import { supabase, getDiscordId, generatePhoneNumber, generateIdNumber, formatPhoneNumber } from '@/lib/supabase'
+import logoShadow from '@/assets/logo_shadow.png'
 import styles from './OnboardingScreen.module.css'
 
 export function OnboardingScreen() {
@@ -98,8 +99,8 @@ export function OnboardingScreen() {
     <div className={styles.onboarding}>
       <StatusBar light />
       <div className={`${styles.content} app-scroll`}>
-        <div className={`${styles.header} fade-in`}>
-          <img src="/src/assets/logo_shadow.png" alt="Logo" width={100} height={100} />
+        <div className={styles.topLogoSection}>
+          <img src={logoShadow} alt="Logo" width={100} height={100} />
           <h1 className={styles.title}>Bienvenido! Ayudanos a conocerte</h1>
           <p className={styles.subtitle}>
             Completa los datos para emitir tu documentación

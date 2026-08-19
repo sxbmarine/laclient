@@ -67,13 +67,43 @@ export function ContactosApp() {
 
   const loadContactos = useCallback(async () => {
     setLoading(true)
+    setError(null)
+
+    const rpcDiscordId = await getDiscordId().catch(() => null)
+    const discordId =
+      personaje?.discord_id ||
+      user?.user_metadata?.provider_id ||
+      user?.user_metadata?.sub ||
+      user?.id
+
+    const candidateIds = Array.from(
+      new Set(
+        [
+          discordId,
+          rpcDiscordId,
+          personaje?.discord_id,
+          user?.user_metadata?.provider_id,
+          user?.user_metadata?.sub,
+          user?.id,
+        ].filter(Boolean) as string[],
+      ),
+    )
+
+    if (candidateIds.length === 0) {
+      setContactos([])
+      setLoading(false)
+      return
+    }
+
     const { data, error: err } = await supabase
       .from('contactos')
       .select('*')
+      .in('discord_id', candidateIds)
       .order('nombre', { ascending: true })
 
     if (err) {
       setError(err.message)
+      setContactos([])
     } else {
       const fetched = data ?? []
       setContactos(fetched)
@@ -309,8 +339,16 @@ export function ContactosApp() {
                 </button>
               </div>
             ) : (
-              <div className="ios-list fade-in">
-                {contactos.map((c) => {
+              <div className="fade-in">
+                <button
+                  className="ios-btn ios-btn-primary"
+                  style={{ width: '100%', marginBottom: 14 }}
+                  onClick={() => setView('add')}
+                >
+                  + Nuevo contacto
+                </button>
+                <div className="ios-list">
+                  {contactos.map((c) => {
                   const rawNum = c.numero_telefono?.replace(/\D/g, '') || ''
                   const pInfo =
                     personajesMap[c.numero_telefono] ||
@@ -339,6 +377,7 @@ export function ContactosApp() {
                     </div>
                   )
                 })}
+                </div>
               </div>
             )}
           </>

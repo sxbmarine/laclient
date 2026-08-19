@@ -28,8 +28,7 @@ const ICON_MAP: Record<string, string> = {
 }
 
 export function getAppIconUrl(appId: string): string {
-  if (ICON_MAP[appId]) return ICON_MAP[appId]
-  return `/src/assets/icons/${appId}.png`
+  return ICON_MAP[appId] || bancoIcon
 }
 
 const APPS: AppInfo[] = [

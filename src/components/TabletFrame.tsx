@@ -1745,15 +1745,15 @@ export function TabletFrame() {
             <div className={styles.greenContentArea}>
               <div className={styles.bgBlurLayer} style={{ backgroundImage: `url(${tabletBg})` }} />
               <div style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', padding: '40px', color: '#fff', textAlign: 'center', gap: '16px' }}>
-                <div style={{ fontSize: '48px' }}>🛡️ 🔒</div>
+                <div style={{ fontSize: '48px' }}></div>
                 <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 800, margin: 0, letterSpacing: '-0.5px' }}>
-                  ACCESO DENEGADO — SISTEMA MDT BLOQUEADO
+                  ACCESO DENEGADO
                 </h2>
                 <p style={{ maxWidth: '520px', color: 'rgba(255,255,255,0.75)', fontSize: '14px', lineHeight: 1.6, margin: 0 }}>
-                  El DNI o usuario no figura registrado ni habilitado en la base de datos de Oficiales Autorizados del Centro de Operaciones Policiales (LAPD / LASD / CHP).
+                  El usuario no figura como habilitado en la base de datos de miemos autorizados.
                 </p>
                 <div style={{ background: 'rgba(255, 69, 58, 0.2)', border: '1px solid rgba(255, 69, 58, 0.4)', color: '#ff453a', padding: '10px 20px', borderRadius: '12px', fontSize: '12px', fontWeight: 700 }}>
-                  CÓDIGO DE ERROR: UNAUTHORIZED_OFFICER_DNI
+                  CÓDIGO DE ERROR: UNAUTHORIZED_DNI
                 </div>
                 <button
                   type="button"

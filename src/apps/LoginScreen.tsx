@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '@/contexts/AuthContext'
 import { StatusBar } from '@/components/StatusBar'
+import logoShadow from '@/assets/logo_shadow.png'
 import styles from './LoginScreen.module.css'
 
 export function LoginScreen() {
@@ -29,7 +30,7 @@ export function LoginScreen() {
       <div className={styles.content}>
         <div className={styles.logo}>
           <div className={styles.logoIcon}>
-            <img src="/src/assets/logo_shadow.png" alt="Logo" width={200} height={200} />
+            <img src={logoShadow} alt="Logo" width={200} height={200} />
           </div>
           <h1 className={styles.title}>Los Ángeles Spanish RP</h1>
           <p className={styles.subtitle}>

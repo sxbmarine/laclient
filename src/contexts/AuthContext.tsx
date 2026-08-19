@@ -72,29 +72,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         }
       }
 
-      // Si no se encuentra por match exacto de candidateIds, traer lista de personajes para analizar
+      // Si no se encuentra por candidato directo, buscar coincidencia limpia en la lista de personajes
       if (!foundPersonaje) {
-        const { data: allPersonajes, error: allErr } = await supabase
+        const { data: allPersonajes } = await supabase
           .from('personajes')
           .select('*')
           .order('creado_en', { ascending: false })
           .limit(100)
 
-        console.log('[AuthContext Debug] Lista de personajes en Supabase:', allPersonajes, 'Error:', allErr)
-
         if (allPersonajes && allPersonajes.length > 0) {
-          // 1. Intentar machacando discord_id sin espacios ni sufijos
           foundPersonaje =
             allPersonajes.find((p) => {
               const pId = String(p.discord_id || '').trim()
-              return candidateIds.some((c) => String(c).trim() === pId || pId.includes(String(c).trim()) || String(c).trim().includes(pId))
+              return candidateIds.some(
+                (c) => String(c).trim() === pId && pId.length > 0
+              )
             }) || null
-
-          // 2. Si no hay match de discord_id y solo existe 1 personaje en la base de datos, o coincide usuario_roblox
-          if (!foundPersonaje && allPersonajes.length === 1) {
-            console.log('[AuthContext Debug] Solo existe 1 personaje en Supabase, asignando automáticamente:', allPersonajes[0])
-            foundPersonaje = allPersonajes[0]
-          }
         }
       }
 

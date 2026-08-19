@@ -38,8 +38,26 @@ export function GPSApp() {
       return
     }
 
+    const rpcDiscordId = await getDiscordId().catch(() => null)
+    const candidateIds = Array.from(
+      new Set(
+        [
+          discordId,
+          rpcDiscordId,
+          personaje?.discord_id,
+          user?.user_metadata?.provider_id,
+          user?.user_metadata?.sub,
+          user?.id,
+        ].filter(Boolean) as string[],
+      ),
+    )
+
     const [contactosRes, compartidosRes, ubicacionRes] = await Promise.all([
-      supabase.from('contactos').select('*').order('nombre_guardado'),
+      supabase
+        .from('contactos')
+        .select('*')
+        .in('discord_id', candidateIds)
+        .order('nombre_guardado'),
       supabase.from('gps_compartido').select('*').eq('discord_id_emisor', discordId),
       supabase.from('ubicaciones').select('*').eq('discord_id', discordId).maybeSingle(),
     ])

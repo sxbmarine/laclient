@@ -173,22 +173,60 @@ export function BancoApp() {
 
   const loadCuentas = useCallback(async () => {
     setLoading(true)
-    const { data, error: err } = await supabase
-      .from('cuentas_bancarias')
-      .select('*')
-      .order('created_at', { ascending: false })
+    setError(null)
+
+    const rpcDiscordId = await getDiscordId().catch(() => null)
+    const discordId =
+      personaje?.discord_id ||
+      user?.user_metadata?.provider_id ||
+      user?.user_metadata?.sub ||
+      user?.id
+
+    const candidateIds = Array.from(
+      new Set(
+        [
+          discordId,
+          rpcDiscordId,
+          personaje?.discord_id,
+          user?.user_metadata?.provider_id,
+          user?.user_metadata?.sub,
+          user?.id,
+        ].filter(Boolean) as string[],
+      ),
+    )
+
+    if (candidateIds.length === 0 && !personaje?.id) {
+      setCuentas([])
+      setSelectedCuenta(null)
+      setLoading(false)
+      return
+    }
+
+    let query = supabase.from('cuentas_bancarias').select('*')
+
+    if (candidateIds.length > 0) {
+      query = query.in('discord_id', candidateIds)
+    } else if (personaje?.id) {
+      query = query.eq('personaje_id', personaje.id)
+    }
+
+    const { data, error: err } = await query.order('created_at', { ascending: false })
 
     if (err) {
+      console.error('Error al cargar cuentas bancarias:', err.message)
       setError(err.message)
+      setCuentas([])
     } else {
       const fetched = data ?? []
       setCuentas(fetched)
       if (fetched.length > 0 && !selectedCuenta) {
         setSelectedCuenta(fetched[0])
+      } else if (fetched.length === 0) {
+        setSelectedCuenta(null)
       }
     }
     setLoading(false)
-  }, [selectedCuenta])
+  }, [personaje, user, selectedCuenta])
 
   const loadTransacciones = useCallback(async (numeroCuenta?: string) => {
     try {
