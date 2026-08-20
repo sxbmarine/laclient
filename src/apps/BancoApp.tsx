@@ -228,49 +228,75 @@ export function BancoApp() {
     setLoading(false)
   }, [personaje, user, selectedCuenta])
 
-  const loadTransacciones = useCallback(async (numeroCuenta?: string) => {
-    try {
-      let query = supabase.from('transacciones').select('*').limit(50)
-      if (numeroCuenta) {
-        query = query.or(`cuenta_origen.eq.${numeroCuenta},cuenta_destino.eq.${numeroCuenta}`)
-      }
+  const loadTransacciones = useCallback(
+    async (numeroCuenta?: string) => {
+      try {
+        const userAccountNumbers = cuentas
+          .map((c) => c.numero_cuenta)
+          .filter(Boolean)
 
-      // Intentar ordenación por 'fecha'
-      let { data, error: err } = await query.order('fecha', { ascending: false })
+        const targetAccounts = numeroCuenta
+          ? [numeroCuenta]
+          : userAccountNumbers
 
-      // Alternativa si la columna de ordenación en la BD se llama 'created_at'
-      if (err) {
-        let altQuery = supabase.from('transacciones').select('*').limit(50)
-        if (numeroCuenta) {
-          altQuery = altQuery.or(`cuenta_origen.eq.${numeroCuenta},cuenta_destino.eq.${numeroCuenta}`)
+        if (targetAccounts.length === 0) {
+          setTransacciones([])
+          return
         }
-        const res = await altQuery.order('created_at', { ascending: false })
-        if (res.data) {
-          data = res.data
-          err = null
-        }
-      }
 
-      if (err) {
-        console.error('Error al cargar transacciones:', err)
-      } else {
-        setTransacciones(data ?? [])
+        const orConditions = targetAccounts
+          .flatMap((num) => [`cuenta_origen.eq.${num}`, `cuenta_destino.eq.${num}`])
+          .join(',')
+
+        let { data, error: err } = await supabase
+          .from('transacciones')
+          .select('*')
+          .or(orConditions)
+          .order('fecha', { ascending: false })
+          .limit(50)
+
+        // Alternativa si la columna de ordenación en la BD se llama 'created_at'
+        if (err) {
+          const res = await supabase
+            .from('transacciones')
+            .select('*')
+            .or(orConditions)
+            .order('created_at', { ascending: false })
+            .limit(50)
+
+          if (res.data) {
+            data = res.data
+            err = null
+          }
+        }
+
+        if (err) {
+          console.error('Error al cargar transacciones:', err.message)
+          setTransacciones([])
+        } else {
+          setTransacciones(data ?? [])
+        }
+      } catch (e) {
+        console.error('Excepción al cargar transacciones:', e)
+        setTransacciones([])
       }
-    } catch (e) {
-      console.error('Excepción al cargar transacciones:', e)
-    }
-  }, [])
+    },
+    [cuentas],
+  )
 
   useEffect(() => {
     loadCuentas()
-    loadTransacciones()
-  }, [loadCuentas, loadTransacciones])
+  }, [loadCuentas])
 
   useEffect(() => {
-    if (view === 'history' || view === 'list') {
+    if (selectedCuenta?.numero_cuenta) {
+      loadTransacciones(selectedCuenta.numero_cuenta)
+    } else if (cuentas.length > 0) {
       loadTransacciones()
+    } else {
+      setTransacciones([])
     }
-  }, [view, loadTransacciones])
+  }, [selectedCuenta, cuentas, loadTransacciones, view])
 
   const handleCarouselWheel = (e: React.WheelEvent<HTMLDivElement>) => {
     if (!carouselRef.current) return
