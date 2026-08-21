@@ -1,6 +1,6 @@
 {
   "name": "laclient",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "private": true,
   "description": "Overlay oficial de Los Ángeles RP Spanish.",
   "main": "dist-electron/main.js",
