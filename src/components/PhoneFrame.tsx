@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import Speaker1 from './Speaker1'
 import { NotificationOverlay } from '@/components/notifications/NotificationOverlay'
 import faceIdSvg from '@/assets/system/faceid.svg'
+import wallDefault from '@/assets/backgrounds/homescreen/default.png'
 import styles from './PhoneFrame.module.css'
 
 interface PhoneFrameProps {
@@ -170,15 +171,12 @@ export function PhoneFrame({ children }: PhoneFrameProps) {
           <div
             id="1205_1216"
             className={styles.vector1205_1216}
-            style={
-              wallpaper
-                ? {
-                    backgroundImage: `url(${wallpaper})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }
-                : undefined
-            }
+            style={{
+              backgroundImage: `url(${wallpaper || wallDefault})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundColor: '#000000',
+            }}
           >
             <NotificationOverlay />
             {children}
