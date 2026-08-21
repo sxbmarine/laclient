@@ -10,11 +10,8 @@ let mainWindow: BrowserWindow | null = null
 let pendingAuthUrl: string | null = null
 
 function getSupabaseAdmin() {
-  const url = import.meta.env.VITE_SUPABASE_URL as string | undefined
-  const key = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined
-  if (!url || !key) {
-    throw new Error('Faltan VITE_SUPABASE_URL o VITE_SUPABASE_ANON_KEY en el entorno')
-  }
+  const url = (import.meta.env.VITE_SUPABASE_URL as string | undefined) || 'https://pwgicqmwroutwnitkalo.supabase.co'
+  const key = (import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined) || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB3Z2ljcW13cm91dHduaXRrYWxvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ4ODc5MDAsImV4cCI6MjEwMDQ2MzkwMH0.Qm482IkucVKdXxPv19Vds2tTcZnxqOnY3XxTfxN_BvY'
   return createClient(url, key)
 }
 

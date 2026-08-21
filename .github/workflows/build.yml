@@ -29,6 +29,9 @@ jobs:
         run: npm ci
 
       - name: Build Electron Binaries
+        env:
+          VITE_SUPABASE_URL: https://pwgicqmwroutwnitkalo.supabase.co
+          VITE_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB3Z2ljcW13cm91dHduaXRrYWxvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ4ODc5MDAsImV4cCI6MjEwMDQ2MzkwMH0.Qm482IkucVKdXxPv19Vds2tTcZnxqOnY3XxTfxN_BvY
         run: npm run build:vite && npx electron-builder --publish never
 
       - name: Upload Single Unified Release Assets
