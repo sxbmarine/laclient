@@ -28,7 +28,17 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Build & Publish Release
+      - name: Build Electron Binaries
+        run: npm run build:vite && npx electron-builder --publish never
+
+      - name: Upload Single Unified Release Assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            release/*.exe
+            release/*.dmg
+            release/*.zip
+            release/*.yml
+            release/*.blockmap
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
